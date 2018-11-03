@@ -11,6 +11,8 @@ package thehotelfinder;
  */
 public class TheHotelFinder {
     static int loc;
+    static User curUser;
+    static MainPage log_reg;
     /**
      * @param args the command line arguments
      */
@@ -19,10 +21,17 @@ public class TheHotelFinder {
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-             new MainPage().setVisible(true);
-              
+                log_reg = new MainPage();
+                log_reg.setVisible(true);
             }
         });
+        
+        
+    }
+    
+    
+    public void setCurUser(User u){
+        curUser = u;
     }
 
 }

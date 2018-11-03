@@ -18,6 +18,16 @@ public class User {
     private String username;
     private String password;
 
+    User(String name, String  dob, String  address, String  email, String username, String  password){
+        id++;
+        this.name = name;
+        this.dob = dob;
+        this.address = address;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
+    
     public int getId() {
         return id;
     }
