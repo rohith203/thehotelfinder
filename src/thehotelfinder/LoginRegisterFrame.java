@@ -8,19 +8,21 @@ package thehotelfinder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.UIManager;
 
 /**
  *
  * @author Rohith
  */
-public class MainPage extends javax.swing.JFrame {
+public class LoginRegisterFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainPage
      */
-    public MainPage() {
+    public LoginRegisterFrame() {
+        UIManager.put("TabbedPane.contentOpaque", false);
         initComponents();
-        //testPane.setVisible(false);
+        
     }
 
     /**
@@ -33,6 +35,9 @@ public class MainPage extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPagePane = new javax.swing.JPanel();
+        logoLabel2 = new javax.swing.JLabel();
+        searchImageLabel = new javax.swing.JLabel();
+        logoLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         loginPane = new javax.swing.JPanel();
         LoginUsernameLabel = new javax.swing.JLabel();
@@ -59,23 +64,46 @@ public class MainPage extends javax.swing.JFrame {
         dateChooserCombo = new datechooser.beans.DateChooserCombo();
         cityTextField = new javax.swing.JTextField();
         stateTextField = new javax.swing.JTextField();
+        bgImgLabel = new javax.swing.JLabel();
         jOptionPane1 = new javax.swing.JOptionPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Hotel Finder");
         setResizable(false);
-        setSize(new java.awt.Dimension(500, 700));
+        setSize(new java.awt.Dimension(500, 800));
 
         mainPagePane.setBackground(new java.awt.Color(204, 255, 255));
         mainPagePane.setPreferredSize(new java.awt.Dimension(500, 700));
+        mainPagePane.setLayout(null);
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 153, 153));
+        logoLabel2.setFont(new java.awt.Font("Lithos Pro Regular", 1, 36)); // NOI18N
+        logoLabel2.setForeground(new java.awt.Color(242, 240, 234));
+        logoLabel2.setText("Finder");
+        mainPagePane.add(logoLabel2);
+        logoLabel2.setBounds(260, 80, 230, 70);
 
-        loginPane.setBackground(new java.awt.Color(255, 153, 153));
+        searchImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\search.png")); // NOI18N
+        mainPagePane.add(searchImageLabel);
+        searchImageLabel.setBounds(310, 10, 50, 110);
 
+        logoLabel1.setFont(new java.awt.Font("Lithos Pro Regular", 1, 36)); // NOI18N
+        logoLabel1.setForeground(new java.awt.Color(242, 240, 234));
+        logoLabel1.setText("The Hotel");
+        mainPagePane.add(logoLabel1);
+        logoLabel1.setBounds(90, 30, 230, 70);
+
+        jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
+        jTabbedPane1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 16)); // NOI18N
+
+        loginPane.setOpaque(false);
+
+        LoginUsernameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        LoginUsernameLabel.setForeground(new java.awt.Color(51, 51, 51));
         LoginUsernameLabel.setText("Username:");
 
         loginUsernameField.setColumns(20);
+        loginUsernameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginUsernameField.setForeground(new java.awt.Color(51, 51, 51));
         loginUsernameField.setText("Enter Username");
         loginUsernameField.setPreferredSize(new java.awt.Dimension(200, 30));
         loginUsernameField.addActionListener(new java.awt.event.ActionListener() {
@@ -84,8 +112,12 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        loginPasswordLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginPasswordLabel.setForeground(new java.awt.Color(51, 51, 51));
         loginPasswordLabel.setText("Password:");
 
+        loginBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginBtn.setForeground(new java.awt.Color(51, 51, 51));
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +125,12 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        loginPasswordField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginPasswordField.setForeground(new java.awt.Color(51, 51, 51));
         loginPasswordField.setText("password");
 
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("New user? Open register tab.");
 
         javax.swing.GroupLayout loginPaneLayout = new javax.swing.GroupLayout(loginPane);
@@ -143,26 +179,34 @@ public class MainPage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Login", loginPane);
 
-        registerPane.setBackground(new java.awt.Color(255, 153, 153));
+        registerPane.setOpaque(false);
 
+        nameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         nameLabel.setText("Name:");
 
         nameField.setColumns(20);
+        nameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         nameField.setText("Full Name");
 
+        dobLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         dobLabel.setText("Date of Birth:");
 
         streetTextField.setColumns(20);
+        streetTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         streetTextField.setText("Street");
 
+        addressLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         addressLabel.setText("Residential Address:");
 
         emailField.setColumns(20);
+        emailField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         emailField.setText("youremail@example.com");
 
+        emailLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         emailLabel.setText("Email ID:");
 
         usernameField.setColumns(20);
+        usernameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         usernameField.setText("Username");
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,8 +214,10 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        usernameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         usernameLabel.setText("Username:");
 
+        registerBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         registerBtn.setText("Register");
         registerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,20 +225,24 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        passwordLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         passwordLabel.setText("Password:");
 
         passwordField.setColumns(20);
+        passwordField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
 
+        passwordLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         passwordLabel1.setText("Password again:");
 
         passwordField1.setColumns(20);
+        passwordField1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         passwordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordField1ActionPerformed(evt);
             }
         });
 
-        dateChooserCombo.setCurrentView(new datechooser.view.appearance.AppearancesList("Swing",
+        dateChooserCombo.setCurrentView(new datechooser.view.appearance.AppearancesList("Bordered",
             new datechooser.view.appearance.ViewAppearance("custom",
                 new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13),
                     new java.awt.Color(0, 0, 0),
@@ -236,8 +286,10 @@ public class MainPage extends javax.swing.JFrame {
     dateChooserCombo.setFormat(2);
     dateChooserCombo.setWeekStyle(datechooser.view.WeekDaysStyle.SHORT);
 
+    cityTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
     cityTextField.setText("City");
 
+    stateTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
     stateTextField.setText("State");
 
     javax.swing.GroupLayout registerPaneLayout = new javax.swing.GroupLayout(registerPane);
@@ -245,7 +297,7 @@ public class MainPage extends javax.swing.JFrame {
     registerPaneLayout.setHorizontalGroup(
         registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(registerPaneLayout.createSequentialGroup()
-            .addGap(123, 123, 123)
+            .addGap(124, 124, 124)
             .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                 .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(registerBtn)
@@ -266,15 +318,15 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(dobLabel)
                 .addComponent(dateChooserCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPaneLayout.createSequentialGroup()
-                    .addComponent(cityTextField)
+                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(stateTextField)))
-            .addContainerGap(145, Short.MAX_VALUE))
+                    .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap(144, Short.MAX_VALUE))
     );
     registerPaneLayout.setVerticalGroup(
         registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPaneLayout.createSequentialGroup()
-            .addContainerGap(26, Short.MAX_VALUE)
+        .addGroup(registerPaneLayout.createSequentialGroup()
+            .addGap(40, 40, 40)
             .addComponent(nameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,28 +360,19 @@ public class MainPage extends javax.swing.JFrame {
             .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(21, 21, 21)
             .addComponent(registerBtn)
-            .addGap(24, 24, 24))
+            .addContainerGap(73, Short.MAX_VALUE))
     );
 
     registerPaneLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cityTextField, streetTextField});
 
     jTabbedPane1.addTab("Register", registerPane);
 
-    javax.swing.GroupLayout mainPagePaneLayout = new javax.swing.GroupLayout(mainPagePane);
-    mainPagePane.setLayout(mainPagePaneLayout);
-    mainPagePaneLayout.setHorizontalGroup(
-        mainPagePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPagePaneLayout.createSequentialGroup()
-            .addGap(0, 1, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
-    );
-    mainPagePaneLayout.setVerticalGroup(
-        mainPagePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPagePaneLayout.createSequentialGroup()
-            .addContainerGap(92, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(58, 58, 58))
-    );
+    mainPagePane.add(jTabbedPane1);
+    jTabbedPane1.setBounds(0, 140, 505, 660);
+
+    bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel1.jpg")); // NOI18N
+    mainPagePane.add(bgImgLabel);
+    bgImgLabel.setBounds(0, 0, 500, 800);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -338,18 +381,20 @@ public class MainPage extends javax.swing.JFrame {
         .addComponent(mainPagePane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 3, Short.MAX_VALUE)
                 .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 3, Short.MAX_VALUE)))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(mainPagePane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(mainPagePane, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 140, Short.MAX_VALUE)
                 .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 140, Short.MAX_VALUE)))
     );
 
     pack();
@@ -366,27 +411,37 @@ public class MainPage extends javax.swing.JFrame {
         System.out.println(username + " " + password );
         DBConnect db = new DBConnect();
         if(db.loginUser(username, password)){
-            //TheHotelFinder.curUser(db.getUser(username, password));
-            //testPane.setVisible(true);
-            //mainPagePane.setVisible(false);
+            setVisible(false);
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                     new HomePage().setVisible(true);
+                }
+            });
+        }else{
+            showMessage("Enter correct credentials.");
         }
+        db.closeConnection();
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
         String name = nameField.getText();
         String dob = dateChooserCombo.getText();
-        String address = streetTextField.getText();
+        String address[] = new String[3];
+        address[0] = streetTextField.getText();
+        address[1] = cityTextField.getText();
+        address[2] = cityTextField.getText();
         String email = emailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
+        String password1 = passwordField1.getText();
         //System.out.println(name + " " + dob + " " +address + " " +email + " " +password );
         
-        if(validate(name, dob, address, email, username, password)){
+        if(validate(name, dob, address, email, username, password, password1)){
             User u = new User(name, dob, address, email, username, password);
             DBConnect db = new DBConnect();
             if(db.registerUser(u)){
-                jTabbedPane1.setSelectedIndex(0);                
+                jTabbedPane1.setSelectedIndex(0);         
             }
             db.closeConnection();
         }
@@ -401,21 +456,29 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
     
-    private boolean validate(String name, String  dob, String  address, String  email, String username, String password){
+    private boolean validate(String name, String  dob, String  address[], String  email, String username, String password, String password1){
         if(name.isEmpty()){
             showMessage("Name field is empty");
             return false;
         }
-        if(password.isEmpty()){
-            showMessage("Password field is empty");
+        if(password.isEmpty() | password.length()<6){
+            showMessage("Minimum size for password is 6.");
+            return false;
+        }
+        if(!password.equals(password1)){
+            showMessage("Password does not match");
             return false;
         }
         if(email.isEmpty()){
             showMessage("Email field is empty");
             return false;
         }
-        if(address.isEmpty()){
-            showMessage("Email field is empty");
+        if(address[0].isEmpty() | address[1].isEmpty() | address[2].isEmpty()){
+            showMessage("One of the Address fields is empty");
+            return false;
+        }
+        if(username.isEmpty()){
+            showMessage("Username field is empty");
             return false;
         }
         String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
@@ -484,6 +547,7 @@ public class MainPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LoginUsernameLabel;
     private javax.swing.JLabel addressLabel;
+    private javax.swing.JLabel bgImgLabel;
     private javax.swing.JTextField cityTextField;
     private datechooser.beans.DateChooserCombo dateChooserCombo;
     private javax.swing.JLabel dobLabel;
@@ -497,6 +561,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JLabel loginPasswordLabel;
     private javax.swing.JTextField loginUsernameField;
+    private javax.swing.JLabel logoLabel1;
+    private javax.swing.JLabel logoLabel2;
     private javax.swing.JPanel mainPagePane;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
@@ -506,6 +572,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel passwordLabel1;
     private javax.swing.JButton registerBtn;
     private javax.swing.JPanel registerPane;
+    private javax.swing.JLabel searchImageLabel;
     private javax.swing.JTextField stateTextField;
     private javax.swing.JTextField streetTextField;
     private javax.swing.JTextField usernameField;

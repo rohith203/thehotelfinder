@@ -11,8 +11,8 @@ package thehotelfinder;
  */
 public class TheHotelFinder {
     static int loc;
-    static User curUser;
-    static MainPage log_reg;
+    static User curUser = null;
+    static LoginRegisterFrame log_reg;
     /**
      * @param args the command line arguments
      */
@@ -21,7 +21,7 @@ public class TheHotelFinder {
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                log_reg = new MainPage();
+                log_reg = new LoginRegisterFrame();
                 log_reg.setVisible(true);
             }
         });

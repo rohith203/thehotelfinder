@@ -13,12 +13,12 @@ public class User {
     private static int id;
     private String name;
     private String dob;
-    private String address;
+    private String address[];
     private String email;
     private String username;
     private String password;
 
-    User(String name, String  dob, String  address, String  email, String username, String  password){
+    User(String name, String  dob, String  address[], String  email, String username, String  password){
         id++;
         this.name = name;
         this.dob = dob;
@@ -52,11 +52,11 @@ public class User {
         this.dob = dob;
     }
 
-    public String getAddress() {
+    public String[] getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(String address[]) {
         this.address = address;
     }
 

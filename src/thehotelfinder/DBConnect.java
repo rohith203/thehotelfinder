@@ -47,7 +47,9 @@ public class DBConnect {
         Document document = new Document("name", u.getName())
         .append("id", u.getId())
         .append("dob", u.getDob())
-        .append("address", u.getAddress())
+        .append("street", u.getAddress()[0])
+        .append("city", u.getAddress()[1])
+        .append("state", u.getAddress()[2])                
         .append("email", u.getEmail())
         .append("username", u.getUsername())
         .append("password", u.getPassword());
@@ -59,22 +61,29 @@ public class DBConnect {
     public boolean loginUser(String username, String password){
         MongoCollection<Document> collection = database.getCollection("users");
         FindIterable<Document> iterDoc = collection.find(); 
-        int i = 1; 
-
-        Iterator it = iterDoc.iterator(); 
-        
-        while (it.hasNext()) {  
-           System.out.println(it.next()); 
-        i++; 
+        for(Document d:iterDoc){
+            if(username.equals(d.get("username"))){
+                if(password.equals(d.get("password"))){
+                    TheHotelFinder.curUser = getUser(d);
+                    return true;
+                }
+            }
         }
-        return true;
+       
+        return false;
     }
     
-//    public User getUser(String username, String password){
-//        User u = new User();
-//        
-//        return u;
-//    }
+    public User getUser(Document d){
+        String address[] = new String[3];
+        address[0] = (String)d.get("street");
+        address[1] = (String)d.get("city");
+        address[2] = (String)d.get("state");
+        User u = new User((String)d.get("name"), (String)d.get("dob"), 
+                          address, (String)d.get("email"),
+                          (String)d.get("username"),(String)d.get("password"));
+        
+        return u;
+    }
     
     public void closeConnection(){
         mongoClient.close();
