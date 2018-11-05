@@ -10,7 +10,7 @@ package thehotelfinder;
  * @author Rohith
  */
 public class User {
-    private static int id;
+    //private static int id;
     private String name;
     private String dob;
     private String address[];
@@ -19,7 +19,7 @@ public class User {
     private String password;
 
     User(String name, String  dob, String  address[], String  email, String username, String  password){
-        id++;
+      //  id++;
         this.name = name;
         this.dob = dob;
         this.address = address;
@@ -28,13 +28,13 @@ public class User {
         this.password = password;
     }
     
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;

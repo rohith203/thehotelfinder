@@ -6,6 +6,7 @@
 package thehotelfinder;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -18,22 +19,31 @@ import org.bson.Document;
  * @author Rohith
  */
 public class DBConnect {
-    private final MongoClient mongoClient;
-    private final MongoDatabase database;
+    private MongoClient mongoClient;
+    private MongoDatabase database;
 
     public DBConnect(){
-        mongoClient = new MongoClient("localhost", 27017);
-        System.out.println("Database connection created");
-        database = mongoClient.getDatabase("mydb");
-        System.out.println("Connected to mydb.");
+            mongoClient = new MongoClient("localhost", 27017);
+            System.out.println("Database connection created");
+            database = mongoClient.getDatabase("mydb");
+            System.out.println("Connected to mydb.");
+    }
+    
+    public boolean addBooking(Hotel h, User u, String checkin, String checkout){
+        MongoCollection<Document> collection = database.getCollection("booking");
+        
+        return true;
+    }
+    
+    public boolean getHotel(String location){
+        
+        return true;
     }
     
     public boolean registerUser(User u){
         MongoCollection<Document> collection = database.getCollection("users");
         
         FindIterable<Document> iterDoc = collection.find();
-//        Iterator it = iterDoc.iterator(); 
-
         for(Document d: iterDoc){
             if(u.getUsername().equals(d.get("username"))){
                 TheHotelFinder.log_reg.showMessage("Username already exists.");
@@ -42,10 +52,9 @@ public class DBConnect {
                 TheHotelFinder.log_reg.showMessage("Email already exists.");
                 return false;
             }
-            //System.out.println(d.get("name"));
         }
         Document document = new Document("name", u.getName())
-        .append("id", u.getId())
+        //.append("id", u.getId())
         .append("dob", u.getDob())
         .append("street", u.getAddress()[0])
         .append("city", u.getAddress()[1])

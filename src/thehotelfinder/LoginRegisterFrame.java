@@ -5,6 +5,8 @@
  */
 package thehotelfinder;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,7 +24,8 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     public LoginRegisterFrame() {
         UIManager.put("TabbedPane.contentOpaque", false);
         initComponents();
-        
+        registerPane.setBackground(new Color(240,240,240,75));
+        loginPane.setBackground(new Color(240,240,240,75));
     }
 
     /**
@@ -34,6 +37,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane1 = new javax.swing.JOptionPane();
         mainPagePane = new javax.swing.JPanel();
         logoLabel2 = new javax.swing.JLabel();
         searchImageLabel = new javax.swing.JLabel();
@@ -65,7 +69,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         cityTextField = new javax.swing.JTextField();
         stateTextField = new javax.swing.JTextField();
         bgImgLabel = new javax.swing.JLabel();
-        jOptionPane1 = new javax.swing.JOptionPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Hotel Finder");
@@ -95,28 +98,29 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
         jTabbedPane1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 16)); // NOI18N
 
-        loginPane.setOpaque(false);
-
-        LoginUsernameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        LoginUsernameLabel.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
         LoginUsernameLabel.setForeground(new java.awt.Color(51, 51, 51));
         LoginUsernameLabel.setText("Username:");
 
         loginUsernameField.setColumns(20);
-        loginUsernameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        loginUsernameField.setForeground(new java.awt.Color(51, 51, 51));
+        loginUsernameField.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
+        loginUsernameField.setForeground(new java.awt.Color(153, 153, 153));
         loginUsernameField.setText("Enter Username");
-        loginUsernameField.setPreferredSize(new java.awt.Dimension(200, 30));
-        loginUsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginUsernameFieldActionPerformed(evt);
+        loginUsernameField.setName("Enter Username"); // NOI18N
+        loginUsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
             }
         });
 
-        loginPasswordLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginPasswordLabel.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
         loginPasswordLabel.setForeground(new java.awt.Color(51, 51, 51));
         loginPasswordLabel.setText("Password:");
 
-        loginBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        loginBtn.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(51, 51, 51));
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -125,12 +129,21 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             }
         });
 
-        loginPasswordField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        loginPasswordField.setForeground(new java.awt.Color(51, 51, 51));
+        loginPasswordField.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
+        loginPasswordField.setForeground(new java.awt.Color(153, 153, 153));
         loginPasswordField.setText("password");
+        loginPasswordField.setName("password"); // NOI18N
+        loginPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 255, 204));
         jLabel1.setText("New user? Open register tab.");
 
         javax.swing.GroupLayout loginPaneLayout = new javax.swing.GroupLayout(loginPane);
@@ -140,27 +153,24 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             .addGroup(loginPaneLayout.createSequentialGroup()
                 .addGroup(loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginPaneLayout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addGroup(loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(118, 118, 118)
+                        .addGroup(loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(loginPasswordLabel)
                             .addComponent(LoginUsernameLabel)
-                            .addComponent(loginUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(loginPaneLayout.createSequentialGroup()
+                                .addGap(77, 77, 77)
+                                .addComponent(loginBtn))
+                            .addComponent(loginUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(loginPaneLayout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(loginBtn))
-                    .addGroup(loginPaneLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(134, 134, 134)
                         .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
-
-        loginPaneLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {loginPasswordField, loginUsernameField});
-
         loginPaneLayout.setVerticalGroup(
             loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPaneLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(105, 105, 105)
                 .addComponent(LoginUsernameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,49 +182,87 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 .addComponent(loginBtn)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         loginPaneLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {loginPasswordField, loginUsernameField});
 
         jTabbedPane1.addTab("Login", loginPane);
 
-        registerPane.setOpaque(false);
-
-        nameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        nameLabel.setLabelFor(nameField);
         nameLabel.setText("Name:");
 
-        nameField.setColumns(20);
+        nameField.setColumns(22);
         nameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        nameField.setForeground(new java.awt.Color(153, 153, 153));
         nameField.setText("Full Name");
-
-        dobLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        dobLabel.setText("Date of Birth:");
-
-        streetTextField.setColumns(20);
-        streetTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        streetTextField.setText("Street");
-
-        addressLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        addressLabel.setText("Residential Address:");
-
-        emailField.setColumns(20);
-        emailField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        emailField.setText("youremail@example.com");
-
-        emailLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        emailLabel.setText("Email ID:");
-
-        usernameField.setColumns(20);
-        usernameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        usernameField.setText("Username");
-        usernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameFieldActionPerformed(evt);
+        nameField.setName("Full Name"); // NOI18N
+        nameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
             }
         });
 
-        usernameLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        dobLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        dobLabel.setLabelFor(dateChooserCombo);
+        dobLabel.setText("Date of Birth:");
+
+        streetTextField.setColumns(22);
+        streetTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        streetTextField.setForeground(new java.awt.Color(153, 153, 153));
+        streetTextField.setText("Street");
+        streetTextField.setName("Street"); // NOI18N
+        streetTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
+            }
+        });
+
+        addressLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        addressLabel.setLabelFor(streetTextField);
+        addressLabel.setText("Residential Address:");
+
+        emailField.setColumns(22);
+        emailField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        emailField.setForeground(new java.awt.Color(153, 153, 153));
+        emailField.setText("youremail@example.com");
+        emailField.setName("youremail@example.com"); // NOI18N
+        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
+            }
+        });
+
+        emailLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        emailLabel.setLabelFor(emailField);
+        emailLabel.setText("Email ID:");
+
+        usernameField.setColumns(22);
+        usernameField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        usernameField.setForeground(new java.awt.Color(153, 153, 153));
+        usernameField.setText("Username");
+        usernameField.setName("Username"); // NOI18N
+        usernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
+            }
+        });
+
+        usernameLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        usernameLabel.setLabelFor(usernameField);
         usernameLabel.setText("Username:");
 
         registerBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
@@ -225,20 +273,39 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             }
         });
 
-        passwordLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        passwordLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        passwordLabel.setLabelFor(passwordField);
         passwordLabel.setText("Password:");
 
-        passwordField.setColumns(20);
+        passwordField.setColumns(22);
         passwordField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        passwordField.setForeground(new java.awt.Color(153, 153, 153));
+        passwordField.setText("password");
+        passwordField.setName("password"); // NOI18N
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
+            }
+        });
 
-        passwordLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        passwordLabel1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
+        passwordLabel1.setLabelFor(passwordField1);
         passwordLabel1.setText("Password again:");
 
-        passwordField1.setColumns(20);
+        passwordField1.setColumns(22);
         passwordField1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
-        passwordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordField1ActionPerformed(evt);
+        passwordField1.setForeground(new java.awt.Color(153, 153, 153));
+        passwordField1.setText("password");
+        passwordField1.setName("password"); // NOI18N
+        passwordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFieldFocusLost(evt);
             }
         });
 
@@ -286,47 +353,66 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     dateChooserCombo.setFormat(2);
     dateChooserCombo.setWeekStyle(datechooser.view.WeekDaysStyle.SHORT);
 
+    cityTextField.setColumns(10);
     cityTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+    cityTextField.setForeground(new java.awt.Color(153, 153, 153));
     cityTextField.setText("City");
+    cityTextField.setName("City"); // NOI18N
+    cityTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            textFieldFocusGained(evt);
+        }
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            textFieldFocusLost(evt);
+        }
+    });
 
+    stateTextField.setColumns(10);
     stateTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+    stateTextField.setForeground(new java.awt.Color(153, 153, 153));
     stateTextField.setText("State");
+    stateTextField.setName("State"); // NOI18N
+    stateTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            textFieldFocusGained(evt);
+        }
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            textFieldFocusLost(evt);
+        }
+    });
 
     javax.swing.GroupLayout registerPaneLayout = new javax.swing.GroupLayout(registerPane);
     registerPane.setLayout(registerPaneLayout);
     registerPaneLayout.setHorizontalGroup(
         registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(registerPaneLayout.createSequentialGroup()
-            .addGap(124, 124, 124)
-            .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(registerBtn)
-                    .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(emailLabel)
-                        .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usernameField)
-                            .addComponent(usernameLabel)
-                            .addComponent(nameField)
-                            .addComponent(nameLabel)
-                            .addComponent(passwordLabel)
-                            .addComponent(passwordLabel1)
-                            .addComponent(passwordField1)
-                            .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addComponent(streetTextField)
-                .addComponent(addressLabel)
-                .addComponent(dobLabel)
-                .addComponent(dateChooserCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPaneLayout.createSequentialGroup()
-                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPaneLayout.createSequentialGroup()
+            .addContainerGap(124, Short.MAX_VALUE)
+            .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(registerBtn)
+                .addComponent(passwordField1)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameField)
+                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nameField, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(emailLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(passwordLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(passwordLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(usernameLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(streetTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(addressLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dobLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dateChooserCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, registerPaneLayout.createSequentialGroup()
+                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(144, Short.MAX_VALUE))
+                    .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(122, 122, 122))
     );
     registerPaneLayout.setVerticalGroup(
         registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(registerPaneLayout.createSequentialGroup()
-            .addGap(40, 40, 40)
+            .addGap(33, 33, 33)
             .addComponent(nameLabel)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -334,11 +420,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             .addComponent(dobLabel)
             .addGap(6, 6, 6)
             .addComponent(dateChooserCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(addressLabel)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(5, 5, 5)
             .addComponent(streetTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(11, 11, 11)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -360,7 +446,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(21, 21, 21)
             .addComponent(registerBtn)
-            .addContainerGap(73, Short.MAX_VALUE))
+            .addContainerGap(84, Short.MAX_VALUE))
     );
 
     registerPaneLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cityTextField, streetTextField});
@@ -370,7 +456,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     mainPagePane.add(jTabbedPane1);
     jTabbedPane1.setBounds(0, 140, 505, 660);
 
-    bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel1.jpg")); // NOI18N
+    bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel_image_blur.jpg")); // NOI18N
     mainPagePane.add(bgImgLabel);
     bgImgLabel.setBounds(0, 0, 500, 800);
 
@@ -379,48 +465,39 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addComponent(mainPagePane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
-                .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE)))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
             .addComponent(mainPagePane, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 140, Short.MAX_VALUE)
-                .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 140, Short.MAX_VALUE)))
     );
 
     pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loginUsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUsernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginUsernameFieldActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
         String username = loginUsernameField.getText();
         String password = loginPasswordField.getText();
         System.out.println(username + " " + password );
-        DBConnect db = new DBConnect();
-        if(db.loginUser(username, password)){
-            setVisible(false);
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                     new HomePage().setVisible(true);
-                }
-            });
-        }else{
-            showMessage("Enter correct credentials.");
-        }
-        db.closeConnection();
+        
+        //try{
+            //DBConnect db = new DBConnect();
+            if(TheHotelFinder.db.loginUser(username, password)){
+                setVisible(false);
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                         new HomePage().setVisible(true);
+                    }
+                });
+            }else{
+                showMessage("Enter correct credentials.");
+            }
+            //db.closeConnection();
+        //}catch(Exception e){
+        //    System.out.println(e);
+        //}
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
@@ -439,22 +516,55 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         
         if(validate(name, dob, address, email, username, password, password1)){
             User u = new User(name, dob, address, email, username, password);
-            DBConnect db = new DBConnect();
-            if(db.registerUser(u)){
-                jTabbedPane1.setSelectedIndex(0);         
-            }
-            db.closeConnection();
+            //try{
+                //DBConnect db = new DBConnect();
+                if(TheHotelFinder.db.registerUser(u)){
+                    showMessage("You have been registered succesfully.");
+                    jTabbedPane1.setSelectedIndex(0);         
+                }else{
+                    //showMessage("Registration failed.");
+                }
+
+
+                //Thedb.closeConnection();
+           // }catch(Exception e){
+            //    System.out.println(e);
+            //}
         }
 
     }//GEN-LAST:event_registerBtnActionPerformed
 
-    private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
+    private void textFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordField1ActionPerformed
+        javax.swing.JTextField tf = (javax.swing.JTextField)evt.getSource();
+        if(tf.getText().equals(tf.getName())){
+            tf.setText("");
+        }
+        tf.setForeground(new Color(0,0,0));
+        
+    }//GEN-LAST:event_textFieldFocusGained
 
-    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+    private void textFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFieldActionPerformed
+        javax.swing.JTextField tf = (javax.swing.JTextField)evt.getSource();
+        if(tf.getText().isEmpty()){
+            tf.setForeground(new Color(153,153,153));
+            tf.setText(tf.getName());        
+        }
+    }//GEN-LAST:event_textFieldFocusLost
+    
+    
+    public void clearFields(){
+        loginUsernameField.setText(loginUsernameField.getName()); loginUsernameField.setForeground(new Color(153,153,153));
+        loginPasswordField.setText(loginPasswordField.getName()); loginPasswordField.setForeground(new Color(153,153,153));
+        nameField.setText(nameField.getName()); nameField.setForeground(new Color(153,153,153));
+        streetTextField.setText(streetTextField.getName()); streetTextField.setForeground(new Color(153,153,153));
+        cityTextField.setText(cityTextField.getName()); cityTextField.setForeground(new Color(153,153,153));
+        stateTextField.setText(stateTextField.getName()); stateTextField.setForeground(new Color(153,153,153));
+        usernameField.setText(usernameField.getName()); usernameField.setForeground(new Color(153,153,153));
+        passwordField.setText(passwordField.getName()); passwordField.setForeground(new Color(153,153,153));
+        passwordField1.setText(passwordField1.getName()); passwordField1.setForeground(new Color(153,153,153));
+    }
     
     private boolean validate(String name, String  dob, String  address[], String  email, String username, String password, String password1){
         if(name.isEmpty()){
@@ -508,41 +618,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         jOptionPane1.showMessageDialog(this, msg);
     }
     
-    
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new MainPage().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LoginUsernameLabel;

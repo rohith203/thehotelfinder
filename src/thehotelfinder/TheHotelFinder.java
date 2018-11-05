@@ -13,6 +13,7 @@ public class TheHotelFinder {
     static int loc;
     static User curUser = null;
     static LoginRegisterFrame log_reg;
+    static DBConnect db = new DBConnect();
     /**
      * @param args the command line arguments
      */
@@ -25,8 +26,6 @@ public class TheHotelFinder {
                 log_reg.setVisible(true);
             }
         });
-        
-        
     }
     
     
