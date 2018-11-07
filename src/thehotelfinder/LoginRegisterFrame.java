@@ -115,6 +115,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 textFieldFocusLost(evt);
             }
         });
+        loginUsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterLoginAction(evt);
+            }
+        });
 
         loginPasswordLabel.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
         loginPasswordLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -141,6 +146,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 textFieldFocusLost(evt);
             }
         });
+        loginPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterLoginAction(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 255, 204));
@@ -165,7 +175,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                     .addGroup(loginPaneLayout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(jLabel1)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         loginPaneLayout.setVerticalGroup(
             loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +216,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 textFieldFocusLost(evt);
             }
         });
+        nameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
+            }
+        });
 
         dobLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
         dobLabel.setLabelFor(dateChooserCombo);
@@ -222,6 +237,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 textFieldFocusLost(evt);
+            }
+        });
+        streetTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
             }
         });
 
@@ -242,6 +262,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 textFieldFocusLost(evt);
             }
         });
+        emailField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
+            }
+        });
 
         emailLabel.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
         emailLabel.setLabelFor(emailField);
@@ -258,6 +283,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 textFieldFocusLost(evt);
+            }
+        });
+        usernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
             }
         });
 
@@ -290,6 +320,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 textFieldFocusLost(evt);
             }
         });
+        passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
+            }
+        });
 
         passwordLabel1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
         passwordLabel1.setLabelFor(passwordField1);
@@ -306,6 +341,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 textFieldFocusLost(evt);
+            }
+        });
+        passwordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                enterRegisterAction(evt);
             }
         });
 
@@ -366,6 +406,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             textFieldFocusLost(evt);
         }
     });
+    cityTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            enterRegisterAction(evt);
+        }
+    });
 
     stateTextField.setColumns(10);
     stateTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
@@ -380,13 +425,18 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             textFieldFocusLost(evt);
         }
     });
+    stateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            enterRegisterAction(evt);
+        }
+    });
 
     javax.swing.GroupLayout registerPaneLayout = new javax.swing.GroupLayout(registerPane);
     registerPane.setLayout(registerPaneLayout);
     registerPaneLayout.setHorizontalGroup(
         registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPaneLayout.createSequentialGroup()
-            .addContainerGap(124, Short.MAX_VALUE)
+            .addContainerGap(125, Short.MAX_VALUE)
             .addGroup(registerPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                 .addComponent(registerBtn)
                 .addComponent(passwordField1)
@@ -454,7 +504,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     jTabbedPane1.addTab("Register", registerPane);
 
     mainPagePane.add(jTabbedPane1);
-    jTabbedPane1.setBounds(0, 140, 505, 660);
+    jTabbedPane1.setBounds(-1, 140, 500, 660);
 
     bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel_image_blur.jpg")); // NOI18N
     mainPagePane.add(bgImgLabel);
@@ -552,6 +602,23 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             tf.setText(tf.getName());        
         }
     }//GEN-LAST:event_textFieldFocusLost
+
+    private void enterLoginAction(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enterLoginAction
+        // TODO add your handling code here:
+        //System.out.println(java.awt.event.KeyEvent.vk_ent);
+        //System.out.println(evt.getKeyCode());
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER){
+            loginBtn.doClick();
+            //System.out.println("Enter");
+        }
+    }//GEN-LAST:event_enterLoginAction
+
+    private void enterRegisterAction(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enterRegisterAction
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER){
+            registerBtn.doClick();
+        }
+    }//GEN-LAST:event_enterRegisterAction
     
     
     public void clearFields(){

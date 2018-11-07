@@ -14,22 +14,21 @@ import java.util.Vector;
  */
 public class Hotel {
     String name;
-    String address[];
-    ArrayList nRoomsArr;
+    String city;
+    String state;
+    ArrayList noRoomsArr;
     ArrayList costArr;
     double rating;
     ArrayList hotelDetails;
     ArrayList waitingList;
-    
-    public Hotel(String name, String[] address, ArrayList nRoomsArr, ArrayList costArr, double rating, ArrayList hotelDetails, ArrayList waitingList) {
+
+    public Hotel(String name, String city, String state) {
         this.name = name;
-        this.address = address;
-        this.nRoomsArr = nRoomsArr;
-        this.costArr = costArr;
-        this.rating = rating;
-        this.hotelDetails = hotelDetails;
-        this.waitingList = waitingList;
-    }    
+        this.city = city;
+        this.state = state;
+//        this.rating = rating;
+//        this.hotelDetails = hotelDetails;
+    }
 
     public String getName() {
         return name;
@@ -39,20 +38,28 @@ public class Hotel {
         this.name = name;
     }
 
-    public String[] getAddress() {
-        return address;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress(String[] address) {
-        this.address = address;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public ArrayList getnRoomsArr() {
-        return nRoomsArr;
+    public String getState() {
+        return state;
     }
 
-    public void setnRoomsArr(ArrayList nRoomsArr) {
-        this.nRoomsArr = nRoomsArr;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public ArrayList getNoRoomsArr() {
+        return noRoomsArr;
+    }
+
+    public void setNoRoomsArr(ArrayList noRoomsArr) {
+        this.noRoomsArr = noRoomsArr;
     }
 
     public ArrayList getCostArr() {
@@ -87,6 +94,4 @@ public class Hotel {
         this.waitingList = waitingList;
     }
     
-    
-
 }

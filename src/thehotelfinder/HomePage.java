@@ -5,9 +5,16 @@
  */
 package thehotelfinder;
 
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
+
 /**
  *
- * @author Rohith
+ * @author divakar
  */
 public class HomePage extends javax.swing.JFrame {
 
@@ -15,8 +22,13 @@ public class HomePage extends javax.swing.JFrame {
      * Creates new form HomePage
      */
     public HomePage() {
+//        UIManager.put("ScrollPane.contentOpaque", false);
         initComponents();
-        greetText.setText("Hello " + TheHotelFinder.curUser.getName());
+        scrollPane.setOpaque(false);
+        scrollPane.getViewport().setOpaque(false);
+        scrollPanePanel.setBackground(new Color(255,255,255,100));
+        greetTextLabel.setText("Hello " + TheHotelFinder.curUser.getName());
+        hotelCardList = new ArrayList();
     }
 
     /**
@@ -29,154 +41,233 @@ public class HomePage extends javax.swing.JFrame {
     private void initComponents() {
 
         HomePagePanel = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
+        line_separator = new javax.swing.JSeparator();
+        greetTextLabel = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
-        greetText = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        checkInDateLabel = new javax.swing.JLabel();
+        checkOutDateLabel = new javax.swing.JLabel();
+        noRoomsLabel = new javax.swing.JLabel();
+        noPeopleLabel = new javax.swing.JLabel();
+        noRoomsSpinner = new javax.swing.JSpinner();
+        noPeopleSpinner = new javax.swing.JSpinner();
+        checkInDateChooserCombo = new datechooser.beans.DateChooserCombo();
+        checkOutDateChooserCombo = new datechooser.beans.DateChooserCombo();
+        findHotelBtn = new javax.swing.JButton();
+        scrollPane = new javax.swing.JScrollPane();
+        scrollPanePanel = new javax.swing.JPanel();
+        cityComboBox = new javax.swing.JComboBox<>();
+        locationLabel = new javax.swing.JLabel();
+        bgHydLabel = new javax.swing.JLabel();
+        jMenuBar = new javax.swing.JMenuBar();
+        myAccountMenu = new javax.swing.JMenu();
+        profileMenuItem = new javax.swing.JMenuItem();
+        bookingsMenuItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 800));
+        setTitle("The Hotel Finder");
         setResizable(false);
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        HomePagePanel.setBackground(new java.awt.Color(204, 255, 255));
+        HomePagePanel.setBackground(new java.awt.Color(245, 245, 245));
+        HomePagePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "The Hotel Finder", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lithos Pro Regular", 0, 24))); // NOI18N
         HomePagePanel.setPreferredSize(new java.awt.Dimension(900, 800));
+        HomePagePanel.setLayout(null);
 
-        logoutBtn.setText("Logout");
+        line_separator.setPreferredSize(new java.awt.Dimension(900, 10));
+        HomePagePanel.add(line_separator);
+        line_separator.setBounds(0, 70, 900, 10);
+
+        greetTextLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
+        greetTextLabel.setForeground(new java.awt.Color(102, 102, 102));
+        greetTextLabel.setText("Hello");
+        HomePagePanel.add(greetTextLabel);
+        greetTextLabel.setBounds(6, 42, 300, 19);
+
+        logoutBtn.setForeground(new java.awt.Color(51, 51, 51));
+        logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutBtnActionPerformed(evt);
             }
         });
+        HomePagePanel.add(logoutBtn);
+        logoutBtn.setBounds(790, 30, 100, 25);
 
-        greetText.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 16)); // NOI18N
-        greetText.setText("Hello");
+        checkInDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        checkInDateLabel.setForeground(new java.awt.Color(51, 51, 51));
+        checkInDateLabel.setText("CHECK IN ");
+        HomePagePanel.add(checkInDateLabel);
+        checkInDateLabel.setBounds(512, 99, 57, 15);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 500));
+        checkOutDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        checkOutDateLabel.setForeground(new java.awt.Color(51, 51, 51));
+        checkOutDateLabel.setText("CHECK OUT");
+        HomePagePanel.add(checkOutDateLabel);
+        checkOutDateLabel.setBounds(512, 142, 64, 15);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
+        noRoomsLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        noRoomsLabel.setForeground(new java.awt.Color(51, 51, 51));
+        noRoomsLabel.setText("NUMBER OF ROOMS");
+        HomePagePanel.add(noRoomsLabel);
+        noRoomsLabel.setBounds(140, 140, 112, 15);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 835, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 214, Short.MAX_VALUE)
-        );
+        noPeopleLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        noPeopleLabel.setForeground(new java.awt.Color(51, 51, 51));
+        noPeopleLabel.setText("NUMBER OF PEOPLE");
+        HomePagePanel.add(noPeopleLabel);
+        noPeopleLabel.setBounds(510, 190, 112, 15);
+        HomePagePanel.add(noRoomsSpinner);
+        noRoomsSpinner.setBounds(270, 132, 50, 30);
+        HomePagePanel.add(noPeopleSpinner);
+        noPeopleSpinner.setBounds(650, 182, 40, 30);
+        HomePagePanel.add(checkInDateChooserCombo);
+        checkInDateChooserCombo.setBounds(617, 92, 155, 22);
+        HomePagePanel.add(checkOutDateChooserCombo);
+        checkOutDateChooserCombo.setBounds(617, 135, 155, 22);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 648, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 214, Short.MAX_VALUE)
-        );
+        findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
+        findHotelBtn.setText("FIND HOTELS");
+        findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findHotelBtnActionPerformed(evt);
+            }
+        });
+        HomePagePanel.add(findHotelBtn);
+        findHotelBtn.setBounds(390, 260, 109, 25);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 214, Short.MAX_VALUE)
-        );
+        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        scrollPanePanel.setLayout(new java.awt.GridLayout(3, 0, 10, 25));
+        scrollPane.setViewportView(scrollPanePanel);
 
-        jScrollPane1.setViewportView(jPanel1);
+        HomePagePanel.add(scrollPane);
+        scrollPane.setBounds(0, 300, 900, 600);
 
-        javax.swing.GroupLayout HomePagePanelLayout = new javax.swing.GroupLayout(HomePagePanel);
-        HomePagePanel.setLayout(HomePagePanelLayout);
-        HomePagePanelLayout.setHorizontalGroup(
-            HomePagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(HomePagePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(greetText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutBtn)
-                .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
-        );
-        HomePagePanelLayout.setVerticalGroup(
-            HomePagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomePagePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(HomePagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logoutBtn)
-                    .addComponent(greetText))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Chennai", "Bangalore" }));
+        HomePagePanel.add(cityComboBox);
+        cityComboBox.setBounds(220, 90, 110, 22);
+
+        locationLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        locationLabel.setForeground(new java.awt.Color(51, 51, 51));
+        locationLabel.setText("LOCATION:");
+        HomePagePanel.add(locationLabel);
+        locationLabel.setBounds(150, 90, 59, 20);
+
+        bgHydLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\charminar.jpg")); // NOI18N
+        bgHydLabel.setPreferredSize(new java.awt.Dimension(900, 700));
+        HomePagePanel.add(bgHydLabel);
+        bgHydLabel.setBounds(0, 300, 900, 500);
 
         getContentPane().add(HomePagePanel, "card2");
+
+        myAccountMenu.setText("My Account ");
+
+        profileMenuItem.setText("My Profile");
+        profileMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileMenuItemActionPerformed(evt);
+            }
+        });
+        myAccountMenu.add(profileMenuItem);
+
+        bookingsMenuItem.setText("My Bookings");
+        myAccountMenu.add(bookingsMenuItem);
+
+        jMenuBar.add(myAccountMenu);
+
+        helpMenu.setText("Help");
+        jMenuBar.add(helpMenu);
+
+        setJMenuBar(jMenuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        // TODO add your handling code here:
         setVisible(false);
         TheHotelFinder.curUser = null;
-        TheHotelFinder.log_reg.clearFields();
-        TheHotelFinder.log_reg.setVisible(true);
+        TheHotelFinder.logRegFrame.clearFields();
+        TheHotelFinder.logRegFrame.setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
+    private void findHotelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findHotelBtnActionPerformed
+        // TODO add your handling code here:
+        for(int i=0; i<hotelCardList.size(); i++){
+            scrollPanePanel.remove((HotelCard)hotelCardList.get(0));
+            hotelCardList.remove(0);
+        }  
+        
+        String location = cityComboBox.getItemAt(cityComboBox.getSelectedIndex());
+        int noRooms = (int) noRoomsSpinner.getValue();
+        int noPeople = (int) noPeopleSpinner.getValue();
+        String checkInDate = checkInDateChooserCombo.getText();
+        String checkOutDate = checkOutDateChooserCombo.getText();
+        
+        if(validate(noRooms, noPeople, checkInDate, checkOutDate)){
+            hotelCardList = TheHotelFinder.db.getHotels(location);
+        }else{
+            return;
+        }            
+        
+        
+        scrollPanePanel.setLayout(new GridLayout(hotelCardList.size(),1, 10, 25));
+        
+        
+        System.out.println(location);
+        //hotelCardList.add(new HotelCard(location));
+        System.out.println("added");
+        
+        for(int i=0; i<hotelCardList.size(); i++){
+           scrollPanePanel.add((HotelCard)hotelCardList.get(i));
+        }
+
+
+        ((JComponent)getContentPane()).revalidate();
+
+    }//GEN-LAST:event_findHotelBtnActionPerformed
+
+    private void profileMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileMenuItemActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MyAccountFrame().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_profileMenuItemActionPerformed
+    
+    public boolean validate(int noRooms, int noPeople, String checkin, String checkout){
+        
+        
+        return true;
+    }
+    
+    private ArrayList hotelCardList;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HomePagePanel;
-    private javax.swing.JLabel greetText;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel bgHydLabel;
+    private javax.swing.JMenuItem bookingsMenuItem;
+    private datechooser.beans.DateChooserCombo checkInDateChooserCombo;
+    private javax.swing.JLabel checkInDateLabel;
+    private datechooser.beans.DateChooserCombo checkOutDateChooserCombo;
+    private javax.swing.JLabel checkOutDateLabel;
+    private javax.swing.JComboBox<String> cityComboBox;
+    private javax.swing.JButton findHotelBtn;
+    private javax.swing.JLabel greetTextLabel;
+    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JSeparator line_separator;
+    private javax.swing.JLabel locationLabel;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JMenu myAccountMenu;
+    private javax.swing.JLabel noPeopleLabel;
+    private javax.swing.JSpinner noPeopleSpinner;
+    private javax.swing.JLabel noRoomsLabel;
+    private javax.swing.JSpinner noRoomsSpinner;
+    private javax.swing.JMenuItem profileMenuItem;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JPanel scrollPanePanel;
     // End of variables declaration//GEN-END:variables
 }

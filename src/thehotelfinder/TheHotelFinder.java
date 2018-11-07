@@ -5,29 +5,40 @@
  */
 package thehotelfinder;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Rohith
  */
 public class TheHotelFinder {
-    static int loc;
     static User curUser = null;
-    static LoginRegisterFrame log_reg;
+    static LoginRegisterFrame logRegFrame;
     static DBConnect db = new DBConnect();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        loc = 0;
+        
+         try {
+            // Set cross-platform Java L&F (also called "Metal")
+            UIManager.setLookAndFeel(
+                UIManager.getSystemLookAndFeelClassName());
+        } 
+        catch (Exception e) {
+           // handle exception
+           System.out.println(e);
+        }
+   
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                log_reg = new LoginRegisterFrame();
-                log_reg.setVisible(true);
+                logRegFrame = new LoginRegisterFrame();
+                logRegFrame.setVisible(true);
             }
         });
     }
-    
     
     public void setCurUser(User u){
         curUser = u;

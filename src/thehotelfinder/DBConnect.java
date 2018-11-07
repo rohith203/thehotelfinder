@@ -10,6 +10,8 @@ import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import org.bson.Document;
 
@@ -29,15 +31,50 @@ public class DBConnect {
             System.out.println("Connected to mydb.");
     }
     
-    public boolean addBooking(Hotel h, User u, String checkin, String checkout){
+    public boolean addBooking(Booking b){
         MongoCollection<Document> collection = database.getCollection("booking");
         
+//        FindIterable<Document> iterDoc = collection.find();
+//        for(Document d: iterDoc){
+//            Date dcheckin = MyDate.toDate((String)d.get("checkInDate"));
+//            Date dcheckout = MyDate.toDate((String)d.get("checkInDate"));
+//            if(checkin.before(dcheckin) & checkout){
+//                
+//            }
+//        }
+        String bookingRef = new Date().toString();
+        
+        Document document = new Document("hotel",b.hotel)
+                .append("user",b.customer)
+                .append("bookingRef", b.bookingRef)
+                .append("checkInDate", b.checkInDate)
+                .append("checkOutDate", b.checkOutDate)
+                .append("roomType", b.roomType)
+                .append("roomCost", b.roomCost);
+        collection.insertOne(document);
         return true;
     }
     
-    public boolean getHotel(String location){
+    public ArrayList getHotels(String location){
+        ArrayList hotelList = new ArrayList();
+        MongoCollection<Document> collection = database.getCollection("hotels");
+        FindIterable<Document> iterDoc = collection.find();
         
-        return true;
+        for(Document d: iterDoc){
+            if(location.equals(d.get("city"))){
+                String name = (String)d.get("name");
+                String city = (String)d.get("city");
+                String state = (String)d.get("state");
+                //ArrayList noRoomsArr;
+                //ArrayList costArr;
+                //double rating;
+                //ArrayList hotelDetails;
+                //ArrayList waitingList;
+                hotelList.add(new HotelCard(new Hotel(name,city,state)));
+            }
+        }
+        
+        return hotelList;
     }
     
     public boolean registerUser(User u){
@@ -46,10 +83,10 @@ public class DBConnect {
         FindIterable<Document> iterDoc = collection.find();
         for(Document d: iterDoc){
             if(u.getUsername().equals(d.get("username"))){
-                TheHotelFinder.log_reg.showMessage("Username already exists.");
+                TheHotelFinder.logRegFrame.showMessage("Username already exists.");
                 return false;
             }else if(u.getEmail().equals(d.get("email"))){
-                TheHotelFinder.log_reg.showMessage("Email already exists.");
+                TheHotelFinder.logRegFrame.showMessage("Email already exists.");
                 return false;
             }
         }
@@ -98,4 +135,5 @@ public class DBConnect {
         mongoClient.close();
         System.out.println("Connection closed.");
     }
+
 }
