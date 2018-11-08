@@ -9,12 +9,12 @@ package thehotelfinder;
  *
  * @author Rohith
  */
-public class MyAccountFrame extends javax.swing.JFrame {
+public class MyProfileFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MyAccountFrame
      */
-    public MyAccountFrame() {
+    public MyProfileFrame() {
         initComponents();
         nameLabel.setText(TheHotelFinder.curUser.getName());
         dobLabel.setText(TheHotelFinder.curUser.getDob());
@@ -59,7 +59,7 @@ public class MyAccountFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setBounds(new java.awt.Rectangle(660, 140, 0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(new java.awt.CardLayout());

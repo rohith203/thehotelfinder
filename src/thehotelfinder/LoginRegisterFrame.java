@@ -72,6 +72,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Hotel Finder");
+        setBounds(new java.awt.Rectangle(710, 100, 0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 800));
 

@@ -31,31 +31,23 @@ public class DBConnect {
             System.out.println("Connected to mydb.");
     }
     
-    public boolean addBooking(Booking b){
-        MongoCollection<Document> collection = database.getCollection("booking");
-        
-//        FindIterable<Document> iterDoc = collection.find();
-//        for(Document d: iterDoc){
-//            Date dcheckin = MyDate.toDate((String)d.get("checkInDate"));
-//            Date dcheckout = MyDate.toDate((String)d.get("checkInDate"));
-//            if(checkin.before(dcheckin) & checkout){
-//                
-//            }
-//        }
-        String bookingRef = new Date().toString();
-        
-        Document document = new Document("hotel",b.hotel)
-                .append("user",b.customer)
-                .append("bookingRef", b.bookingRef)
-                .append("checkInDate", b.checkInDate)
-                .append("checkOutDate", b.checkOutDate)
-                .append("roomType", b.roomType)
-                .append("roomCost", b.roomCost);
-        collection.insertOne(document);
-        return true;
-    }
-    
-    public ArrayList getHotels(String location){
+//    public boolean addBooking(Booking b){
+//        MongoCollection<Document> collection = database.getCollection("booking");
+//
+//        String bookingRef = new Date().toString();
+//        
+//        Document document = new Document("hotel",b.hotel)
+//                .append("user",b.customer)
+//                .append("bookingRef", b.bookingRef)
+//                .append("checkInDate", b.checkInDate)
+//                .append("checkOutDate", b.checkOutDate)
+//                .append("roomType", b.roomType)
+//                .append("roomCost", b.roomCost);
+//        collection.insertOne(document);
+//        return true;
+//    }
+//    
+    public ArrayList getHotels(String location, int noRoomsUser, int noPeopleUser, int nights){
         ArrayList hotelList = new ArrayList();
         MongoCollection<Document> collection = database.getCollection("hotels");
         FindIterable<Document> iterDoc = collection.find();
@@ -65,12 +57,31 @@ public class DBConnect {
                 String name = (String)d.get("name");
                 String city = (String)d.get("city");
                 String state = (String)d.get("state");
+                ArrayList noRoomsList = (ArrayList) d.get("noRooms");
+                int noRooms[] = {0,0}; 
+                noRooms[0] = (int)(double)(noRoomsList.get(0));
+                noRooms[1] = (int)(double)(noRoomsList.get(1));
+                //int noRooms[] = {0,0};
+                ArrayList costArrList = (ArrayList)d.get("costArr");
+                double costArr[] = {0,0}; 
+                costArr[0] = (double)costArrList.get(0);
+                costArr[1] = (double)costArrList.get(1);
+                ArrayList ratingArr = (ArrayList)d.get("ratingArr");
+                ArrayList hotelDetails = (ArrayList)d.get("details");
+                ArrayList waitingList = (ArrayList)d.get("waitingList");
+                System.out.println("added: " + name);
+
                 //ArrayList noRoomsArr;
                 //ArrayList costArr;
-                //double rating;
                 //ArrayList hotelDetails;
                 //ArrayList waitingList;
-                hotelList.add(new HotelCard(new Hotel(name,city,state)));
+                int arr[] = {3,4};
+                double cost[] = {1000, 4000};
+                 ArrayList det = new ArrayList();
+                det.add("one");det.add("two");det.add("three");det.add("four");
+                ArrayList rat = new ArrayList();
+                det.add(1);det.add(2);det.add(3);det.add(4);
+                hotelList.add(new HotelCard(new Hotel(name, city, state, noRooms, costArr, ratingArr, hotelDetails, waitingList), noRoomsUser, noPeopleUser, nights));
             }
         }
         

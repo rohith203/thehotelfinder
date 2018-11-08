@@ -5,6 +5,8 @@
  */
 package thehotelfinder;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author divakar
@@ -14,11 +16,24 @@ public class HotelCard extends javax.swing.JPanel {
     /**
      * Creates new form HotelCard
      */
-    public HotelCard(Hotel hotel) {
+    public HotelCard(Hotel hotel, int noRooms, int noPeople, int nights) {
+        this.hotel = hotel;
         initComponents();
-        locationLabel.setText(hotel.city);
+        locationLabel.setText(hotel.city + ", " + hotel.state);
         hotelNameLabel.setText(hotel.name);
-        
+        ratingValueLabel.setText(hotel.getAvgRating() + "/5");
+        reviewsLabel.setText("( " + hotel.getRatingArr().size() + " reviews)");
+        int nsingle = 2*noRooms-noPeople;
+        int ndouble = noPeople-noRooms;
+        if(noRooms>noPeople){
+            nsingle = noPeople;
+            ndouble = 0;
+        }
+        singleSpinner.setValue(nsingle);
+        doubleSpinner.setValue(ndouble);
+        priceValueLabel.setText("\u20B9" + ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights));
+
+  
     }
 
     /**
@@ -36,26 +51,42 @@ public class HotelCard extends javax.swing.JPanel {
         ratingValueLabel = new javax.swing.JLabel();
         si_room_radbutton = new javax.swing.JRadioButton();
         do_room_radbutton = new javax.swing.JRadioButton();
-        tr_room_radbutton = new javax.swing.JRadioButton();
         priceValueLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         locationLabel = new javax.swing.JLabel();
         reviewsLabel = new javax.swing.JLabel();
         deal_button = new javax.swing.JButton();
+        hotelImgLabel = new javax.swing.JLabel();
+        singleSpinner = new javax.swing.JSpinner();
+        doubleSpinner = new javax.swing.JSpinner();
 
+        setBackground(new java.awt.Color(204, 255, 255));
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(850, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        hotelNameLabel.setFont(new java.awt.Font("Footlight MT Light", 2, 36)); // NOI18N
-        hotelNameLabel.setText("THE TAJ HOTEL");
+        hotelNameLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 36)); // NOI18N
+        hotelNameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        hotelNameLabel.setText("The Taj Hotel");
+        hotelNameLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hotelNameLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hotelNameLabelMouseClicked(evt);
+            }
+        });
+        add(hotelNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
         rating_label.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         rating_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rating_label.setText("Rating");
+        add(rating_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 71, -1));
 
         ratingValueLabel.setBackground(new java.awt.Color(255, 0, 51));
         ratingValueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ratingValueLabel.setText("0/5");
+        add(ratingValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 30));
 
+        si_room_radbutton.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(si_room_radbutton);
         si_room_radbutton.setText("Single Room");
         si_room_radbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +94,9 @@ public class HotelCard extends javax.swing.JPanel {
                 si_room_radbuttonActionPerformed(evt);
             }
         });
+        add(si_room_radbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, -1, -1));
 
+        do_room_radbutton.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(do_room_radbutton);
         do_room_radbutton.setText("Double Room");
         do_room_radbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,118 +104,107 @@ public class HotelCard extends javax.swing.JPanel {
                 do_room_radbuttonActionPerformed(evt);
             }
         });
-
-        buttonGroup1.add(tr_room_radbutton);
-        tr_room_radbutton.setText("Triple Room");
-        tr_room_radbutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tr_room_radbuttonActionPerformed(evt);
-            }
-        });
+        add(do_room_radbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 194, -1, -1));
 
         priceValueLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         priceValueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         priceValueLabel.setText("VALUE");
+        add(priceValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(729, 54, 79, -1));
 
         priceLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        priceLabel.setText("PRICE");
+        priceLabel.setText("Price   :");
+        add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(643, 54, 79, -1));
 
-        locationLabel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        locationLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 16)); // NOI18N
         locationLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         locationLabel.setText("Location");
+        add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, 235, 39));
 
         reviewsLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         reviewsLabel.setText("(65 Reviews)");
+        add(reviewsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
 
         deal_button.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         deal_button.setText("View Deal");
+        deal_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deal_buttonActionPerformed(evt);
+            }
+        });
+        add(deal_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(705, 258, -1, -1));
+        add(hotelImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hotelNameLabel)
-                            .addComponent(si_room_radbutton)
-                            .addComponent(do_room_radbutton)
-                            .addComponent(tr_room_radbutton))
-                        .addContainerGap(533, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(deal_button))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(locationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(priceValueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(42, 42, 42))))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(rating_label, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ratingValueLabel)
-                .addGap(18, 18, 18)
-                .addComponent(reviewsLabel)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hotelNameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(locationLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(priceValueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rating_label)
-                    .addComponent(ratingValueLabel)
-                    .addComponent(reviewsLabel))
-                .addGap(36, 36, 36)
-                .addComponent(si_room_radbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(do_room_radbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tr_room_radbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(deal_button)
-                .addContainerGap())
-        );
+        singleSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        singleSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                roomsSpinnerStateChanged(evt);
+            }
+        });
+        add(singleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+
+        doubleSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        doubleSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                roomsSpinnerStateChanged(evt);
+            }
+        });
+        add(doubleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void si_room_radbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_si_room_radbuttonActionPerformed
         if(si_room_radbutton.isSelected()){
-            priceValueLabel.setText("1000");
+            priceValueLabel.setText(Double.toString(hotel.getCostArr()[0]));
         }// TODO add your handling code here:
     }//GEN-LAST:event_si_room_radbuttonActionPerformed
 
     private void do_room_radbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_do_room_radbuttonActionPerformed
         if(do_room_radbutton.isSelected()){
-            priceValueLabel.setText("2000");
+            priceValueLabel.setText(Double.toString(hotel.getCostArr()[1]));
         }// TODO add your handling code here:
     }//GEN-LAST:event_do_room_radbuttonActionPerformed
 
-    private void tr_room_radbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tr_room_radbuttonActionPerformed
-        if(tr_room_radbutton.isSelected()){
-            priceValueLabel.setText("3000");
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_tr_room_radbuttonActionPerformed
+    private void hotelNameLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hotelNameLabelMouseClicked
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                         new HotelFrame(hotel).setVisible(true);
+                    }
+                });
+        
+    }//GEN-LAST:event_hotelNameLabelMouseClicked
 
+    private void deal_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deal_buttonActionPerformed
+        // TODO add your handling code here:
+        
+        
 
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new BookingFrame(hotel).setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_deal_buttonActionPerformed
+
+    private void roomsSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_roomsSpinnerStateChanged
+        // TODO add your handling code here:
+        int nsingle = (int)singleSpinner.getValue();
+        int ndouble = (int)doubleSpinner.getValue();
+        
+        if(nsingle==0 && ndouble==0){
+            return;
+        }
+        
+        priceValueLabel.setText("\u20B9" + (nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1]));
+    }//GEN-LAST:event_roomsSpinnerStateChanged
+
+    private Hotel hotel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton deal_button;
     private javax.swing.JRadioButton do_room_radbutton;
+    private javax.swing.JSpinner doubleSpinner;
+    private javax.swing.JLabel hotelImgLabel;
     private javax.swing.JLabel hotelNameLabel;
     private javax.swing.JLabel locationLabel;
     private javax.swing.JLabel priceLabel;
@@ -191,6 +213,6 @@ public class HotelCard extends javax.swing.JPanel {
     private javax.swing.JLabel rating_label;
     private javax.swing.JLabel reviewsLabel;
     private javax.swing.JRadioButton si_room_radbutton;
-    private javax.swing.JRadioButton tr_room_radbutton;
+    private javax.swing.JSpinner singleSpinner;
     // End of variables declaration//GEN-END:variables
 }

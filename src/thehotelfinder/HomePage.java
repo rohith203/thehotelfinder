@@ -8,6 +8,10 @@ package thehotelfinder;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
@@ -28,6 +32,10 @@ public class HomePage extends javax.swing.JFrame {
         scrollPane.getViewport().setOpaque(false);
         scrollPanePanel.setBackground(new Color(255,255,255,100));
         greetTextLabel.setText("Hello " + TheHotelFinder.curUser.getName());
+        Calendar calendar = Calendar.getInstance(); // this would default to now
+        calendar.add(Calendar.DAY_OF_MONTH, -1);
+        checkInDateChooserCombo.setMinDate(calendar);
+        checkOutDateChooserCombo.setMinDate(new GregorianCalendar());
         hotelCardList = new ArrayList();
     }
 
@@ -40,8 +48,10 @@ public class HomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        homeOptionPane = new javax.swing.JOptionPane();
         HomePagePanel = new javax.swing.JPanel();
         line_separator = new javax.swing.JSeparator();
+        locationLabel = new javax.swing.JLabel();
         greetTextLabel = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
         checkInDateLabel = new javax.swing.JLabel();
@@ -56,16 +66,17 @@ public class HomePage extends javax.swing.JFrame {
         scrollPane = new javax.swing.JScrollPane();
         scrollPanePanel = new javax.swing.JPanel();
         cityComboBox = new javax.swing.JComboBox<>();
-        locationLabel = new javax.swing.JLabel();
-        bgHydLabel = new javax.swing.JLabel();
+        bgImgLabel = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         myAccountMenu = new javax.swing.JMenu();
         profileMenuItem = new javax.swing.JMenuItem();
         bookingsMenuItem = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
+        aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Hotel Finder");
+        setBounds(new java.awt.Rectangle(510, 100, 0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -73,17 +84,20 @@ public class HomePage extends javax.swing.JFrame {
         HomePagePanel.setBackground(new java.awt.Color(245, 245, 245));
         HomePagePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "The Hotel Finder", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lithos Pro Regular", 0, 24))); // NOI18N
         HomePagePanel.setPreferredSize(new java.awt.Dimension(900, 800));
-        HomePagePanel.setLayout(null);
+        HomePagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         line_separator.setPreferredSize(new java.awt.Dimension(900, 10));
-        HomePagePanel.add(line_separator);
-        line_separator.setBounds(0, 70, 900, 10);
+        HomePagePanel.add(line_separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 76, 888, -1));
+
+        locationLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        locationLabel.setForeground(new java.awt.Color(51, 51, 51));
+        locationLabel.setText("LOCATION:");
+        HomePagePanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 108, -1, -1));
 
         greetTextLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         greetTextLabel.setForeground(new java.awt.Color(102, 102, 102));
         greetTextLabel.setText("Hello");
-        HomePagePanel.add(greetTextLabel);
-        greetTextLabel.setBounds(6, 42, 300, 19);
+        HomePagePanel.add(greetTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 42, -1, -1));
 
         logoutBtn.setForeground(new java.awt.Color(51, 51, 51));
         logoutBtn.setText("LOGOUT");
@@ -92,40 +106,35 @@ public class HomePage extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        HomePagePanel.add(logoutBtn);
-        logoutBtn.setBounds(790, 30, 100, 25);
+        HomePagePanel.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(787, 27, -1, -1));
 
         checkInDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         checkInDateLabel.setForeground(new java.awt.Color(51, 51, 51));
         checkInDateLabel.setText("CHECK IN ");
-        HomePagePanel.add(checkInDateLabel);
-        checkInDateLabel.setBounds(512, 99, 57, 15);
+        HomePagePanel.add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 94, -1, -1));
 
         checkOutDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         checkOutDateLabel.setForeground(new java.awt.Color(51, 51, 51));
         checkOutDateLabel.setText("CHECK OUT");
-        HomePagePanel.add(checkOutDateLabel);
-        checkOutDateLabel.setBounds(512, 142, 64, 15);
+        HomePagePanel.add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 137, -1, -1));
 
         noRoomsLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         noRoomsLabel.setForeground(new java.awt.Color(51, 51, 51));
         noRoomsLabel.setText("NUMBER OF ROOMS");
-        HomePagePanel.add(noRoomsLabel);
-        noRoomsLabel.setBounds(140, 140, 112, 15);
+        HomePagePanel.add(noRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 155, -1, -1));
 
         noPeopleLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         noPeopleLabel.setForeground(new java.awt.Color(51, 51, 51));
         noPeopleLabel.setText("NUMBER OF PEOPLE");
-        HomePagePanel.add(noPeopleLabel);
-        noPeopleLabel.setBounds(510, 190, 112, 15);
-        HomePagePanel.add(noRoomsSpinner);
-        noRoomsSpinner.setBounds(270, 132, 50, 30);
-        HomePagePanel.add(noPeopleSpinner);
-        noPeopleSpinner.setBounds(650, 182, 40, 30);
-        HomePagePanel.add(checkInDateChooserCombo);
-        checkInDateChooserCombo.setBounds(617, 92, 155, 22);
-        HomePagePanel.add(checkOutDateChooserCombo);
-        checkOutDateChooserCombo.setBounds(617, 135, 155, 22);
+        HomePagePanel.add(noPeopleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 174, -1, -1));
+
+        noRoomsSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        HomePagePanel.add(noRoomsSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 151, 40, -1));
+
+        noPeopleSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 40, -1));
+        HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 87, -1, -1));
+        HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 130, -1, -1));
 
         findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
         findHotelBtn.setText("FIND HOTELS");
@@ -134,32 +143,22 @@ public class HomePage extends javax.swing.JFrame {
                 findHotelBtnActionPerformed(evt);
             }
         });
-        HomePagePanel.add(findHotelBtn);
-        findHotelBtn.setBounds(390, 260, 109, 25);
+        HomePagePanel.add(findHotelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 238, -1, -1));
 
         scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
 
-        scrollPanePanel.setLayout(new java.awt.GridLayout(3, 0, 10, 25));
+        scrollPanePanel.setLayout(new java.awt.GridLayout(10, 0, 10, 25));
         scrollPane.setViewportView(scrollPanePanel);
 
-        HomePagePanel.add(scrollPane);
-        scrollPane.setBounds(0, 300, 900, 600);
+        HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
 
-        cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Chennai", "Bangalore" }));
-        HomePagePanel.add(cityComboBox);
-        cityComboBox.setBounds(220, 90, 110, 22);
+        cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
+        HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 104, -1, -1));
 
-        locationLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
-        locationLabel.setForeground(new java.awt.Color(51, 51, 51));
-        locationLabel.setText("LOCATION:");
-        HomePagePanel.add(locationLabel);
-        locationLabel.setBounds(150, 90, 59, 20);
-
-        bgHydLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\charminar.jpg")); // NOI18N
-        bgHydLabel.setPreferredSize(new java.awt.Dimension(900, 700));
-        HomePagePanel.add(bgHydLabel);
-        bgHydLabel.setBounds(0, 300, 900, 500);
+        bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\charminar.jpg")); // NOI18N
+        bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
+        HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
 
         getContentPane().add(HomePagePanel, "card2");
 
@@ -179,6 +178,10 @@ public class HomePage extends javax.swing.JFrame {
         jMenuBar.add(myAccountMenu);
 
         helpMenu.setText("Help");
+
+        aboutMenuItem.setText("About");
+        helpMenu.add(aboutMenuItem);
+
         jMenuBar.add(helpMenu);
 
         setJMenuBar(jMenuBar);
@@ -195,26 +198,36 @@ public class HomePage extends javax.swing.JFrame {
 
     private void findHotelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findHotelBtnActionPerformed
         // TODO add your handling code here:
+       
         for(int i=0; i<hotelCardList.size(); i++){
-            scrollPanePanel.remove((HotelCard)hotelCardList.get(0));
-            hotelCardList.remove(0);
-        }  
+            scrollPanePanel.remove((HotelCard)hotelCardList.get(i));
+        }
         
         String location = cityComboBox.getItemAt(cityComboBox.getSelectedIndex());
+        if(location.equals("Hyderabad")){
+            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\hyderabad.jpg"));
+        }else if(location.equals("Bangalore")){
+            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\bangalore.jpg"));
+        }else if(location.equals("Mumbai")){
+            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\mumbai.jpg"));
+        }else if(location.equals("New Delhi")){
+            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\newdelhi.jpg"));
+        }else if(location.equals("Kolkata")){
+            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\kolkata.jpg"));
+        }
         int noRooms = (int) noRoomsSpinner.getValue();
         int noPeople = (int) noPeopleSpinner.getValue();
         String checkInDate = checkInDateChooserCombo.getText();
         String checkOutDate = checkOutDateChooserCombo.getText();
         
         if(validate(noRooms, noPeople, checkInDate, checkOutDate)){
-            hotelCardList = TheHotelFinder.db.getHotels(location);
+            int nights = (int)((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24);
+            hotelCardList = TheHotelFinder.db.getHotels(location, noRooms, noPeople, nights);
         }else{
             return;
         }            
         
-        
-        scrollPanePanel.setLayout(new GridLayout(hotelCardList.size(),1, 10, 25));
-        
+        //scrollPanePanel.setLayout(new GridLayout(hotelCardList.size(),1, 10, 25));
         
         System.out.println(location);
         //hotelCardList.add(new HotelCard(location));
@@ -224,7 +237,6 @@ public class HomePage extends javax.swing.JFrame {
            scrollPanePanel.add((HotelCard)hotelCardList.get(i));
         }
 
-
         ((JComponent)getContentPane()).revalidate();
 
     }//GEN-LAST:event_findHotelBtnActionPerformed
@@ -233,13 +245,31 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MyAccountFrame().setVisible(true);
+                new MyProfileFrame().setVisible(true);
             }
         });
     }//GEN-LAST:event_profileMenuItemActionPerformed
     
+    
+    public void showMessage(String msg){
+        homeOptionPane.showMessageDialog(this, msg);
+    }
+     
     public boolean validate(int noRooms, int noPeople, String checkin, String checkout){
+        Date curDate = new Date();
         
+        if(checkin.isEmpty() || checkout.isEmpty()){
+            showMessage("Please fill the empty fields.");
+            return false;
+        }
+        
+        Date checkInDate = MyDate.toDate(checkin);
+        Date checkOutDate = MyDate.toDate(checkout);
+        if(checkInDate.after(checkOutDate) || checkInDate.equals(checkOutDate)){
+            System.out.println(checkInDate + "  " + checkOutDate + "  "  + curDate);
+            showMessage("Please enter a valid date.");
+            return false;
+        }
         
         return true;
     }
@@ -247,7 +277,8 @@ public class HomePage extends javax.swing.JFrame {
     private ArrayList hotelCardList;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HomePagePanel;
-    private javax.swing.JLabel bgHydLabel;
+    private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JLabel bgImgLabel;
     private javax.swing.JMenuItem bookingsMenuItem;
     private datechooser.beans.DateChooserCombo checkInDateChooserCombo;
     private javax.swing.JLabel checkInDateLabel;
@@ -257,6 +288,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton findHotelBtn;
     private javax.swing.JLabel greetTextLabel;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JOptionPane homeOptionPane;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JSeparator line_separator;
     private javax.swing.JLabel locationLabel;

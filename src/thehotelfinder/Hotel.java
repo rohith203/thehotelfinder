@@ -16,18 +16,26 @@ public class Hotel {
     String name;
     String city;
     String state;
-    ArrayList noRoomsArr;
-    ArrayList costArr;
-    double rating;
+    int noRoomsArr[];
+    double costArr[];
+    ArrayList ratingArr;
+    double avgRating = 0;
     ArrayList hotelDetails;
     ArrayList waitingList;
 
-    public Hotel(String name, String city, String state) {
+    public Hotel(String name, String city, String state, int noRoomsArr[], double costArr[], ArrayList ratingArr, ArrayList hotelDetails, ArrayList waitingList) {
         this.name = name;
         this.city = city;
         this.state = state;
-//        this.rating = rating;
-//        this.hotelDetails = hotelDetails;
+        this.noRoomsArr = noRoomsArr;
+        this.costArr = costArr;
+        this.ratingArr = ratingArr;
+        for(Object o: ratingArr){
+            avgRating += (double)o;
+        }
+        avgRating = avgRating/ratingArr.size();
+        this.hotelDetails = hotelDetails;
+        this.waitingList = waitingList;
     }
 
     public String getName() {
@@ -54,28 +62,36 @@ public class Hotel {
         this.state = state;
     }
 
-    public ArrayList getNoRoomsArr() {
+    public int[] getNoRoomsArr() {
         return noRoomsArr;
     }
 
-    public void setNoRoomsArr(ArrayList noRoomsArr) {
+    public void setNoRoomsArr(int[] noRoomsArr) {
         this.noRoomsArr = noRoomsArr;
     }
 
-    public ArrayList getCostArr() {
+    public double[] getCostArr() {
         return costArr;
     }
 
-    public void setCostArr(ArrayList costArr) {
+    public void setCostArr(double[] costArr) {
         this.costArr = costArr;
     }
 
-    public double getRating() {
-        return rating;
+    public ArrayList getRatingArr() {
+        return ratingArr;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setRatingArr(ArrayList ratingArr) {
+        this.ratingArr = ratingArr;
+    }
+
+    public double getAvgRating() {
+        return avgRating;
+    }
+
+    public void setAvgRating(double avgRating) {
+        this.avgRating = avgRating;
     }
 
     public ArrayList getHotelDetails() {
@@ -93,5 +109,9 @@ public class Hotel {
     public void setWaitingList(ArrayList waitingList) {
         this.waitingList = waitingList;
     }
+
     
+
+    
+   
 }
