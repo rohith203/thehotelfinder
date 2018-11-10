@@ -63,6 +63,7 @@ public class BookingFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(510, 140, 900, 900));
         setSize(new java.awt.Dimension(900, 900));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Booking Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Light", 0, 36), new java.awt.Color(51, 102, 255))); // NOI18N
@@ -170,8 +171,7 @@ public class BookingFrame extends javax.swing.JFrame {
                             .addComponent(numberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(228, 228, 228)
-                                .addComponent(bookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                                .addComponent(bookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -251,6 +251,7 @@ public class BookingFrame extends javax.swing.JFrame {
         Booking b = new Booking(TheHotelFinder.curUser, hotel, noRoomsBooked, noPeople, checkInDate, checkOutDate, proofType, proofValue);
         TheHotelFinder.db.addBooking(b);
         optionPane.showMessageDialog(this, "Hotel Succesfully Booked. Your Reference No: " + b.getBookingRef());
+        this.dispose();
     }//GEN-LAST:event_bookBtnActionPerformed
 
     private void numberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberTextFieldFocusGained

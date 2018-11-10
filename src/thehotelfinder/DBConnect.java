@@ -35,6 +35,99 @@ public class DBConnect {
             System.out.println("Connected to mydb.");
     }
     
+    public boolean addToWaitingList(String username, String hotelName, int noPeople, String checkIn, String checkOut){
+        MongoCollection<Document> hotelCollection = database.getCollection("hotels");
+        
+        FindIterable<Document> iterDoc = hotelCollection.find();
+        ArrayList waitingList;
+        for(Document d: iterDoc){
+            if(d.get("name").equals(hotelName)){
+                waitingList = (ArrayList) d.get("waitingList");
+                ArrayList arrlist = new ArrayList();
+                arrlist.add(username);
+                arrlist.add(noPeople);
+                arrlist.add(checkIn);
+                arrlist.add(checkOut);
+                waitingList.add(arrlist);
+                hotelCollection.updateOne(Filters.eq("name",hotelName), Updates.set("waitingList", waitingList));
+                return true;
+            }
+        }
+        
+        
+        return false;
+    }
+    
+    public ArrayList checkWaitingList(){
+        ArrayList resList = new ArrayList();
+        String username = TheHotelFinder.curUser.getUsername();
+        MongoCollection<Document> hotelCollection = database.getCollection("hotels");
+        
+        FindIterable<Document> iterDoc = hotelCollection.find();
+        ArrayList waitingList;
+        for(Document d: iterDoc){
+            waitingList = (ArrayList)d.get("waitingList");
+            if(!waitingList.isEmpty()){
+                ArrayList user = (ArrayList)waitingList.get(0);
+                if(user.get(0).equals(username)){
+                    int noPeople = (int)user.get(1);
+                    String checkIn = (String)user.get(2);
+                    String checkOut = (String)user.get(3);
+                    String hotelName = (String)d.get("name");
+                  
+                    int roomsArr[] = getMaxRooms(hotelName, checkIn, checkOut);
+                    int x= 0; int y=0;
+                    for(x=0; x<=roomsArr[0]; x++){
+                        for(y=0; y<=roomsArr[1]; y++){
+                            if((x + 2*y) >= noPeople){
+                                resList.add(username);
+                                resList.add(noPeople);
+                                resList.add(checkIn);
+                                resList.add(checkOut);
+                                resList.add(hotelName);
+                                return resList;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        
+        return resList;
+    }
+    
+    public Hotel getHotelByName(String hotelName){
+        MongoCollection<Document> hotelCollection = database.getCollection("hotels");
+        
+        FindIterable<Document> iterDoc = hotelCollection.find();
+
+        for(Document d: iterDoc){
+            if(d.get("name").equals(hotelName)){
+                String name = (String)d.get("name");
+                String city = (String)d.get("city");
+                String state = (String)d.get("state");
+                ArrayList noRoomsList = (ArrayList) d.get("noRooms");
+                int noRooms[] = {0,0}; 
+                noRooms[0] = (int)(double)(noRoomsList.get(0));
+                noRooms[1] = (int)(double)(noRoomsList.get(1));
+                ArrayList costArrList = (ArrayList)d.get("costArr");
+                double costArr[] = {0,0}; 
+                costArr[0] = (double)costArrList.get(0);
+                costArr[1] = (double)costArrList.get(1);
+                ArrayList ratingArr = (ArrayList)d.get("ratingArr");
+                ArrayList hotelDetails = (ArrayList)d.get("details");
+                ArrayList waitingList = (ArrayList)d.get("waitingList");
+                
+                
+                return new Hotel(name, city, state, noRooms, costArr, ratingArr, hotelDetails, waitingList);
+            }
+        }
+        
+        
+        return null;
+    }
+    
     public boolean cancelBooking(String bookingRef){
         MongoCollection<Document> bookingCollection = database.getCollection("booking");
         bookingCollection.deleteOne(Filters.eq("bookingRef",bookingRef));
@@ -58,15 +151,14 @@ public class DBConnect {
                                                                                                  Updates.set("checkOutDate", newCheckOut),
                                                                                                  Updates.set("nsingle", newsingle),
                                                                                                  Updates.set("ndouble", newdouble)));
-                        TheHotelFinder.logRegFrame.showMessage("Booking modified successfully!");
-                        break;
+                        return true;
                     }
                 }
                 break;
             }
         }              
         
-        return true;
+        return false;
     }
     
     public boolean giveRating(int rating, String hotelName, String bookingRef){
@@ -126,46 +218,6 @@ public class DBConnect {
         return true;
     }
     
-//    public boolean updateRooms(){
-//        MongoCollection<Document> bookingCollection = database.getCollection("booking");
-//        MongoCollection<Document> hotelCollection = database.getCollection("hotels");
-//
-//        FindIterable<Document> biterDoc = bookingCollection.find();
-//        FindIterable<Document> hiterDoc = bookingCollection.find();
-//     
-//        for(Document bDoc: biterDoc){
-//            
-//            Date checkOut = MyDate.toDate((String)bDoc.get("checkOutDate"));
-//            Date checkIn = MyDate.toDate((String)bDoc.get("checkInDate"));
-//            Date curDate = new Date();
-//                for(Document hDoc: hiterDoc){
-//                    if(bDoc.get("hotel").equals(hDoc.get("name"))){
-//                        if(curDate.after(checkIn) && curDate.before(checkOut)){
-//                            ArrayList noRoomsList = new ArrayList();
-//                            ArrayList noRoomsHotel = (ArrayList)hDoc.get("noRooms");
-//                            noRoomsList.add((double)noRoomsHotel.get(0) - (double)bDoc.get("nsingle"));
-//                            noRoomsList.add((double)noRoomsHotel.get(1)-(double)bDoc.get("ndouble"));
-//                            hotelCollection.updateOne(Filters.eq("name", (String)bDoc.get("hotel")), Updates.set("noRooms", noRoomsList));
-//                        }
-//                        if(curDate.after(checkOut)){
-//                            ArrayList noRoomsList = new ArrayList();
-//                            ArrayList noRoomsHotel = (ArrayList)hDoc.get("noRooms");
-//                            noRoomsList.add((double)bDoc.get("nsingle")  +  (double)noRoomsHotel.get(0));
-//                            noRoomsList.add((double)bDoc.get("ndouble")  +  (double)noRoomsHotel.get(1));
-//                            hotelCollection.updateOne(Filters.eq("name", (String)bDoc.get("name")), Updates.set("noRooms", noRoomsList));
-//                        }
-//                    }
-//                }
-//        }                
-//        return true;
-//    }
-    
-    
-//    public int[] getAvailableRooms(String hotelName ){
-//        int res[] = new int[2];
-//
-//        return res;
-//    }
     public int[] getMaxRooms(String hotelName, String a, String b){
         int res[] = new int[2];
         
@@ -237,7 +289,7 @@ public class DBConnect {
                 String checkIn = (String)d.get("checkInDate");
                 String checkOut = (String)d.get("checkOutDate");
                 double totalAmount = (double)d.get("totalAmountPaid");
-                bookingList.add(new BookingCard(bookingRef, hotelName, city, state,checkIn,checkOut, nsingle, ndouble, totalAmount));
+                bookingList.add(new MyBookingCard(bookingRef, hotelName, city, state,checkIn,checkOut, nsingle, ndouble, totalAmount));
             }
         }
         

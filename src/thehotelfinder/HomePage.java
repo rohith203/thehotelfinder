@@ -14,6 +14,7 @@ import java.util.GregorianCalendar;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -37,6 +38,14 @@ public class HomePage extends javax.swing.JFrame {
         Calendar calendar1 = Calendar.getInstance(); // this would default to now
         checkOutDateChooserCombo.setMinDate(calendar1);
         hotelCardList = new ArrayList();
+        
+        ArrayList waitingListRes = TheHotelFinder.db.checkWaitingList();
+        if(!waitingListRes.isEmpty()){
+            bookWaitingList(waitingListRes);
+            System.out.println(waitingListRes.get(0) + " " + waitingListRes.get(1) + " " +
+                    waitingListRes.get(2)+" " +waitingListRes.get(3)+" " +waitingListRes.get(4));
+        }
+        
     }
 
     /**
@@ -200,6 +209,41 @@ public class HomePage extends javax.swing.JFrame {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void bookWaitingList(ArrayList waitListRes){
+        String username = (String) waitListRes.get(0);
+        int noPeople = (int) waitListRes.get(1);
+        String checkIn = (String) waitListRes.get(2);
+        String checkOut = (String) waitListRes.get(3);
+        String hotelName = (String) waitListRes.get(4);
+        String question = "You were in waiting list for the Hotel "+hotelName+
+                                      " Do you want to book the hotel?";
+        int nsingle = 0;
+        int ndouble = 0;
+        
+        int maxRooms[] = TheHotelFinder.db.getMaxRooms(hotelName, checkIn, checkOut);
+        int noRoomsUser[] = new int[2];
+        outer:for(int x=0; x<=maxRooms[0]; x++){
+            for(int y=0; y<=maxRooms[1]; y++){
+                if((x+2*y) >= noPeople){
+                    noRoomsUser[0] = x;
+                    noRoomsUser[1] = y;
+                    break outer;
+                }
+            }
+        }
+        int nights = (int)((MyDate.toDate(checkOut).getTime()) - (MyDate.toDate(checkIn).getTime()))/(1000 * 60 * 60 * 24);
+
+        int res = JOptionPane.showConfirmDialog(this, question ,"Confirm" ,JOptionPane.YES_NO_OPTION );
+        
+        Hotel hotel = TheHotelFinder.db.getHotelByName(hotelName);
+        if(res==0){
+            if(hotel!=null){
+                new BookingFrame(hotel, noRoomsUser, noPeople, nights, MyDate.toDate(checkIn), MyDate.toDate(checkOut)).setVisible(true);
+            }
+        }
+    }
+    
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         setVisible(false);
         TheHotelFinder.curUser = null;

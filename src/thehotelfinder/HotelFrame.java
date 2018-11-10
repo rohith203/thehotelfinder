@@ -42,7 +42,6 @@ public class HotelFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(710, 100, 0, 0));
-        setResizable(false);
         setSize(new java.awt.Dimension(500, 600));
         getContentPane().setLayout(new java.awt.CardLayout());
 
@@ -64,13 +63,16 @@ public class HotelFrame extends javax.swing.JFrame {
         HotelPanelLayout.setHorizontalGroup(
             HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HotelPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hotelNameLabel)
-                    .addComponent(locationLabel)
-                    .addGroup(HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(amenitiesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
+                    .addGroup(HotelPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hotelNameLabel)
+                            .addComponent(locationLabel)
+                            .addComponent(jLabel3)))
+                    .addGroup(HotelPanelLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(amenitiesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(286, Short.MAX_VALUE))
         );
         HotelPanelLayout.setVerticalGroup(

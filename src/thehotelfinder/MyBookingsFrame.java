@@ -24,7 +24,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
             return;
         }
         for(int i=0; i<bookingCardList.size(); i++){
-           scrollPanePanel.add((BookingCard)bookingCardList.get(i));
+           scrollPanePanel.add((MyBookingCard)bookingCardList.get(i));
         }
 
         ((JComponent)getContentPane()).revalidate();
@@ -44,6 +44,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
         scrollPanePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(510, 140, 900, 800));
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
 

@@ -9,6 +9,7 @@ package thehotelfinder;
 import java.text.DecimalFormat;
 import java.util.Date;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,8 +26,8 @@ public class HotelCard extends javax.swing.JPanel {
         this.checkOutDate = checkOutDate;
         this.noPeople = noPeople;
         initComponents();
-        int availableRoomsArr[] = TheHotelFinder.db.getMaxRooms(hotel.getName(), MyDate.toStringInit(checkInDate), MyDate.toStringInit(checkOutDate));
-
+        this.availableRoomsArr = TheHotelFinder.db.getMaxRooms(hotel.getName(), MyDate.toStringInit(checkInDate), MyDate.toStringInit(checkOutDate));
+        
         singleSpinner.setModel(new javax.swing.SpinnerNumberModel(0,0,availableRoomsArr[0],1));
         doubleSpinner.setModel(new javax.swing.SpinnerNumberModel(0,0,availableRoomsArr[1],1));
         locationLabel.setText(hotel.city + ", " + hotel.state);
@@ -56,7 +57,8 @@ public class HotelCard extends javax.swing.JPanel {
         doubleSpinner.setValue(ndouble);
         priceValueLabel.setText("\u20B9" + ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights));
         waitListBtn.setVisible(false);
-        if((availableRoomsArr[0]==0 && availableRoomsArr[1]==0) || (noPeople>availableRoomsArr[0] && noPeople>(2*availableRoomsArr[1]))){
+        if((availableRoomsArr[0]==0 && availableRoomsArr[1]==0) || 
+           (noPeople>availableRoomsArr[0] && noPeople>(2*availableRoomsArr[1]))){
             waitListBtn.setVisible(true);
             dealBtn.setVisible(false);
         }
@@ -235,12 +237,15 @@ public class HotelCard extends javax.swing.JPanel {
         int noRoomsUserArr[] = new int[2];
         noRoomsUserArr[0] = nsingle;
         noRoomsUserArr[1] = ndouble;
-        
+        if(availableRoomsArr[0]>=nsingle && availableRoomsArr[1]>=ndouble){
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     new BookingFrame(hotel, noRoomsUserArr, noPeople, nights, checkInDate, checkOutDate).setVisible(true);
                 }
             });
+        }else{
+            JOptionPane.showMessageDialog(this,"Rooms are not available.");
+        }
         
     }//GEN-LAST:event_dealBtnActionPerformed
 
@@ -270,6 +275,9 @@ public class HotelCard extends javax.swing.JPanel {
 
     private void waitListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waitListBtnActionPerformed
         // TODO add your handling code here:
+        TheHotelFinder.db.addToWaitingList(TheHotelFinder.curUser.getUsername(), hotel.getName(), noPeople,
+                                           MyDate.toStringInit(checkInDate),  MyDate.toStringInit(checkOutDate));
+        JOptionPane.showMessageDialog(this, "added to waitinglist");
         
     }//GEN-LAST:event_waitListBtnActionPerformed
 
@@ -278,6 +286,7 @@ public class HotelCard extends javax.swing.JPanel {
     private int nights;
     private Date checkInDate;
     private Date checkOutDate;
+    private int availableRoomsArr[];
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dealBtn;
     private javax.swing.JLabel doubleAvailableLabel;
