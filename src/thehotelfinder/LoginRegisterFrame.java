@@ -26,6 +26,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         initComponents();
         registerPane.setBackground(new Color(240,240,240,75));
         loginPane.setBackground(new Color(240,240,240,75));
+        //TheHotelFinder.db.updateRooms();
     }
 
     /**
@@ -684,6 +685,10 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     
     public void showMessage(String msg){
         jOptionPane1.showMessageDialog(this, msg);
+    }
+    
+    public javax.swing.JOptionPane getJOption(){
+        return jOptionPane1;
     }
     
 

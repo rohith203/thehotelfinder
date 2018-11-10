@@ -26,7 +26,6 @@ public class HomePage extends javax.swing.JFrame {
      * Creates new form HomePage
      */
     public HomePage() {
-//        UIManager.put("ScrollPane.contentOpaque", false);
         initComponents();
         scrollPane.setOpaque(false);
         scrollPane.getViewport().setOpaque(false);
@@ -35,7 +34,8 @@ public class HomePage extends javax.swing.JFrame {
         Calendar calendar = Calendar.getInstance(); // this would default to now
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         checkInDateChooserCombo.setMinDate(calendar);
-        checkOutDateChooserCombo.setMinDate(new GregorianCalendar());
+        Calendar calendar1 = Calendar.getInstance(); // this would default to now
+        checkOutDateChooserCombo.setMinDate(calendar1);
         hotelCardList = new ArrayList();
     }
 
@@ -134,59 +134,70 @@ public class HomePage extends javax.swing.JFrame {
         noPeopleSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 40, -1));
         HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 87, -1, -1));
-        HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 130, -1, -1));
 
-        findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
-        findHotelBtn.setText("FIND HOTELS");
-        findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                findHotelBtnActionPerformed(evt);
-            }
-        });
-        HomePagePanel.add(findHotelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 238, -1, -1));
+        try {
+            checkOutDateChooserCombo.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2018, 10, 9),
+                new java.util.GregorianCalendar(2018, 10, 9))));
+    } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+        e1.printStackTrace();
+    }
+    HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 130, -1, -1));
 
-        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
+    findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
+    findHotelBtn.setText("FIND HOTELS");
+    findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            findHotelBtnActionPerformed(evt);
+        }
+    });
+    HomePagePanel.add(findHotelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 238, -1, -1));
 
-        scrollPanePanel.setLayout(new java.awt.GridLayout(10, 0, 10, 25));
-        scrollPane.setViewportView(scrollPanePanel);
+    scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+    scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
 
-        HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
+    scrollPanePanel.setLayout(new java.awt.GridLayout(10, 0, 10, 25));
+    scrollPane.setViewportView(scrollPanePanel);
 
-        cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
-        HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 104, -1, -1));
+    HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
 
-        bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\charminar.jpg")); // NOI18N
-        bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
-        HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
+    cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
+    HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 104, -1, -1));
 
-        getContentPane().add(HomePagePanel, "card2");
+    bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
+    HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
 
-        myAccountMenu.setText("My Account ");
+    getContentPane().add(HomePagePanel, "card2");
 
-        profileMenuItem.setText("My Profile");
-        profileMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileMenuItemActionPerformed(evt);
-            }
-        });
-        myAccountMenu.add(profileMenuItem);
+    myAccountMenu.setText("My Account ");
 
-        bookingsMenuItem.setText("My Bookings");
-        myAccountMenu.add(bookingsMenuItem);
+    profileMenuItem.setText("My Profile");
+    profileMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            profileMenuItemActionPerformed(evt);
+        }
+    });
+    myAccountMenu.add(profileMenuItem);
 
-        jMenuBar.add(myAccountMenu);
+    bookingsMenuItem.setText("My Bookings");
+    bookingsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            bookingsMenuItemActionPerformed(evt);
+        }
+    });
+    myAccountMenu.add(bookingsMenuItem);
 
-        helpMenu.setText("Help");
+    jMenuBar.add(myAccountMenu);
 
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+    helpMenu.setText("Help");
 
-        jMenuBar.add(helpMenu);
+    aboutMenuItem.setText("About");
+    helpMenu.add(aboutMenuItem);
 
-        setJMenuBar(jMenuBar);
+    jMenuBar.add(helpMenu);
 
-        pack();
+    setJMenuBar(jMenuBar);
+
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -222,7 +233,8 @@ public class HomePage extends javax.swing.JFrame {
         
         if(validate(noRooms, noPeople, checkInDate, checkOutDate)){
             int nights = (int)((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24);
-            hotelCardList = TheHotelFinder.db.getHotels(location, noRooms, noPeople, nights);
+            //int nights
+            hotelCardList = TheHotelFinder.db.getHotels(location, noRooms, noPeople, nights, MyDate.toDate(checkInDate),MyDate.toDate(checkOutDate));
         }else{
             return;
         }            
@@ -249,6 +261,15 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_profileMenuItemActionPerformed
+
+    private void bookingsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingsMenuItemActionPerformed
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MyBookingsFrame().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_bookingsMenuItemActionPerformed
     
     
     public void showMessage(String msg){

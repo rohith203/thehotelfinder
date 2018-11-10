@@ -5,6 +5,7 @@
  */
 package thehotelfinder;
 
+import static java.lang.Math.abs;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,9 +26,20 @@ public class MyDate{
         return resDate;
     }
     
-    public static String getString(Date d){
-        SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyss");
+    public static String getRefString(Date d){
+        SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmmss");
         String s = formatter.format(d);
         return s;
+    }
+    
+    public static String toStringInit(Date d){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMM, yyyy");
+        String s = formatter.format(d);
+        return s;
+    }
+    
+    public static int getDays(String a, String b){
+        int nights = (int)((MyDate.toDate(a).getTime()) - (MyDate.toDate(b).getTime()))/(1000 * 60 * 60 * 24);
+        return abs(nights);
     }
 }

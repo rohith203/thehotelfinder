@@ -31,7 +31,7 @@ public class Hotel {
         this.costArr = costArr;
         this.ratingArr = ratingArr;
         for(Object o: ratingArr){
-            avgRating += (double)o;
+            avgRating += (int)o;
         }
         avgRating = avgRating/ratingArr.size();
         this.hotelDetails = hotelDetails;

@@ -5,6 +5,9 @@
  */
 package thehotelfinder;
 
+import java.util.ArrayList;
+import javax.swing.JComponent;
+
 /**
  *
  * @author Rohith
@@ -16,6 +19,15 @@ public class MyBookingsFrame extends javax.swing.JFrame {
      */
     public MyBookingsFrame() {
         initComponents();
+        bookingCardList = TheHotelFinder.db.getBookings(TheHotelFinder.curUser.getUsername());
+        if(bookingCardList.isEmpty()){
+            return;
+        }
+        for(int i=0; i<bookingCardList.size(); i++){
+           scrollPanePanel.add((BookingCard)bookingCardList.get(i));
+        }
+
+        ((JComponent)getContentPane()).revalidate();
     }
 
     /**
@@ -27,57 +39,35 @@ public class MyBookingsFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        MyBookingsPanel = new javax.swing.JPanel();
+        jScrollPane = new javax.swing.JScrollPane();
+        scrollPanePanel = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 586, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setSize(new java.awt.Dimension(900, 800));
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        MyBookingsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "My Bookings", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semibold", 0, 24), new java.awt.Color(0, 102, 255))); // NOI18N
+        MyBookingsPanel.setPreferredSize(new java.awt.Dimension(900, 800));
+        MyBookingsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        scrollPanePanel.setLayout(new java.awt.GridLayout(25, 0, 0, 25));
+        jScrollPane.setViewportView(scrollPanePanel);
+
+        MyBookingsPanel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 900, 600));
+
+        getContentPane().add(MyBookingsPanel, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MyBookingsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MyBookingsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MyBookingsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MyBookingsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MyBookingsFrame().setVisible(true);
-            }
-        });
-    }
-
+    ArrayList bookingCardList;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MyBookingsPanel;
+    private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JPanel scrollPanePanel;
     // End of variables declaration//GEN-END:variables
 }

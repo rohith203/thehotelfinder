@@ -23,8 +23,7 @@ public class TheHotelFinder {
         
          try {
             // Set cross-platform Java L&F (also called "Metal")
-            UIManager.setLookAndFeel(
-                UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } 
         catch (Exception e) {
            // handle exception
