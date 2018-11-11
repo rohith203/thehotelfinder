@@ -37,8 +37,8 @@ public class DBConnect {
     
     public boolean addToWaitingList(String username, String hotelName, int noPeople, String checkIn, String checkOut){
         MongoCollection<Document> hotelCollection = database.getCollection("hotels");
-        
         FindIterable<Document> iterDoc = hotelCollection.find();
+        
         ArrayList waitingList;
         for(Document d: iterDoc){
             if(d.get("name").equals(hotelName)){
@@ -54,7 +54,6 @@ public class DBConnect {
             }
         }
         
-        
         return false;
     }
     
@@ -62,8 +61,8 @@ public class DBConnect {
         ArrayList resList = new ArrayList();
         String username = TheHotelFinder.curUser.getUsername();
         MongoCollection<Document> hotelCollection = database.getCollection("hotels");
-        
         FindIterable<Document> iterDoc = hotelCollection.find();
+        
         ArrayList waitingList;
         for(Document d: iterDoc){
             waitingList = (ArrayList)d.get("waitingList");
@@ -74,7 +73,6 @@ public class DBConnect {
                     String checkIn = (String)user.get(2);
                     String checkOut = (String)user.get(3);
                     String hotelName = (String)d.get("name");
-                  
                     int roomsArr[] = getMaxRooms(hotelName, checkIn, checkOut);
                     int x= 0; int y=0;
                     for(x=0; x<=roomsArr[0]; x++){
@@ -85,6 +83,8 @@ public class DBConnect {
                                 resList.add(checkIn);
                                 resList.add(checkOut);
                                 resList.add(hotelName);
+                                waitingList.remove(0);
+                                hotelCollection.updateOne(Filters.eq("name",(String)d.get("name")), Updates.set("waitingList",waitingList));
                                 return resList;
                             }
                         }
@@ -118,7 +118,6 @@ public class DBConnect {
                 ArrayList ratingArr = (ArrayList)d.get("ratingArr");
                 ArrayList hotelDetails = (ArrayList)d.get("details");
                 ArrayList waitingList = (ArrayList)d.get("waitingList");
-                
                 
                 return new Hotel(name, city, state, noRooms, costArr, ratingArr, hotelDetails, waitingList);
             }
@@ -187,20 +186,13 @@ public class DBConnect {
             }
         }
         
-        
         return true;
     }
     
     public boolean addBooking(Booking b){
         MongoCollection<Document> collection = database.getCollection("booking");
         MongoCollection<Document> hotelCollection = database.getCollection("hotels");
-        
-//        ArrayList noRoomsList = new ArrayList();
-//        noRoomsList.add((double)(b.hotel.getNoRoomsArr()[0]-b.getNoRoomsBooked()[0]));
-//        noRoomsList.add((double)(b.hotel.getNoRoomsArr()[1]-b.getNoRoomsBooked()[1]));
-//        hotelCollection.updateOne(Filters.eq("name", b.hotel.getName()), Updates.set("noRooms", noRoomsList));
-        //String bookingRef = new Date().toString();
-        
+
         Document document = new Document("bookingRef",b.getBookingRef())
                                         .append("customer", b.getCustomer().getUsername())
                                         .append("hotel", b.getHotel().getName())
@@ -254,11 +246,9 @@ public class DBConnect {
                 ArrayList hotelRooms = (ArrayList)hDoc.get("noRooms");
                 res[0] = (int)(double)(hotelRooms.get(0)) - maxSingle;
                 res[1] = (int)(double)(hotelRooms.get(1)) - maxDouble;
-                //System.out.println("Answer innwe:  "+ res[0] +"  "+res[1]);
                 break;
             }
         }        
-        //System.out.println("Answer: " +res[0] +"  "+res[1]);
         
         return res;
     }

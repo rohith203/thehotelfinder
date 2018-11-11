@@ -26,7 +26,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         initComponents();
         registerPane.setBackground(new Color(240,240,240,75));
         loginPane.setBackground(new Color(240,240,240,75));
-        //TheHotelFinder.db.updateRooms();
     }
 
     /**
@@ -533,23 +532,17 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         String username = loginUsernameField.getText();
         String password = loginPasswordField.getText();
         System.out.println(username + " " + password );
-        
-        //try{
-            //DBConnect db = new DBConnect();
-            if(TheHotelFinder.db.loginUser(username, password)){
-                setVisible(false);
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    public void run() {
-                         new HomePage().setVisible(true);
-                    }
-                });
-            }else{
-                showMessage("Enter correct credentials.");
-            }
-            //db.closeConnection();
-        //}catch(Exception e){
-        //    System.out.println(e);
-        //}
+
+        if(TheHotelFinder.db.loginUser(username, password)){
+            setVisible(false);
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                     new HomePage().setVisible(true);
+                }
+            });
+        }else{
+            showMessage("Enter correct credentials.");
+        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
@@ -568,8 +561,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         
         if(validate(name, dob, address, email, username, password, password1)){
             User u = new User(name, dob, address, email, username, password);
-            //try{
-                //DBConnect db = new DBConnect();
                 if(TheHotelFinder.db.registerUser(u)){
                     showMessage("You have been registered succesfully.");
                     jTabbedPane1.setSelectedIndex(0);         
@@ -577,11 +568,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                     //showMessage("Registration failed.");
                 }
 
-
-                //Thedb.closeConnection();
-           // }catch(Exception e){
-            //    System.out.println(e);
-            //}
         }
 
     }//GEN-LAST:event_registerBtnActionPerformed
@@ -607,11 +593,8 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
 
     private void enterLoginAction(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enterLoginAction
         // TODO add your handling code here:
-        //System.out.println(java.awt.event.KeyEvent.vk_ent);
-        //System.out.println(evt.getKeyCode());
         if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER){
             loginBtn.doClick();
-            //System.out.println("Enter");
         }
     }//GEN-LAST:event_enterLoginAction
 

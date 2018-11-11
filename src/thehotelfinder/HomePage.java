@@ -28,10 +28,13 @@ public class HomePage extends javax.swing.JFrame {
      */
     public HomePage() {
         initComponents();
+        
         scrollPane.setOpaque(false);
         scrollPane.getViewport().setOpaque(false);
         scrollPanePanel.setBackground(new Color(255,255,255,100));
+        
         greetTextLabel.setText("Hello " + TheHotelFinder.curUser.getName());
+        
         Calendar calendar = Calendar.getInstance(); // this would default to now
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         checkInDateChooserCombo.setMinDate(calendar);
@@ -43,7 +46,7 @@ public class HomePage extends javax.swing.JFrame {
         if(!waitingListRes.isEmpty()){
             bookWaitingList(waitingListRes);
             System.out.println(waitingListRes.get(0) + " " + waitingListRes.get(1) + " " +
-                    waitingListRes.get(2)+" " +waitingListRes.get(3)+" " +waitingListRes.get(4));
+                               waitingListRes.get(2)+" " +waitingListRes.get(3)+" " +waitingListRes.get(4));
         }
         
     }
@@ -100,8 +103,8 @@ public class HomePage extends javax.swing.JFrame {
 
         locationLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         locationLabel.setForeground(new java.awt.Color(51, 51, 51));
-        locationLabel.setText("LOCATION:");
-        HomePagePanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 108, -1, -1));
+        locationLabel.setText("LOCATION                         :");
+        HomePagePanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 150, 40));
 
         greetTextLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         greetTextLabel.setForeground(new java.awt.Color(102, 102, 102));
@@ -119,94 +122,87 @@ public class HomePage extends javax.swing.JFrame {
 
         checkInDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         checkInDateLabel.setForeground(new java.awt.Color(51, 51, 51));
-        checkInDateLabel.setText("CHECK IN ");
-        HomePagePanel.add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 94, -1, -1));
+        checkInDateLabel.setText("CHECK IN                      :");
+        HomePagePanel.add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 140, 35));
 
         checkOutDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         checkOutDateLabel.setForeground(new java.awt.Color(51, 51, 51));
-        checkOutDateLabel.setText("CHECK OUT");
-        HomePagePanel.add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 137, -1, -1));
+        checkOutDateLabel.setText("CHECK OUT                   :");
+        HomePagePanel.add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 140, 35));
 
         noRoomsLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         noRoomsLabel.setForeground(new java.awt.Color(51, 51, 51));
-        noRoomsLabel.setText("NUMBER OF ROOMS");
-        HomePagePanel.add(noRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 155, -1, -1));
+        noRoomsLabel.setText("NUMBER OF ROOMS      :");
+        HomePagePanel.add(noRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, 40));
 
         noPeopleLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
         noPeopleLabel.setForeground(new java.awt.Color(51, 51, 51));
-        noPeopleLabel.setText("NUMBER OF PEOPLE");
-        HomePagePanel.add(noPeopleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 174, -1, -1));
+        noPeopleLabel.setText("NUMBER OF PEOPLE   :");
+        HomePagePanel.add(noPeopleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 140, 35));
 
         noRoomsSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        HomePagePanel.add(noRoomsSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 151, 40, -1));
+        HomePagePanel.add(noRoomsSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 40, 30));
 
         noPeopleSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 40, -1));
-        HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 87, -1, -1));
+        HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 40, 30));
+        HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
+        HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, -1));
 
-        try {
-            checkOutDateChooserCombo.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2018, 10, 9),
-                new java.util.GregorianCalendar(2018, 10, 9))));
-    } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
-        e1.printStackTrace();
-    }
-    HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 130, -1, -1));
+        findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
+        findHotelBtn.setText("FIND HOTELS");
+        findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findHotelBtnActionPerformed(evt);
+            }
+        });
+        HomePagePanel.add(findHotelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
 
-    findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
-    findHotelBtn.setText("FIND HOTELS");
-    findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            findHotelBtnActionPerformed(evt);
-        }
-    });
-    HomePagePanel.add(findHotelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 238, -1, -1));
+        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
 
-    scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollPane.setPreferredSize(new java.awt.Dimension(900, 552));
+        scrollPanePanel.setLayout(new java.awt.GridLayout(10, 0, 10, 25));
+        scrollPane.setViewportView(scrollPanePanel);
 
-    scrollPanePanel.setLayout(new java.awt.GridLayout(10, 0, 10, 25));
-    scrollPane.setViewportView(scrollPanePanel);
+        HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
 
-    HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
+        cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
+        HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
-    cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
-    HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 104, -1, -1));
+        bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
+        HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
 
-    bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
-    HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
+        getContentPane().add(HomePagePanel, "card2");
 
-    getContentPane().add(HomePagePanel, "card2");
+        myAccountMenu.setText("My Account ");
 
-    myAccountMenu.setText("My Account ");
+        profileMenuItem.setText("My Profile");
+        profileMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileMenuItemActionPerformed(evt);
+            }
+        });
+        myAccountMenu.add(profileMenuItem);
 
-    profileMenuItem.setText("My Profile");
-    profileMenuItem.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            profileMenuItemActionPerformed(evt);
-        }
-    });
-    myAccountMenu.add(profileMenuItem);
+        bookingsMenuItem.setText("My Bookings");
+        bookingsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookingsMenuItemActionPerformed(evt);
+            }
+        });
+        myAccountMenu.add(bookingsMenuItem);
 
-    bookingsMenuItem.setText("My Bookings");
-    bookingsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            bookingsMenuItemActionPerformed(evt);
-        }
-    });
-    myAccountMenu.add(bookingsMenuItem);
+        jMenuBar.add(myAccountMenu);
 
-    jMenuBar.add(myAccountMenu);
+        helpMenu.setText("Help");
 
-    helpMenu.setText("Help");
+        aboutMenuItem.setText("About");
+        helpMenu.add(aboutMenuItem);
 
-    aboutMenuItem.setText("About");
-    helpMenu.add(aboutMenuItem);
+        jMenuBar.add(helpMenu);
 
-    jMenuBar.add(helpMenu);
+        setJMenuBar(jMenuBar);
 
-    setJMenuBar(jMenuBar);
-
-    pack();
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     

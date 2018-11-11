@@ -21,6 +21,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
         initComponents();
         bookingCardList = TheHotelFinder.db.getBookings(TheHotelFinder.curUser.getUsername());
         if(bookingCardList.isEmpty()){
+            infoLabel.setText("There are no bookings under your account.");
             return;
         }
         for(int i=0; i<bookingCardList.size(); i++){
@@ -42,6 +43,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
         MyBookingsPanel = new javax.swing.JPanel();
         jScrollPane = new javax.swing.JScrollPane();
         scrollPanePanel = new javax.swing.JPanel();
+        infoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(510, 140, 900, 800));
@@ -59,6 +61,11 @@ public class MyBookingsFrame extends javax.swing.JFrame {
 
         MyBookingsPanel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 900, 600));
 
+        infoLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 24)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(102, 102, 102));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MyBookingsPanel.add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+
         getContentPane().add(MyBookingsPanel, "card2");
 
         pack();
@@ -68,6 +75,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
     ArrayList bookingCardList;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MyBookingsPanel;
+    private javax.swing.JLabel infoLabel;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JPanel scrollPanePanel;
     // End of variables declaration//GEN-END:variables

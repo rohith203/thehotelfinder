@@ -189,9 +189,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="              Aadhar Card"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aadharLabelActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="panLabel">
           <Properties>
@@ -203,9 +200,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="               Pan Card"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="panLabelActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>

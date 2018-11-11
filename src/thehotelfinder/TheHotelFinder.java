@@ -15,13 +15,15 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class TheHotelFinder {
     static User curUser = null;
     static LoginRegisterFrame logRegFrame;
-    static DBConnect db = new DBConnect();
+    static DBConnect db;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-         try {
+        db = new DBConnect();
+        
+        try {
             // Set cross-platform Java L&F (also called "Metal")
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } 

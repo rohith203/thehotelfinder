@@ -84,20 +84,10 @@ public class BookingFrame extends javax.swing.JFrame {
         buttonGroup.add(aadharLabel);
         aadharLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         aadharLabel.setText("              Aadhar Card");
-        aadharLabel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aadharLabelActionPerformed(evt);
-            }
-        });
 
         buttonGroup.add(panLabel);
         panLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         panLabel.setText("               Pan Card");
-        panLabel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                panLabelActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setText("Please select an ID Proof    :");
@@ -221,14 +211,6 @@ public class BookingFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void aadharLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aadharLabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aadharLabelActionPerformed
-
-    private void panLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_panLabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_panLabelActionPerformed
 
     private void bookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookBtnActionPerformed
         // TODO add your handling code here:

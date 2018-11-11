@@ -38,7 +38,6 @@ public class HotelCard extends javax.swing.JPanel {
         singlePriceLabel.setText("\u20B9" + hotel.getCostArr()[0]);
         doublePriceLabel.setText("\u20B9" + hotel.getCostArr()[1]);
         
-        
         singleAvailableLabel.setText("(" + availableRoomsArr[0] + " available)");
         doubleAvailableLabel.setText("(" + availableRoomsArr[1] + " available)");
         int ndouble = noPeople-noRoomsUser;
@@ -259,16 +258,6 @@ public class HotelCard extends javax.swing.JPanel {
             jOptionPane1.showMessageDialog(this,"Please select atleast one room");
             return;
         }
-        
-//        int availableRoomsArr[] = TheHotelFinder.db.getMaxRooms(hotel.getName(), MyDate.toStringInit(checkInDate), MyDate.toStringInit(checkOutDate));
-//        if(nsingle >= availableRoomsArr[0] && ndouble >= availableRoomsArr[1]){
-//            waitListBtn.setVisible(false);
-//            dealBtn.setVisible(true);
-//        }else{
-//            waitListBtn.setVisible(true);
-//            dealBtn.setVisible(false);
-//        }
-        
         
         priceValueLabel.setText("\u20B9" + (nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1]));
     }//GEN-LAST:event_roomsSpinnerStateChanged
