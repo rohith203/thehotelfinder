@@ -507,7 +507,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     mainPagePane.add(jTabbedPane1);
     jTabbedPane1.setBounds(-1, 140, 500, 660);
 
-    bgImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel_image_blur.jpg")); // NOI18N
+    bgImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/hotel_image_blur.jpg"))); // NOI18N
     mainPagePane.add(bgImgLabel);
     bgImgLabel.setBounds(0, 0, 500, 800);
 
@@ -537,7 +537,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             setVisible(false);
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                     new HomePage().setVisible(true);
+                     new HomePageFrame().setVisible(true);
                 }
             });
         }else{

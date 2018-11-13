@@ -5,6 +5,7 @@
  */
 package thehotelfinder;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,12 @@ public class ModifyFrame extends javax.swing.JFrame {
     public ModifyFrame(String bookingRef, String hotelName) {
         this.bookingRef = bookingRef;
         initComponents();
+        
+         Calendar calendar = Calendar.getInstance(); // this would default to now
+        calendar.add(Calendar.DAY_OF_MONTH, -1);
+        checkIndateChooser.setMinDate(calendar);
+        Calendar calendar1 = Calendar.getInstance(); // this would default to now
+        checkOutdateChooser.setMinDate(calendar1);
     }
 
     /**
@@ -54,6 +61,10 @@ public class ModifyFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Check Out Date           :");
+
+        singleSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        doubleSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("No. of Single Rooms     :");

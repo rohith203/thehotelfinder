@@ -7,6 +7,7 @@ package thehotelfinder;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,12 +22,12 @@ import javax.swing.UIManager;
  *
  * @author divakar
  */
-public class HomePage extends javax.swing.JFrame {
+public class HomePageFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form HomePage
      */
-    public HomePage() {
+    public HomePageFrame() {
         initComponents();
         
         scrollPane.setOpaque(false);
@@ -253,7 +254,7 @@ public class HomePage extends javax.swing.JFrame {
         for(int i=0; i<hotelCardList.size(); i++){
             scrollPanePanel.remove((HotelCard)hotelCardList.get(i));
         }
-        
+
         String location = cityComboBox.getItemAt(cityComboBox.getSelectedIndex());
         if(location.equals("Hyderabad")){
             bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\hyderabad.jpg"));
