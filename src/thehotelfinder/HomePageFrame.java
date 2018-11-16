@@ -94,7 +94,7 @@ public class HomePageFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        HomePagePanel.setBackground(new java.awt.Color(245, 245, 245));
+        HomePagePanel.setBackground(new java.awt.Color(250, 250, 250));
         HomePagePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "The Hotel Finder", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lithos Pro Regular", 0, 24))); // NOI18N
         HomePagePanel.setPreferredSize(new java.awt.Dimension(900, 800));
         HomePagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

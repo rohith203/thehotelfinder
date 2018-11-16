@@ -230,6 +230,14 @@ public class BookingFrame extends javax.swing.JFrame {
             optionPane.showMessageDialog(this, "Please enter the id proof.");
             return;
         }
+        if(proofType.equals("aadhar") && proofValue.length()!=12){
+            optionPane.showMessageDialog(this, "Please enter a 12 digit Aadhar number.");
+            return;
+        }
+        if(proofType.equals("pan") && proofValue.length()!=10){
+            optionPane.showMessageDialog(this, "Please enter a Permanent Account Number of length 10.");
+            return;
+        }
         Booking b = new Booking(TheHotelFinder.curUser, hotel, noRoomsBooked, noPeople, checkInDate, checkOutDate, proofType, proofValue);
         TheHotelFinder.db.addBooking(b);
         optionPane.showMessageDialog(this, "Hotel Succesfully Booked. Your Reference No: " + b.getBookingRef());

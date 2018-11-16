@@ -35,7 +35,7 @@ public class MyBookingCard extends javax.swing.JPanel {
         }else if(ndouble!=0 && nsingle==0){
             roomsLabel.setText(ndouble + " double room(s)");
         }else{
-            roomsLabel.setText(nsingle + " single room(s) and " + ndouble + " double rooms(s)");
+            roomsLabel.setText("<html>"+nsingle + " single room(s) and <br>" + ndouble + " double rooms(s)</html>");
         }
         String status = "";
         Date curDate = new Date();
@@ -195,8 +195,10 @@ public class MyBookingCard extends javax.swing.JPanel {
         int rating = ratingComboBox.getSelectedIndex();
         if(TheHotelFinder.db.giveRating(rating, hotelName, bookingRef)){
             System.out.println("Rating: " + rating);
+            JOptionPane.showMessageDialog(this, "Rating = " + rating);
         }else{
-            System.out.println("Rating already given");       
+            System.out.println("Rating already given");      
+            JOptionPane.showMessageDialog(this, "Rating already given for this booking.");
         }
         
     }//GEN-LAST:event_ratingBtnActionPerformed

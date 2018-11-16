@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.UIManager;
 
@@ -26,6 +27,12 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         initComponents();
         registerPane.setBackground(new Color(240,240,240,75));
         loginPane.setBackground(new Color(240,240,240,75));
+        Calendar calendar = Calendar.getInstance(); // this would default to now
+        calendar.add(Calendar.YEAR, -14);
+        dateChooserCombo.setMaxDate(calendar);
+        Calendar calendar1 = Calendar.getInstance(); // this would default to now
+        calendar1.add(Calendar.YEAR, -130);
+        dateChooserCombo.setMinDate(calendar1);
     }
 
     /**
@@ -393,6 +400,13 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 true)));
     dateChooserCombo.setFormat(2);
     dateChooserCombo.setWeekStyle(datechooser.view.WeekDaysStyle.SHORT);
+    try {
+        dateChooserCombo.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(1999, 2, 20),
+            new java.util.GregorianCalendar(1999, 2, 20))));
+} catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+    e1.printStackTrace();
+    }
+    dateChooserCombo.setFieldFont(new java.awt.Font("Franklin Gothic Medium", java.awt.Font.PLAIN, 14));
 
     cityTextField.setColumns(10);
     cityTextField.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
@@ -619,28 +633,17 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
     }
     
     private boolean validate(String name, String  dob, String  address[], String  email, String username, String password, String password1){
-        if(name.isEmpty()){
+         if(name.isEmpty() || name.equals(nameField.getName())){
             showMessage("Name field is empty");
             return false;
         }
-        if(password.isEmpty() | password.length()<6){
-            showMessage("Minimum size for password is 6.");
-            return false;
-        }
-        if(!password.equals(password1)){
-            showMessage("Password does not match");
-            return false;
-        }
-        if(email.isEmpty()){
-            showMessage("Email field is empty");
-            return false;
-        }
-        if(address[0].isEmpty() | address[1].isEmpty() | address[2].isEmpty()){
+        if(address[0].isEmpty() | address[1].isEmpty() | address[2].isEmpty() |
+            address[0].equals(streetTextField.getName()) | address[1].equals(cityTextField.getName()) | address[2].equals(stateTextField.getName()) ){
             showMessage("One of the Address fields is empty");
             return false;
         }
-        if(username.isEmpty()){
-            showMessage("Username field is empty");
+        if(email.isEmpty() | email.equals(emailField.getName())){
+            showMessage("Email field is empty");
             return false;
         }
         String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
@@ -648,6 +651,20 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             showMessage("Enter valid email address.");
             return false;
         }
+        if(username.isEmpty() | username.equals(usernameField.getName())){
+            showMessage("Username field is empty");
+            return false;
+        }
+        if(password.isEmpty() | password.length()<6 || password.equals(passwordField.getName())){
+            showMessage("Minimum size for password is 6.");
+            return false;
+        }
+        if(!password.equals(password1)){
+            showMessage("Password does not match");
+            return false;
+        }
+        
+        
         
         SimpleDateFormat formatter = new SimpleDateFormat("dd MMM, yyyy");
         
