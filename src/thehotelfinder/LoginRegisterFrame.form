@@ -81,7 +81,7 @@
         <Component class="javax.swing.JLabel" name="searchImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Rohith\Downloads\search.png"/>
+              <Image iconType="3" name="/thehotelfinder/imgs/search.png"/>
             </Property>
           </Properties>
           <Constraints>

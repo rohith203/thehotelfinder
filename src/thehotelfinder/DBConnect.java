@@ -7,6 +7,7 @@ package thehotelfinder;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
+import com.mongodb.MongoSocketOpenException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -14,9 +15,11 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import static com.mongodb.client.model.Updates.combine;
 import com.mongodb.client.result.UpdateResult;
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 import org.bson.Document;
 
 
@@ -29,10 +32,21 @@ public class DBConnect {
     private MongoDatabase database;
 
     public DBConnect(){
+        try {
             mongoClient = new MongoClient("localhost", 27017);
             System.out.println("Database connection created");
-            database = mongoClient.getDatabase("mydb");
-            System.out.println("Connected to mydb.");
+            mongoClient.getAddress();
+        }catch(MongoSocketOpenException e){
+                    System.out.println("Database unavailable!");
+        }catch (Exception e) {
+            System.out.println("Database unavailable!");
+            mongoClient.close();
+            JOptionPane.showMessageDialog(TheHotelFinder.logRegFrame,"Unable to connect to database");
+            System.exit(0);
+            return;
+        }
+        database = mongoClient.getDatabase("mydb");
+        System.out.println("Connected to mydb.");
     }
     
     public boolean addToWaitingList(String username, String hotelName, int noPeople, String checkIn, String checkOut){

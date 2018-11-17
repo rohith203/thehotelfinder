@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -93,7 +94,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         mainPagePane.add(logoLabel2);
         logoLabel2.setBounds(260, 80, 230, 70);
 
-        searchImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\search.png")); // NOI18N
+        searchImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/search.png"))); // NOI18N
         mainPagePane.add(searchImageLabel);
         searchImageLabel.setBounds(310, 10, 50, 110);
 
@@ -545,6 +546,15 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = loginUsernameField.getText();
         String password = loginPasswordField.getText();
+        
+        if(username.equals(loginUsernameField.getName()) || username.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Username field is empty");
+            return;
+        }
+        if(password.equals(loginPasswordField.getName()) || password.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Password field is empty");
+            return;
+        }
         System.out.println(username + " " + password );
 
         if(TheHotelFinder.db.loginUser(username, password)){
@@ -581,7 +591,6 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
                 }else{
                     //showMessage("Registration failed.");
                 }
-
         }
 
     }//GEN-LAST:event_registerBtnActionPerformed

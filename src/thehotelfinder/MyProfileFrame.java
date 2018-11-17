@@ -64,13 +64,13 @@ public class MyProfileFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        MyAccountPanel.setBackground(new java.awt.Color(245, 245, 245));
+        MyAccountPanel.setBackground(new java.awt.Color(254, 249, 243));
         MyAccountPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "My Account", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Orator Std", 0, 24))); // NOI18N
         MyAccountPanel.setPreferredSize(new java.awt.Dimension(600, 600));
 
         jLabel1.setBackground(new java.awt.Color(102, 102, 102));
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel1.setText("Full Name:");
+        jLabel1.setText("Full Name             :");
 
         nameLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         nameLabel.setForeground(new java.awt.Color(60, 60, 60));
@@ -83,7 +83,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(102, 102, 102));
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel3.setText("Address:");
+        jLabel3.setText("Address                 :");
 
         addressLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         addressLabel.setForeground(new java.awt.Color(60, 60, 60));
@@ -91,7 +91,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(102, 102, 102));
         jLabel5.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel5.setText("Date of Birth:");
+        jLabel5.setText("Date of Birth         :");
 
         dobLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         dobLabel.setForeground(new java.awt.Color(60, 60, 60));
@@ -99,7 +99,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(102, 102, 102));
         jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel7.setText("Email:");
+        jLabel7.setText("Email                     :");
 
         emailLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(60, 60, 60));
@@ -111,7 +111,7 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel12.setText("Password:");
+        jLabel12.setText("Password              :");
 
         passwordToggleBtn.setText("show");
         passwordToggleBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -122,13 +122,13 @@ public class MyProfileFrame extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(102, 102, 102));
         jLabel8.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 20)); // NOI18N
-        jLabel8.setText("Username:");
+        jLabel8.setText("Username             :");
 
         usernameLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         usernameLabel.setForeground(new java.awt.Color(60, 60, 60));
         usernameLabel.setText("Username");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Downloads\\hotel_image.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/account.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(500, 500));
 
         jLabel4.setBackground(new java.awt.Color(245, 245, 245));
@@ -140,19 +140,22 @@ public class MyProfileFrame extends javax.swing.JFrame {
         MyAccountPanel.setLayout(MyAccountPanelLayout);
         MyAccountPanelLayout.setHorizontalGroup(
             MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
             .addGroup(MyAccountPanelLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addGroup(MyAccountPanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(MyAccountPanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel12))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameLabel)
@@ -164,41 +167,44 @@ public class MyProfileFrame extends javax.swing.JFrame {
                             .addComponent(dobLabel)
                             .addComponent(addressLabel)
                             .addComponent(emailLabel))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         MyAccountPanelLayout.setVerticalGroup(
             MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MyAccountPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameLabel)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MyAccountPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MyAccountPanelLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(nameLabel)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dobLabel))
                 .addGap(18, 18, 18)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addressLabel))
                 .addGap(18, 18, 18)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailLabel))
                 .addGap(18, 18, 18)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernameLabel))
                 .addGap(18, 18, 18)
                 .addGroup(MyAccountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordLabel)
                     .addComponent(passwordToggleBtn))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         getContentPane().add(MyAccountPanel, "card2");

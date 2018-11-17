@@ -24,6 +24,16 @@ public class MyBookingsFrame extends javax.swing.JFrame {
             infoLabel.setText("There are no bookings under your account.");
             return;
         }
+        int n = bookingCardList.size();
+        int numNotCheckedIn = 0;
+        for(int i=0; i<n; i++){
+            String s = ((MyBookingCard)bookingCardList.get(i)).getStatus();
+            if(s.equals("NOT CHECKED IN")){
+                numNotCheckedIn+=1;
+            }
+        }
+        infoLabel.setText("You have " + numNotCheckedIn + " booking(s) not Checked In");
+
         for(int i=0; i<bookingCardList.size(); i++){
            scrollPanePanel.add((MyBookingCard)bookingCardList.get(i));
         }
@@ -50,12 +60,14 @@ public class MyBookingsFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
 
+        MyBookingsPanel.setBackground(new java.awt.Color(254, 249, 243));
         MyBookingsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "My Bookings", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semibold", 0, 24), new java.awt.Color(0, 102, 255))); // NOI18N
         MyBookingsPanel.setPreferredSize(new java.awt.Dimension(900, 800));
         MyBookingsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        scrollPanePanel.setBackground(new java.awt.Color(254, 249, 243));
         scrollPanePanel.setLayout(new java.awt.GridLayout(25, 0, 0, 25));
         jScrollPane.setViewportView(scrollPanePanel);
 

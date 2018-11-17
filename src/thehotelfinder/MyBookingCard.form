@@ -293,7 +293,7 @@
     <Component class="javax.swing.JLabel" name="bgLabel">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Rohith\Documents\NetBeansProjects\TheHotelFinder\images\Photo-Background-Application.jpg"/>
+          <Image iconType="3" name="/thehotelfinder/imgs/Photo-Background-Application.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>

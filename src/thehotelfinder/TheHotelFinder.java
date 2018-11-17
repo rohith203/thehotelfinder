@@ -20,9 +20,7 @@ public class TheHotelFinder {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        db = new DBConnect();
-        
+            db = new DBConnect();
         try {
             // Set cross-platform Java L&F (also called "Metal")
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

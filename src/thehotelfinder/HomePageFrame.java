@@ -32,7 +32,7 @@ public class HomePageFrame extends javax.swing.JFrame {
         
         scrollPane.setOpaque(false);
         scrollPane.getViewport().setOpaque(false);
-        scrollPanePanel.setBackground(new Color(255,255,255,100));
+        scrollPanePanel.setBackground(new Color(255,255,255,75));
         
         greetTextLabel.setText("Hello " + TheHotelFinder.curUser.getName());
         
@@ -94,23 +94,23 @@ public class HomePageFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        HomePagePanel.setBackground(new java.awt.Color(250, 250, 250));
+        HomePagePanel.setBackground(new java.awt.Color(254, 249, 243));
         HomePagePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "The Hotel Finder", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lithos Pro Regular", 0, 24))); // NOI18N
         HomePagePanel.setPreferredSize(new java.awt.Dimension(900, 800));
         HomePagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         line_separator.setPreferredSize(new java.awt.Dimension(900, 10));
-        HomePagePanel.add(line_separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 76, 888, -1));
+        HomePagePanel.add(line_separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, 888, 1));
 
-        locationLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        locationLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 15)); // NOI18N
         locationLabel.setForeground(new java.awt.Color(51, 51, 51));
-        locationLabel.setText("LOCATION                         :");
-        HomePagePanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 150, 40));
+        locationLabel.setText("Location    :");
+        HomePagePanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 90, 20));
 
         greetTextLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
         greetTextLabel.setForeground(new java.awt.Color(102, 102, 102));
         greetTextLabel.setText("Hello");
-        HomePagePanel.add(greetTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 42, -1, -1));
+        HomePagePanel.add(greetTextLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         logoutBtn.setForeground(new java.awt.Color(51, 51, 51));
         logoutBtn.setText("LOGOUT");
@@ -121,34 +121,35 @@ public class HomePageFrame extends javax.swing.JFrame {
         });
         HomePagePanel.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(787, 27, -1, -1));
 
-        checkInDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        checkInDateLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 15)); // NOI18N
         checkInDateLabel.setForeground(new java.awt.Color(51, 51, 51));
-        checkInDateLabel.setText("CHECK IN                      :");
-        HomePagePanel.add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 140, 35));
+        checkInDateLabel.setText("Check In Date     :");
+        HomePagePanel.add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 130, 30));
 
-        checkOutDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        checkOutDateLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 15)); // NOI18N
         checkOutDateLabel.setForeground(new java.awt.Color(51, 51, 51));
-        checkOutDateLabel.setText("CHECK OUT                   :");
-        HomePagePanel.add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 140, 35));
+        checkOutDateLabel.setText("Check Out Date  :");
+        HomePagePanel.add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 130, 30));
 
-        noRoomsLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        noRoomsLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 15)); // NOI18N
         noRoomsLabel.setForeground(new java.awt.Color(51, 51, 51));
-        noRoomsLabel.setText("NUMBER OF ROOMS      :");
-        HomePagePanel.add(noRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, 40));
+        noRoomsLabel.setText("Number of Rooms  :");
+        HomePagePanel.add(noRoomsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 150, 30));
 
-        noPeopleLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 13)); // NOI18N
+        noPeopleLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 15)); // NOI18N
         noPeopleLabel.setForeground(new java.awt.Color(51, 51, 51));
-        noPeopleLabel.setText("NUMBER OF PEOPLE   :");
-        HomePagePanel.add(noPeopleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 140, 35));
+        noPeopleLabel.setText("Number of People  :");
+        HomePagePanel.add(noPeopleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 150, 30));
 
         noRoomsSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        HomePagePanel.add(noRoomsSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 40, 30));
+        HomePagePanel.add(noRoomsSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 40, 30));
 
         noPeopleSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 40, 30));
-        HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
-        HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, -1));
+        HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 30));
+        HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, -1, 30));
+        HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, -1, 30));
 
+        findHotelBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         findHotelBtn.setForeground(new java.awt.Color(51, 51, 51));
         findHotelBtn.setText("FIND HOTELS");
         findHotelBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -167,8 +168,9 @@ public class HomePageFrame extends javax.swing.JFrame {
         HomePagePanel.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 525));
 
         cityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hyderabad", "New Delhi", "Kolkata", "Bangalore", "Mumbai" }));
-        HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        HomePagePanel.add(cityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 100, 20));
 
+        bgImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/beach.jpg"))); // NOI18N
         bgImgLabel.setPreferredSize(new java.awt.Dimension(900, 700));
         HomePagePanel.add(bgImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 900, 520));
 

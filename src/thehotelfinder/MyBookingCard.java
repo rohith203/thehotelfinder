@@ -5,6 +5,8 @@
  */
 package thehotelfinder;
 
+import java.awt.Component;
+import java.awt.Container;
 import java.util.Date;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -48,12 +50,16 @@ public class MyBookingCard extends javax.swing.JPanel {
         }else{
             status+="CHECKED OUT";
         }
+        this.status = status;
         statusLabel.setText(status);
         
         if(MyDate.getDays(checkIn, MyDate.toStringInit(curDate))<3){
             modifyBtn.setVisible(false);
         }
-        
+        if(status.equals("CHECKED OUT")){
+            modifyBtn.setVisible(false);
+            cancelBtn.setVisible(false);
+        }
         totalAmountLabel.setText("\u20B9"+totalAmount);
 
     }
@@ -185,7 +191,7 @@ public class MyBookingCard extends javax.swing.JPanel {
         });
         add(ratingComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, -1, -1));
 
-        bgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\Photo-Background-Application.jpg")); // NOI18N
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/Photo-Background-Application.jpg"))); // NOI18N
         bgLabel.setText("jLabel4");
         add(bgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 300));
     }// </editor-fold>//GEN-END:initComponents
@@ -222,10 +228,10 @@ public class MyBookingCard extends javax.swing.JPanel {
         int n = 0;
         if(MyDate.getDays(checkIn, MyDate.toStringInit(curDate))<3){
             double half = totalAmount * 0.5;
-            msg += "Only 50% of the total amount \u20B9" + half +"of this booking will be given back. ";
+            msg += "Only 50% of the total amount \u20B9" + half +" of this booking will refunded.";
         }
         
-        n = JOptionPane.showConfirmDialog(this,msg+"Are you sure? Do you want to cancel this booking?", "Confirm", JOptionPane.YES_NO_OPTION);
+        n = JOptionPane.showConfirmDialog(this,"<html>"+msg+"<br>Are you sure? Do you want to cancel this booking?</html>", "Confirm", JOptionPane.YES_NO_OPTION);
 
         if(n==1){
             return;
@@ -237,11 +243,15 @@ public class MyBookingCard extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cancelBtnActionPerformed
 
+    public String getStatus(){
+        return status;
+    }
     private String hotelName;
     private String bookingRef;
     private String checkIn;
     private String checkOut;
     private double totalAmount;
+    private String status;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLabel;
     private javax.swing.JLabel bookingRefLabel;

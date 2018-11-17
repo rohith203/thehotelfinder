@@ -143,25 +143,32 @@ public class ModifyFrame extends javax.swing.JFrame {
     private void modifyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyBtnActionPerformed
         // TODO add your handling code here:
         Date curDate = new Date();
+        curDate = MyDate.removeTime(curDate);
         String newCheckIn = checkIndateChooser.getText();
         String newCheckOut = checkOutdateChooser.getText();
         int newsingle = (int)singleSpinner.getValue();
         int newdouble = (int)doubleSpinner.getValue();
+        if(newsingle==0 && newdouble==0){
+            JOptionPane.showMessageDialog(this, "Please select a room.");
+            return;
+        }
         int roomsArr[] = TheHotelFinder.db.getMaxRooms(bookingRef, newCheckIn, newCheckOut);
         if(newsingle<roomsArr[0] || newdouble<roomsArr[1]){
             System.out.println("not avialable");
             return;
         }
+        
         if((MyDate.toDate(newCheckIn).after(curDate) || MyDate.toDate(newCheckIn).equals(curDate)) && 
            MyDate.toDate(newCheckOut).after(MyDate.toDate(newCheckIn))
           ){
             System.out.println("valid");
             boolean flag = TheHotelFinder.db.modifyBooking(bookingRef, newCheckIn, newCheckOut, newsingle, newdouble);
             if(flag) JOptionPane.showMessageDialog(this, "Booking modified successfully!");
+            else JOptionPane.showMessageDialog(this, "Rooms not available in these dates");
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(this, "Rooms not available in these dates");
             System.out.println("invalid");
+            JOptionPane.showMessageDialog(this, "Enter valid details");
         }
         
     }//GEN-LAST:event_modifyBtnActionPerformed

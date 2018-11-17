@@ -34,7 +34,7 @@ public class HotelCard extends javax.swing.JPanel {
         hotelNameLabel.setText(hotel.name);
         DecimalFormat df = new DecimalFormat("#.##");
         ratingValueLabel.setText("" + df.format(hotel.getAvgRating()) + "/5");
-        reviewsLabel.setText("( " + hotel.getRatingArr().size() + " reviews)");
+        reviewsLabel.setText("( " + hotel.getRatingArr().size() + " ratings)");
         singlePriceLabel.setText("\u20B9" + hotel.getCostArr()[0]);
         doublePriceLabel.setText("\u20B9" + hotel.getCostArr()[1]);
         
@@ -56,8 +56,9 @@ public class HotelCard extends javax.swing.JPanel {
         doubleSpinner.setValue(ndouble);
         priceValueLabel.setText("\u20B9" + ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights));
         waitListBtn.setVisible(false);
-        if((availableRoomsArr[0]==0 && availableRoomsArr[1]==0) || 
-           (noPeople>availableRoomsArr[0] && noPeople>(2*availableRoomsArr[1]))){
+        if((availableRoomsArr[0]==0 && availableRoomsArr[1]==0 ) || 
+           (noPeople>availableRoomsArr[0] && noPeople>(2*availableRoomsArr[1]))
+           ){
             waitListBtn.setVisible(true);
             dealBtn.setVisible(false);
         }
@@ -94,7 +95,7 @@ public class HotelCard extends javax.swing.JPanel {
         hotelImgLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
-        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 1, new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(850, 300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -215,7 +216,7 @@ public class HotelCard extends javax.swing.JPanel {
         });
         add(waitListBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, 30));
 
-        hotelImgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\bluebg.jpg")); // NOI18N
+        hotelImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/bluebg.jpg"))); // NOI18N
         add(hotelImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -266,7 +267,7 @@ public class HotelCard extends javax.swing.JPanel {
         // TODO add your handling code here:
         TheHotelFinder.db.addToWaitingList(TheHotelFinder.curUser.getUsername(), hotel.getName(), noPeople,
                                            MyDate.toStringInit(checkInDate),  MyDate.toStringInit(checkOutDate));
-        JOptionPane.showMessageDialog(this, "added to waitinglist");
+        JOptionPane.showMessageDialog(this, "Added to waiting list");
         
     }//GEN-LAST:event_waitListBtnActionPerformed
 
