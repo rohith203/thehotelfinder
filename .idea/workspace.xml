@@ -2,76 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6e37030-a7e5-4fef-9c82-c6e5a11412ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/DBConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/DBConnect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/ModifyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/ModifyFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/Booking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/BookingFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/BookingFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/BookingFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/DBConnect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/Hotel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$21.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$22.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$23.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/LoginRegisterFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/ModifyFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/ModifyFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/User.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/TheHotelFinder.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TheHotelFinder.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/BookingFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/BookingFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/BookingFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/BookingFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HomePageFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HomePageFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelCard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/LoginRegisterFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/LoginRegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/ModifyFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/ModifyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingCard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingsFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyProfileFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyProfileFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/TheHotelFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/TheHotelFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,25 +104,28 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="JAVA/thehotelfinder" value="1" />
-          <entry key="JavaScript-modules-diagram/C:/Users/Rohith/Documents/NetBeansProjects/TheHotelFinder/src/thehotelfinder" value="2" />
+          <entry key="JAVA/thehotelfinder" value="2" />
+          <entry key="JavaScript-modules-diagram/C:/Users/Rohith/Documents/NetBeansProjects/TheHotelFinder/src/thehotelfinder" value="3" />
+          <entry key="databaseutil" value="1" />
+          <entry key="frames" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="UML" value="3" />
+          <entry key="UML" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="uml://JAVA/thehotelfinder">
           <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -111,30 +133,233 @@
               <ID>JAVA</ID>
               <OriginalElement>thehotelfinder</OriginalElement>
               <nodes>
-                <node x="307.0" y="296.0">thehotelfinder.imgs</node>
-                <node x="198.0" y="0.0">thehotelfinder.MyBookingsFrame</node>
-                <node x="185.0" y="74.0">thehotelfinder.MyBookingCard</node>
-                <node x="0.0" y="148.0">thehotelfinder.MyProfileFrame</node>
-                <node x="0.0" y="0.0">thehotelfinder.LoginRegisterFrame</node>
-                <node x="0.0" y="296.0">thehotelfinder.HotelFrame</node>
-                <node x="0.0" y="74.0">thehotelfinder.HomePageFrame</node>
-                <node x="0.0" y="370.0">thehotelfinder.HotelCard</node>
-                <node x="176.0" y="148.0">thehotelfinder.TheHotelFinder</node>
-                <node x="284.0" y="370.0">thehotelfinder.MyDate</node>
-                <node x="0.0" y="444.0">thehotelfinder.Hotel</node>
-                <node x="169.0" y="222.0">thehotelfinder.ModifyFrame</node>
-                <node x="147.0" y="370.0">thehotelfinder.Booking</node>
-                <node x="0.0" y="222.0">thehotelfinder.BookingFrame</node>
-                <node x="122.0" y="444.0">thehotelfinder.User</node>
-                <node x="155.0" y="296.0">thehotelfinder.DBConnect</node>
+                <node x="403.2737373737374" y="0.0">thehotelfinder.imgs</node>
+                <node x="207.69646464646465" y="626.0">thehotelfinder.frames</node>
+                <node x="24.77373737373739" y="350.0">thehotelfinder.TheHotelFinder</node>
+                <node x="195.4338383838384" y="211.0">thehotelfinder.databaseutil</node>
+                <node x="0.0" y="0.0">thehotelfinder.MyDate</node>
               </nodes>
               <notes />
-              <edges />
-              <settings layout="Hierarchic Group" zoom="1.0" x="205.5" y="236.5" />
+              <edges>
+                <edge source="thehotelfinder.frames" target="thehotelfinder.databaseutil">
+                  <point x="51.11111111111114" y="-14.5" />
+                  <point x="316.3075757575758" y="606.0" />
+                  <point x="344.2737373737374" y="606.0" />
+                  <point x="344.2737373737374" y="300.0" />
+                  <point x="332.88838383838385" y="300.0" />
+                  <point x="65.45454545454544" y="14.5" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil" target="thehotelfinder.databaseutil">
+                  <point x="-39.272727272727266" y="14.5" />
+                  <point x="228.16111111111115" y="280.0" />
+                  <point x="155.4338383838384" y="280.0" />
+                  <point x="155.4338383838384" y="215.83333333333331" />
+                  <point x="-72.0" y="-9.666666666666686" />
+                </edge>
+                <edge source="thehotelfinder.TheHotelFinder" target="thehotelfinder.frames">
+                  <point x="34.5" y="103.0" />
+                  <point x="197.2737373737374" y="576.0" />
+                  <point x="252.41868686868688" y="576.0" />
+                  <point x="-12.777777777777771" y="-14.5" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil" target="thehotelfinder.TheHotelFinder">
+                  <point x="13.090909090909065" y="14.5" />
+                  <point x="280.52474747474747" y="330.0" />
+                  <point x="266.2737373737374" y="330.0" />
+                  <point x="103.5" y="-103.0" />
+                </edge>
+                <edge source="thehotelfinder.frames" target="thehotelfinder.MyDate">
+                  <point x="-51.111111111111086" y="-14.5" />
+                  <point x="214.08535353535356" y="606.0" />
+                  <point x="14.27373737373739" y="606.0" />
+                  <point x="14.27373737373739" y="186.0" />
+                  <point x="75.5" y="186.0" />
+                  <point x="-75.5" y="80.5" />
+                </edge>
+                <edge source="thehotelfinder.frames" target="thehotelfinder.frames">
+                  <point x="-28.75" y="14.5" />
+                  <point x="236.44646464646465" y="675.0" />
+                  <point x="187.69646464646465" y="675.0" />
+                  <point x="187.69646464646465" y="647.75" />
+                  <point x="-57.5" y="7.25" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil" target="thehotelfinder.frames">
+                  <point x="39.27272727272731" y="14.5" />
+                  <point x="306.7065656565657" y="320.0" />
+                  <point x="322.2737373737374" y="320.0" />
+                  <point x="322.2737373737374" y="586.0" />
+                  <point x="290.75202020202016" y="586.0" />
+                  <point x="25.555555555555543" y="-14.5" />
+                </edge>
+                <edge source="thehotelfinder.frames" target="thehotelfinder.TheHotelFinder">
+                  <point x="-38.333333333333314" y="-14.5" />
+                  <point x="226.86313131313133" y="596.0" />
+                  <point x="59.27373737373739" y="596.0" />
+                  <point x="-103.5" y="103.0" />
+                </edge>
+                <edge source="thehotelfinder.TheHotelFinder" target="thehotelfinder.databaseutil">
+                  <point x="-103.5" y="-103.0" />
+                  <point x="59.27373737373739" y="300.0" />
+                  <point x="241.25202020202022" y="300.0" />
+                  <point x="-26.181818181818187" y="14.5" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil" target="thehotelfinder.MyDate">
+                  <point x="0.0" y="-14.5" />
+                  <point x="267.4338383838384" y="186.0" />
+                  <point x="226.5" y="186.0" />
+                  <point x="75.5" y="80.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="378.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/thehotelfinder.databaseutil">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>thehotelfinder.databaseutil</OriginalElement>
+              <nodes>
+                <node x="42.25000000000003" y="1216.0">thehotelfinder.databaseutil.DBConnect</node>
+                <node x="121.25" y="674.0">thehotelfinder.databaseutil.Booking</node>
+                <node x="250.0" y="99.0">thehotelfinder.databaseutil.User</node>
+                <node x="0.0" y="0.0">thehotelfinder.databaseutil.Hotel</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.Booking">
+                  <point x="0.0" y="-191.0" />
+                  <point x="231.25000000000003" y="1191.0" />
+                  <point x="234.75" y="1191.0" />
+                  <point x="0.0" y="246.0" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.User">
+                  <point x="151.2" y="-191.0" />
+                  <point x="382.45000000000005" y="1191.0" />
+                  <point x="387.9265625" y="1191.0" />
+                  <point x="387.9265625" y="649.0" />
+                  <point x="426.75" y="649.0" />
+                  <point x="75.75" y="213.0" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.Hotel">
+                  <point x="-75.60000000000002" y="-191.0" />
+                  <point x="155.65" y="1191.0" />
+                  <point x="91.26093750000001" y="1191.0" />
+                  <point x="91.26093750000001" y="649.0" />
+                  <point x="86.25" y="649.0" />
+                  <point x="-28.75" y="312.0" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil.Booking" target="thehotelfinder.databaseutil.User">
+                  <point x="28.375" y="-246.0" />
+                  <point x="263.125" y="649.0" />
+                  <point x="275.25" y="649.0" />
+                  <point x="-75.75" y="213.0" />
+                </edge>
+                <edge source="thehotelfinder.databaseutil.Booking" target="thehotelfinder.databaseutil.Hotel">
+                  <point x="-28.375" y="-246.0" />
+                  <point x="206.375" y="649.0" />
+                  <point x="201.25" y="649.0" />
+                  <point x="86.25" y="312.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="18.000000000000057" y="995.5" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/thehotelfinder.frames">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>thehotelfinder.frames</OriginalElement>
+              <nodes>
+                <node x="319.99999999999994" y="0.0">thehotelfinder.frames.ModifyFrame</node>
+                <node x="381.99999999999994" y="378.0">thehotelfinder.frames.MyBookingsFrame</node>
+                <node x="0.0" y="356.0">thehotelfinder.frames.MyProfileFrame</node>
+                <node x="696.0" y="334.0">thehotelfinder.frames.HotelCard</node>
+                <node x="667.5" y="167.0">thehotelfinder.frames.HotelFrame</node>
+                <node x="488.74999999999994" y="523.0">thehotelfinder.frames.HomePageFrame</node>
+                <node x="454.74999999999994" y="800.0">thehotelfinder.frames.LoginRegisterFrame</node>
+                <node x="303.49999999999994" y="123.0">thehotelfinder.frames.MyBookingCard</node>
+                <node x="908.5" y="145.0">thehotelfinder.frames.BookingFrame</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="thehotelfinder.frames.LoginRegisterFrame" target="thehotelfinder.frames.HomePageFrame">
+                  <point x="0.0" y="-135.5" />
+                  <point x="0.0" y="113.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.HotelCard">
+                  <point x="44.75" y="-113.5" />
+                  <point x="712.5" y="493.0" />
+                  <point x="860.0" y="493.0" />
+                  <point x="0.0" y="69.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.MyProfileFrame">
+                  <point x="-134.25" y="-113.5" />
+                  <point x="533.5" y="503.0" />
+                  <point x="181.0" y="503.0" />
+                  <point x="0.0" y="47.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HotelCard" target="thehotelfinder.frames.BookingFrame">
+                  <point x="82.0" y="-69.5" />
+                  <point x="942.0" y="309.0" />
+                  <point x="987.75" y="309.0" />
+                  <point x="-79.25" y="58.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.MyBookingCard" target="thehotelfinder.frames.ModifyFrame">
+                  <point x="86.0" y="-80.5" />
+                  <point x="561.5" y="98.0" />
+                  <point x="553.25" y="98.0" />
+                  <point x="77.75" y="36.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.MyBookingsFrame" target="thehotelfinder.frames.MyBookingCard">
+                  <point x="0.0" y="-25.5" />
+                  <point x="0.0" y="80.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.MyBookingsFrame">
+                  <point x="-44.75" y="-113.5" />
+                  <point x="623.0" y="493.0" />
+                  <point x="475.49999999999994" y="493.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.BookingFrame">
+                  <point x="134.25" y="-113.5" />
+                  <point x="802.0" y="503.0" />
+                  <point x="1146.25" y="503.0" />
+                  <point x="79.25" y="58.5" />
+                </edge>
+                <edge source="thehotelfinder.frames.HotelCard" target="thehotelfinder.frames.HotelFrame">
+                  <point x="-82.0" y="-69.5" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.6994500458295143" x="214.04512426578043" y="407.12671995806573" />
               <SelectedNodes>
-                <node>thehotelfinder.imgs</node>
+                <node>thehotelfinder.frames.LoginRegisterFrame</node>
               </SelectedNodes>
-              <Categories />
+              <Categories>
+                <Category>Methods</Category>
+              </Categories>
               <SCOPE>All</SCOPE>
               <VISIBILITY>private</VISIBILITY>
             </state>
@@ -156,14 +381,13 @@
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
-    <option name="height" value="968" />
+    <option name="height" value="969" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -183,16 +407,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="thehotelfinder" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TheHotelFinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheHotelFinder" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="thehotelfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="frames" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542385555073" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542545488444" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,26 +449,24 @@
       <option name="presentableId" value="Default" />
       <updated>1542384931989</updated>
       <workItem from="1542384935137" duration="710000" />
+      <workItem from="1542544297439" duration="1071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="710000" />
+    <option name="totallyTimeSpent" value="1781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -244,15 +474,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,12 +504,150 @@
           <nodes />
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="559.0" y="327.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="556.5" y="327.0" />
           <SelectedNodes />
           <Categories>
             <Category>All</Category>
           </Categories>
           <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/thehotelfinder.frames">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>thehotelfinder.frames</OriginalElement>
+          <nodes>
+            <node x="319.99999999999994" y="0.0">thehotelfinder.frames.ModifyFrame</node>
+            <node x="381.99999999999994" y="378.0">thehotelfinder.frames.MyBookingsFrame</node>
+            <node x="0.0" y="356.0">thehotelfinder.frames.MyProfileFrame</node>
+            <node x="696.0" y="334.0">thehotelfinder.frames.HotelCard</node>
+            <node x="667.5" y="167.0">thehotelfinder.frames.HotelFrame</node>
+            <node x="488.74999999999994" y="523.0">thehotelfinder.frames.HomePageFrame</node>
+            <node x="454.74999999999994" y="800.0">thehotelfinder.frames.LoginRegisterFrame</node>
+            <node x="303.49999999999994" y="123.0">thehotelfinder.frames.MyBookingCard</node>
+            <node x="908.5" y="145.0">thehotelfinder.frames.BookingFrame</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="thehotelfinder.frames.LoginRegisterFrame" target="thehotelfinder.frames.HomePageFrame">
+              <point x="0.0" y="-135.5" />
+              <point x="0.0" y="113.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.HotelCard">
+              <point x="44.75" y="-113.5" />
+              <point x="712.5" y="493.0" />
+              <point x="860.0" y="493.0" />
+              <point x="0.0" y="69.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.MyProfileFrame">
+              <point x="-134.25" y="-113.5" />
+              <point x="533.5" y="503.0" />
+              <point x="181.0" y="503.0" />
+              <point x="0.0" y="47.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HotelCard" target="thehotelfinder.frames.BookingFrame">
+              <point x="82.0" y="-69.5" />
+              <point x="942.0" y="309.0" />
+              <point x="987.75" y="309.0" />
+              <point x="-79.25" y="58.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.MyBookingCard" target="thehotelfinder.frames.ModifyFrame">
+              <point x="86.0" y="-80.5" />
+              <point x="561.5" y="98.0" />
+              <point x="553.25" y="98.0" />
+              <point x="77.75" y="36.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.MyBookingsFrame" target="thehotelfinder.frames.MyBookingCard">
+              <point x="0.0" y="-25.5" />
+              <point x="0.0" y="80.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.MyBookingsFrame">
+              <point x="-44.75" y="-113.5" />
+              <point x="623.0" y="493.0" />
+              <point x="475.49999999999994" y="493.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HomePageFrame" target="thehotelfinder.frames.BookingFrame">
+              <point x="134.25" y="-113.5" />
+              <point x="802.0" y="503.0" />
+              <point x="1146.25" y="503.0" />
+              <point x="79.25" y="58.5" />
+            </edge>
+            <edge source="thehotelfinder.frames.HotelCard" target="thehotelfinder.frames.HotelFrame">
+              <point x="-82.0" y="-69.5" />
+              <point x="0.0" y="36.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6994500458295143" x="214.04512426578043" y="407.12671995806573" />
+          <SelectedNodes>
+            <node>thehotelfinder.frames.LoginRegisterFrame</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/thehotelfinder.databaseutil">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>thehotelfinder.databaseutil</OriginalElement>
+          <nodes>
+            <node x="42.25000000000003" y="1216.0">thehotelfinder.databaseutil.DBConnect</node>
+            <node x="121.25" y="674.0">thehotelfinder.databaseutil.Booking</node>
+            <node x="250.0" y="99.0">thehotelfinder.databaseutil.User</node>
+            <node x="0.0" y="0.0">thehotelfinder.databaseutil.Hotel</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.Booking">
+              <point x="0.0" y="-191.0" />
+              <point x="231.25000000000003" y="1191.0" />
+              <point x="234.75" y="1191.0" />
+              <point x="0.0" y="246.0" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.User">
+              <point x="151.2" y="-191.0" />
+              <point x="382.45000000000005" y="1191.0" />
+              <point x="387.9265625" y="1191.0" />
+              <point x="387.9265625" y="649.0" />
+              <point x="426.75" y="649.0" />
+              <point x="75.75" y="213.0" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil.DBConnect" target="thehotelfinder.databaseutil.Hotel">
+              <point x="-75.60000000000002" y="-191.0" />
+              <point x="155.65" y="1191.0" />
+              <point x="91.26093750000001" y="1191.0" />
+              <point x="91.26093750000001" y="649.0" />
+              <point x="86.25" y="649.0" />
+              <point x="-28.75" y="312.0" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil.Booking" target="thehotelfinder.databaseutil.User">
+              <point x="28.375" y="-246.0" />
+              <point x="263.125" y="649.0" />
+              <point x="275.25" y="649.0" />
+              <point x="-75.75" y="213.0" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil.Booking" target="thehotelfinder.databaseutil.Hotel">
+              <point x="-28.375" y="-246.0" />
+              <point x="206.375" y="649.0" />
+              <point x="201.25" y="649.0" />
+              <point x="86.25" y="312.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="18.000000000000057" y="995.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -285,30 +657,91 @@
           <ID>JAVA</ID>
           <OriginalElement>thehotelfinder</OriginalElement>
           <nodes>
-            <node x="307.0" y="296.0">thehotelfinder.imgs</node>
-            <node x="198.0" y="0.0">thehotelfinder.MyBookingsFrame</node>
-            <node x="185.0" y="74.0">thehotelfinder.MyBookingCard</node>
-            <node x="0.0" y="148.0">thehotelfinder.MyProfileFrame</node>
-            <node x="0.0" y="0.0">thehotelfinder.LoginRegisterFrame</node>
-            <node x="0.0" y="296.0">thehotelfinder.HotelFrame</node>
-            <node x="0.0" y="74.0">thehotelfinder.HomePageFrame</node>
-            <node x="0.0" y="370.0">thehotelfinder.HotelCard</node>
-            <node x="176.0" y="148.0">thehotelfinder.TheHotelFinder</node>
-            <node x="284.0" y="370.0">thehotelfinder.MyDate</node>
-            <node x="0.0" y="444.0">thehotelfinder.Hotel</node>
-            <node x="169.0" y="222.0">thehotelfinder.ModifyFrame</node>
-            <node x="147.0" y="370.0">thehotelfinder.Booking</node>
-            <node x="0.0" y="222.0">thehotelfinder.BookingFrame</node>
-            <node x="122.0" y="444.0">thehotelfinder.User</node>
-            <node x="155.0" y="296.0">thehotelfinder.DBConnect</node>
+            <node x="403.2737373737374" y="0.0">thehotelfinder.imgs</node>
+            <node x="207.69646464646465" y="626.0">thehotelfinder.frames</node>
+            <node x="24.77373737373739" y="350.0">thehotelfinder.TheHotelFinder</node>
+            <node x="195.4338383838384" y="211.0">thehotelfinder.databaseutil</node>
+            <node x="0.0" y="0.0">thehotelfinder.MyDate</node>
           </nodes>
           <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="205.5" y="236.5" />
-          <SelectedNodes>
-            <node>thehotelfinder.imgs</node>
-          </SelectedNodes>
-          <Categories />
+          <edges>
+            <edge source="thehotelfinder.frames" target="thehotelfinder.databaseutil">
+              <point x="51.11111111111114" y="-14.5" />
+              <point x="316.3075757575758" y="606.0" />
+              <point x="344.2737373737374" y="606.0" />
+              <point x="344.2737373737374" y="300.0" />
+              <point x="332.88838383838385" y="300.0" />
+              <point x="65.45454545454544" y="14.5" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil" target="thehotelfinder.databaseutil">
+              <point x="-39.272727272727266" y="14.5" />
+              <point x="228.16111111111115" y="280.0" />
+              <point x="155.4338383838384" y="280.0" />
+              <point x="155.4338383838384" y="215.83333333333331" />
+              <point x="-72.0" y="-9.666666666666686" />
+            </edge>
+            <edge source="thehotelfinder.TheHotelFinder" target="thehotelfinder.frames">
+              <point x="34.5" y="103.0" />
+              <point x="197.2737373737374" y="576.0" />
+              <point x="252.41868686868688" y="576.0" />
+              <point x="-12.777777777777771" y="-14.5" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil" target="thehotelfinder.TheHotelFinder">
+              <point x="13.090909090909065" y="14.5" />
+              <point x="280.52474747474747" y="330.0" />
+              <point x="266.2737373737374" y="330.0" />
+              <point x="103.5" y="-103.0" />
+            </edge>
+            <edge source="thehotelfinder.frames" target="thehotelfinder.MyDate">
+              <point x="-51.111111111111086" y="-14.5" />
+              <point x="214.08535353535356" y="606.0" />
+              <point x="14.27373737373739" y="606.0" />
+              <point x="14.27373737373739" y="186.0" />
+              <point x="75.5" y="186.0" />
+              <point x="-75.5" y="80.5" />
+            </edge>
+            <edge source="thehotelfinder.frames" target="thehotelfinder.frames">
+              <point x="-28.75" y="14.5" />
+              <point x="236.44646464646465" y="675.0" />
+              <point x="187.69646464646465" y="675.0" />
+              <point x="187.69646464646465" y="647.75" />
+              <point x="-57.5" y="7.25" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil" target="thehotelfinder.frames">
+              <point x="39.27272727272731" y="14.5" />
+              <point x="306.7065656565657" y="320.0" />
+              <point x="322.2737373737374" y="320.0" />
+              <point x="322.2737373737374" y="586.0" />
+              <point x="290.75202020202016" y="586.0" />
+              <point x="25.555555555555543" y="-14.5" />
+            </edge>
+            <edge source="thehotelfinder.frames" target="thehotelfinder.TheHotelFinder">
+              <point x="-38.333333333333314" y="-14.5" />
+              <point x="226.86313131313133" y="596.0" />
+              <point x="59.27373737373739" y="596.0" />
+              <point x="-103.5" y="103.0" />
+            </edge>
+            <edge source="thehotelfinder.TheHotelFinder" target="thehotelfinder.databaseutil">
+              <point x="-103.5" y="-103.0" />
+              <point x="59.27373737373739" y="300.0" />
+              <point x="241.25202020202022" y="300.0" />
+              <point x="-26.181818181818187" y="14.5" />
+            </edge>
+            <edge source="thehotelfinder.databaseutil" target="thehotelfinder.MyDate">
+              <point x="0.0" y="-14.5" />
+              <point x="267.4338383838384" y="186.0" />
+              <point x="226.5" y="186.0" />
+              <point x="75.5" y="80.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="378.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Fields</Category>
+          </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>

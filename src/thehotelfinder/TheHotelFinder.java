@@ -5,6 +5,9 @@
  */
 package thehotelfinder;
 
+import thehotelfinder.frames.LoginRegisterFrame;
+import thehotelfinder.databaseutil.DBConnect;
+import thehotelfinder.databaseutil.User;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -20,7 +23,7 @@ public class TheHotelFinder {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            db = new DBConnect();
+        db = new DBConnect();
         try {
             // Set cross-platform Java L&F (also called "Metal")
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -39,8 +42,21 @@ public class TheHotelFinder {
         });
     }
     
-    public void setCurUser(User u){
+    public static void setCurUser(User u){
         curUser = u;
     }
 
+    public static User getCurUser() {
+        return curUser;
+    }
+
+    public static LoginRegisterFrame getLogRegFrame() {
+        return logRegFrame;
+    }
+
+    public static DBConnect getDb() {
+        return db;
+    }
+
+    
 }

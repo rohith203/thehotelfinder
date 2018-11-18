@@ -27,6 +27,14 @@ public class MyDate{
         return resDate;
     }
     
+    public static boolean hasOverlap(Date a, Date b, Date x, Date y){
+        if(((a.after(y) || a.equals(y)) && b.after(y)) ||
+            (a.before(x) && (b.before(x) || b.equals(x)))){
+            return true;
+        }
+        return false;
+    }
+    
     public static String getRefString(Date d){
         SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmmss");
         String s = formatter.format(d);
