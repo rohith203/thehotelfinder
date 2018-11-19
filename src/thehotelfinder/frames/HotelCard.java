@@ -43,18 +43,10 @@ public class HotelCard extends javax.swing.JPanel {
         
         singleAvailableLabel.setText("(" + availableRoomsArr[0] + " available)");
         doubleAvailableLabel.setText("(" + availableRoomsArr[1] + " available)");
-        int ndouble = noPeople-noRoomsUser;
         int nsingle = 0;
-        if(ndouble<0){
-            ndouble = 0;
-            nsingle = noRoomsUser;
-        }else{
-            nsingle = noRoomsUser-ndouble;
-        }
-        if(noRoomsUser<noPeople){
-            nsingle = noPeople;
-            ndouble = 0;
-        }
+        int ndouble = 0;
+        nsingle = noRoomsUser;
+        ndouble = 0;
         singleSpinner.setValue(nsingle);
         doubleSpinner.setValue(ndouble);
         priceValueLabel.setText("\u20B9" + ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights));

@@ -7,6 +7,7 @@ package thehotelfinder.frames;
 
 import thehotelfinder.databaseutil.Hotel;
 import java.util.ArrayList;
+import javax.swing.JComponent;
 
 /**
  *
@@ -22,8 +23,15 @@ public class HotelFrame extends javax.swing.JFrame {
         initComponents();
         hotelNameLabel.setText(hotel.getName());
         locationLabel.setText(hotel.getCity() + ", " + hotel.getState());
-       
         amenitiesLabel.setText(getStringArr(hotel.getHotelDetails()));
+        double rating = hotel.getAvgRating();
+        ratingWidth = (int)((rating/5) * 160);
+        
+//        ratingWidth += 10*(((int)rating));
+        
+        starsBgPanel.setBounds(0, 0, ratingWidth, 30);
+//                ((JComponent)getContentPane()).revalidate();
+
     }
 
     /**
@@ -40,55 +48,59 @@ public class HotelFrame extends javax.swing.JFrame {
         locationLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         amenitiesLabel = new javax.swing.JLabel();
+        ratingPanel = new javax.swing.JPanel();
+        stars = new javax.swing.JLabel();
+        starsBgPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(710, 100, 0, 0));
         setSize(new java.awt.Dimension(500, 600));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        hotelNameLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 36)); // NOI18N
+        HotelPanel.setBackground(new java.awt.Color(254, 249, 243));
+        HotelPanel.setPreferredSize(new java.awt.Dimension(500, 600));
+        HotelPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        hotelNameLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 32)); // NOI18N
         hotelNameLabel.setText("Hotel Name");
+        HotelPanel.add(hotelNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
         locationLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
         locationLabel.setText("location");
+        HotelPanel.add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 24)); // NOI18N
         jLabel3.setText("Special facilities:");
+        HotelPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 234, -1, -1));
 
         amenitiesLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         amenitiesLabel.setForeground(new java.awt.Color(102, 102, 102));
         amenitiesLabel.setText("<html> -  one<br> - two<br> - three<br>- four<br>- five</html>");
+        HotelPanel.add(amenitiesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        javax.swing.GroupLayout HotelPanelLayout = new javax.swing.GroupLayout(HotelPanel);
-        HotelPanel.setLayout(HotelPanelLayout);
-        HotelPanelLayout.setHorizontalGroup(
-            HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HotelPanelLayout.createSequentialGroup()
-                .addGroup(HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HotelPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hotelNameLabel)
-                            .addComponent(locationLabel)
-                            .addComponent(jLabel3)))
-                    .addGroup(HotelPanelLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(amenitiesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(286, Short.MAX_VALUE))
+        ratingPanel.setLayout(null);
+
+        stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/stars.png"))); // NOI18N
+        ratingPanel.add(stars);
+        stars.setBounds(0, 0, 160, 30);
+
+        starsBgPanel.setBackground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout starsBgPanelLayout = new javax.swing.GroupLayout(starsBgPanel);
+        starsBgPanel.setLayout(starsBgPanelLayout);
+        starsBgPanelLayout.setHorizontalGroup(
+            starsBgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        HotelPanelLayout.setVerticalGroup(
-            HotelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HotelPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hotelNameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationLabel)
-                .addGap(77, 77, 77)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(amenitiesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+        starsBgPanelLayout.setVerticalGroup(
+            starsBgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
+
+        ratingPanel.add(starsBgPanel);
+        starsBgPanel.setBounds(0, 0, 0, 30);
+
+        HotelPanel.add(ratingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 30));
 
         getContentPane().add(HotelPanel, "card2");
 
@@ -105,11 +117,15 @@ public class HotelFrame extends javax.swing.JFrame {
     }
 
     private Hotel hotel;
+    private int ratingWidth;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HotelPanel;
     private javax.swing.JLabel amenitiesLabel;
     private javax.swing.JLabel hotelNameLabel;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel locationLabel;
+    private javax.swing.JPanel ratingPanel;
+    private javax.swing.JLabel stars;
+    private javax.swing.JPanel starsBgPanel;
     // End of variables declaration//GEN-END:variables
 }

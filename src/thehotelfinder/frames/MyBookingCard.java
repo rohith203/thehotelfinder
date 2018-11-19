@@ -23,7 +23,7 @@ public class MyBookingCard extends javax.swing.JPanel {
     /**
      * Creates new form BookingCard
      */
-    public MyBookingCard(String bookingRef, String hotelName, String city, String state,String checkIn, String checkOut ,int nsingle,int ndouble, double totalAmount) {
+    public MyBookingCard(String bookingRef, String hotelName, String city, String state, String checkIn, String checkOut, String bookingDate, int nsingle,int ndouble, double totalAmount) {
         this.hotelName = hotelName;
         this.bookingRef = bookingRef;
         this.checkIn = checkIn;
@@ -34,6 +34,7 @@ public class MyBookingCard extends javax.swing.JPanel {
         hotelLabel.setText("<html>"+hotelName + ",<br> " + city + ", " + state+"</html>");
         checkInDateLabel.setText(checkIn);
         checkOutDateLabel.setText(checkOut);
+        bookingDateLabel.setText(bookingDate);
         if(nsingle!=0 && ndouble==0){
             roomsLabel.setText(nsingle + " single room(s)");
         }else if(ndouble!=0 && nsingle==0){
@@ -93,6 +94,8 @@ public class MyBookingCard extends javax.swing.JPanel {
         statusLabel = new javax.swing.JLabel();
         ratingBtn = new javax.swing.JButton();
         ratingComboBox = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        bookingDateLabel = new javax.swing.JLabel();
         bgLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(900, 300));
@@ -104,16 +107,16 @@ public class MyBookingCard extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         jLabel2.setText("Hotel                                :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 70, 175, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 175, 50));
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         jLabel3.setText("Check in date                 :");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 127, 175, 50));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 175, 50));
 
         hotelLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
         hotelLabel.setForeground(new java.awt.Color(102, 102, 102));
         hotelLabel.setText("Booking Reference");
-        add(hotelLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 70, 270, 50));
+        add(hotelLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 270, 50));
 
         bookingRefLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         bookingRefLabel.setForeground(new java.awt.Color(102, 102, 102));
@@ -122,17 +125,17 @@ public class MyBookingCard extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         jLabel6.setText("Check out date               :");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 184, 175, 50));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 175, 50));
 
         checkInDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         checkInDateLabel.setForeground(new java.awt.Color(102, 102, 102));
         checkInDateLabel.setText("Booking Reference");
-        add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 127, 175, 50));
+        add(checkInDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 175, 50));
 
         checkOutDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
         checkOutDateLabel.setForeground(new java.awt.Color(102, 102, 102));
         checkOutDateLabel.setText("Booking Reference");
-        add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 184, 175, 50));
+        add(checkOutDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 175, 50));
 
         cancelBtn.setText("Cancel Booking");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +195,15 @@ public class MyBookingCard extends javax.swing.JPanel {
             }
         });
         add(ratingComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
+        jLabel7.setText("Booking Date                  :");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 175, 50));
+
+        bookingDateLabel.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 16)); // NOI18N
+        bookingDateLabel.setForeground(new java.awt.Color(102, 102, 102));
+        bookingDateLabel.setText("Booking Reference");
+        add(bookingDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 175, 50));
 
         bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/Photo-Background-Application.jpg"))); // NOI18N
         bgLabel.setText("jLabel4");
@@ -256,6 +268,7 @@ public class MyBookingCard extends javax.swing.JPanel {
     private String status;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLabel;
+    private javax.swing.JLabel bookingDateLabel;
     private javax.swing.JLabel bookingRefLabel;
     private javax.swing.JButton cancelBtn;
     private javax.swing.JLabel checkInDateLabel;
@@ -267,6 +280,7 @@ public class MyBookingCard extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton modifyBtn;
     private javax.swing.JButton ratingBtn;

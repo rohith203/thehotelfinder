@@ -51,6 +51,7 @@ public class DBConnect {
         }
         database = mongoClient.getDatabase("mydb");
         System.out.println("Connected to mydb.");
+//        initRating();
     }
     
     public boolean addToWaitingList(String username, String hotelName, int noPeople, String checkIn, String checkOut){
@@ -194,7 +195,7 @@ public class DBConnect {
                     for(Document d: iterDoc){
                         if(d.get("name").equals(hotelName)){
                             ArrayList ratingArr = (ArrayList)d.get("ratingArr");
-                            ratingArr.add(rating);
+                            ratingArr.add((double)rating);
                             collection.updateOne(Filters.eq("name", (String)d.get("name")), Updates.set("ratingArr", ratingArr));
                             bookingCollection.updateOne(Filters.eq("hotel", (String)d.get("name")), Updates.set("rated", (int)1));
                             break;
@@ -209,6 +210,20 @@ public class DBConnect {
         
         return true;
     }
+//    
+//     public boolean initRating(){
+//        MongoCollection<Document> collection = database.getCollection("hotels");
+//        FindIterable<Document> iterDoc = collection.find();
+//            for(Document d: iterDoc){
+//                int r1 = (int)(Math.random() * ((5 - 0) + 1));
+//                int r2 = (int)(Math.random() * ((5 - 0) + 1));
+//                ArrayList ratingArr = (ArrayList)d.get("ratingArr");
+//                ratingArr.add(Integer.toString(r1));
+//                ratingArr.add(Integer.toString(r2));
+//                collection.updateOne(Filters.eq("name", (String)d.get("name")), Updates.set("ratingArr", ratingArr));
+//            }
+//        return true;
+//    }
     
     public boolean addBooking(Booking b){
         MongoCollection<Document> collection = database.getCollection("booking");
@@ -311,8 +326,10 @@ public class DBConnect {
                 int ndouble = (int)d.get("ndouble");
                 String checkIn = (String)d.get("checkInDate");
                 String checkOut = (String)d.get("checkOutDate");
+                String bookingDate = (String)d.get("bookingDate");
                 double totalAmount = (double)d.get("totalAmountPaid");
-                bookingList.add(new MyBookingCard(bookingRef, hotelName, city, state,checkIn,checkOut, nsingle, ndouble, totalAmount));
+                bookingList.add(new MyBookingCard(bookingRef, hotelName, city, state, checkIn, checkOut, bookingDate,
+                                                  nsingle, ndouble, totalAmount));
             }
         }
         

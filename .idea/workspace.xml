@@ -2,6 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6e37030-a7e5-4fef-9c82-c6e5a11412ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/javaapplication1/BookingFrame$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/databaseutil/Booking.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/databaseutil/DBConnect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/BookingFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/BookingFrame$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/BookingFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$14.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$15.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$16.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$17.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$18.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$19.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$20.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$21.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$22.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$23.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/LoginRegisterFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/ModifyFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/ModifyFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyProfileFrame$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyProfileFrame$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyProfileFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/BookingFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HomePageFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelCard.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/LoginRegisterFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/ModifyFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingCard.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingsFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyProfileFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/Booking.class" beforeDir="false" />
@@ -16,7 +90,7 @@
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame$6.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HomePageFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/Hotel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/databaseutil/Hotel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/HotelCard$3.class" beforeDir="false" />
@@ -57,37 +131,37 @@
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyBookingsFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingsFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/MyDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/MyProfileFrame.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/TheHotelFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/thehotelfinder/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/databaseutil/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/TheHotelFinder.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TheHotelFinder.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/BookingFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/BookingFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/BookingFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/BookingFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/BookingFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/BookingFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HomePageFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HomePageFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HomePageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HomePageFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelCard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelCard.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/HotelFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/HotelFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/HotelFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/LoginRegisterFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/LoginRegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/LoginRegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/ModifyFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/ModifyFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/ModifyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/ModifyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingCard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingCard.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingsFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyBookingsFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyBookingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyBookingsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/MyDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyProfileFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/thehotelfinder/frames/MyProfileFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/MyProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/frames/MyProfileFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/TheHotelFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/TheHotelFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thehotelfinder/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thehotelfinder/databaseutil/User.java" afterDir="false" />
@@ -103,7 +177,7 @@
     <session id="350735392">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="2" />
@@ -210,7 +284,7 @@
                   <point x="75.5" y="80.5" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="378.0" />
+              <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="307.0" />
               <SelectedNodes />
               <Categories>
                 <Category>Constructors</Category>
@@ -424,7 +498,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542545488444" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542545521227" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -449,16 +523,15 @@
       <option name="presentableId" value="Default" />
       <updated>1542384931989</updated>
       <workItem from="1542384935137" duration="710000" />
-      <workItem from="1542544297439" duration="1071000" />
+      <workItem from="1542544297439" duration="1411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1781000" />
+    <option name="totallyTimeSpent" value="2121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -734,7 +807,7 @@
               <point x="75.5" y="80.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="378.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="339.0" y="307.0" />
           <SelectedNodes />
           <Categories>
             <Category>Constructors</Category>
