@@ -263,15 +263,15 @@ public class HomePageFrame extends javax.swing.JFrame {
 
         String location = cityComboBox.getItemAt(cityComboBox.getSelectedIndex());
         if(location.equals("Hyderabad")){
-            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\hyderabad.jpg"));
+            bgImgLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hyderabad.jpg")));
         }else if(location.equals("Bangalore")){
-            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\bangalore.jpg"));
+            bgImgLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\bangalore.jpg")));
         }else if(location.equals("Mumbai")){
-            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\mumbai.jpg"));
+            bgImgLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\mumbai.jpg")));
         }else if(location.equals("New Delhi")){
-            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\newdelhi.jpg"));
+            bgImgLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\newdelhi.jpg")));
         }else if(location.equals("Kolkata")){
-            bgImgLabel.setIcon(new ImageIcon("C:\\Users\\Rohith\\Documents\\NetBeansProjects\\TheHotelFinder\\images\\kolkata.jpg"));
+            bgImgLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\kolkata.jpg")));
         }
         int noRooms = (int) noRoomsSpinner.getValue();
         int noPeople = (int) noPeopleSpinner.getValue();
