@@ -25,8 +25,9 @@ public class HotelFrame extends javax.swing.JFrame {
         locationLabel.setText(hotel.getCity() + ", " + hotel.getState());
         amenitiesLabel.setText(getStringArr(hotel.getHotelDetails()));
         double rating = hotel.getAvgRating();
-        ratingWidth = (int)((rating/5) * 160);
-        
+//        int starsWidth = 
+        ratingWidth = (int)((rating/5)*165);
+        System.out.println(rating + " " + ratingWidth);
 //        ratingWidth += 10*(((int)rating));
         
         starsBgPanel.setBounds(0, 0, ratingWidth, 30);
@@ -82,7 +83,7 @@ public class HotelFrame extends javax.swing.JFrame {
 
         stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/stars.png"))); // NOI18N
         ratingPanel.add(stars);
-        stars.setBounds(0, 0, 160, 30);
+        stars.setBounds(0, 0, 165, 30);
 
         starsBgPanel.setBackground(new java.awt.Color(255, 204, 0));
 

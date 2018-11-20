@@ -29,6 +29,14 @@ public class HotelCard extends javax.swing.JPanel {
         this.checkOutDate = checkOutDate;
         this.noPeople = noPeople;
         initComponents();
+        
+        double rating = hotel.getAvgRating();
+        int ratingWidth = (int)((rating/5)*165);
+        System.out.println(rating + " " + ratingWidth);
+        
+        starsBgPanel.setBounds(0, 0, ratingWidth, 30);
+        
+        
         this.availableRoomsArr = TheHotelFinder.getDb().getMaxRooms(hotel.getName(), MyDate.toStringInit(checkInDate), MyDate.toStringInit(checkOutDate));
         
         singleSpinner.setModel(new javax.swing.SpinnerNumberModel(0,0,availableRoomsArr[0],1));
@@ -49,7 +57,10 @@ public class HotelCard extends javax.swing.JPanel {
         ndouble = 0;
         singleSpinner.setValue(nsingle);
         doubleSpinner.setValue(ndouble);
-        priceValueLabel.setText("\u20B9" + ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights));
+        double total = ((nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights);
+        
+        System.out.println("Total : " + total +" "+nights+" " +  " " +hotel.getCostArr()[1] + " " +hotel.getCostArr()[0] );
+        priceValueLabel.setText("\u20B9" + total);
         waitListBtn.setVisible(false);
         if((availableRoomsArr[0]==0 && availableRoomsArr[1]==0 ) || 
            (noPeople>availableRoomsArr[0] && noPeople>(2*availableRoomsArr[1]))
@@ -70,7 +81,6 @@ public class HotelCard extends javax.swing.JPanel {
 
         jOptionPane1 = new javax.swing.JOptionPane();
         hotelNameLabel = new javax.swing.JLabel();
-        rating_label = new javax.swing.JLabel();
         ratingValueLabel = new javax.swing.JLabel();
         priceValueLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
@@ -87,6 +97,9 @@ public class HotelCard extends javax.swing.JPanel {
         doublePriceLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         waitListBtn = new javax.swing.JButton();
+        ratingPanel = new javax.swing.JPanel();
+        stars = new javax.swing.JLabel();
+        starsBgPanel = new javax.swing.JPanel();
         hotelImgLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
@@ -105,17 +118,11 @@ public class HotelCard extends javax.swing.JPanel {
         });
         add(hotelNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
-        rating_label.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        rating_label.setForeground(new java.awt.Color(204, 204, 204));
-        rating_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rating_label.setText("Rating");
-        add(rating_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 71, 30));
-
         ratingValueLabel.setBackground(new java.awt.Color(255, 0, 51));
         ratingValueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ratingValueLabel.setForeground(new java.awt.Color(204, 204, 204));
         ratingValueLabel.setText("0/5");
-        add(ratingValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, 30));
+        add(ratingValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, 30));
 
         priceValueLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         priceValueLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,10 +142,10 @@ public class HotelCard extends javax.swing.JPanel {
         locationLabel.setText("Location");
         add(locationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, 235, 39));
 
-        reviewsLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        reviewsLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         reviewsLabel.setForeground(new java.awt.Color(204, 204, 204));
         reviewsLabel.setText("(65 Reviews)");
-        add(reviewsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
+        add(reviewsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 30));
 
         dealBtn.setBackground(new java.awt.Color(51, 51, 51));
         dealBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -210,6 +217,30 @@ public class HotelCard extends javax.swing.JPanel {
             }
         });
         add(waitListBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, 30));
+
+        ratingPanel.setLayout(null);
+
+        stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/stars_bluebg.png"))); // NOI18N
+        ratingPanel.add(stars);
+        stars.setBounds(0, 0, 165, 31);
+
+        starsBgPanel.setBackground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout starsBgPanelLayout = new javax.swing.GroupLayout(starsBgPanel);
+        starsBgPanel.setLayout(starsBgPanelLayout);
+        starsBgPanelLayout.setHorizontalGroup(
+            starsBgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        starsBgPanelLayout.setVerticalGroup(
+            starsBgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        ratingPanel.add(starsBgPanel);
+        starsBgPanel.setBounds(0, 0, 0, 30);
+
+        add(ratingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 100, 160, 30));
 
         hotelImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/bluebg.jpg"))); // NOI18N
         add(hotelImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -285,13 +316,15 @@ public class HotelCard extends javax.swing.JPanel {
     private javax.swing.JLabel locationLabel;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel priceValueLabel;
+    private javax.swing.JPanel ratingPanel;
     private javax.swing.JLabel ratingValueLabel;
-    private javax.swing.JLabel rating_label;
     private javax.swing.JLabel reviewsLabel;
     private javax.swing.JLabel singleAvailableLabel;
     private javax.swing.JLabel singlePriceLabel;
     private javax.swing.JLabel singleRoomLabel;
     private javax.swing.JSpinner singleSpinner;
+    private javax.swing.JLabel stars;
+    private javax.swing.JPanel starsBgPanel;
     private javax.swing.JButton waitListBtn;
     // End of variables declaration//GEN-END:variables
 }

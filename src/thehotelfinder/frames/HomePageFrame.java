@@ -151,6 +151,8 @@ public class HomePageFrame extends javax.swing.JFrame {
         noPeopleSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         HomePagePanel.add(noPeopleSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 30));
         HomePagePanel.add(checkInDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, -1, 30));
+
+        checkOutDateChooserCombo.setNothingAllowed(false);
         HomePagePanel.add(checkOutDateChooserCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, -1, 30));
 
         findHotelBtn.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
@@ -203,6 +205,11 @@ public class HomePageFrame extends javax.swing.JFrame {
         helpMenu.setText("Help");
 
         aboutMenuItem.setText("About");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         jMenuBar.add(helpMenu);
@@ -248,10 +255,15 @@ public class HomePageFrame extends javax.swing.JFrame {
     }
     
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        setVisible(false);
-        TheHotelFinder.setCurUser(null);
-        TheHotelFinder.getLogRegFrame().clearFields();
-        TheHotelFinder.getLogRegFrame().setVisible(true);
+        int n = JOptionPane.showConfirmDialog(this, "<html>Are you sure?<br>Do you want to logout?</html>", "Logout", JOptionPane.YES_NO_OPTION);
+        if(n==1){
+            return;
+        }else if(n==0){
+            setVisible(false);
+            TheHotelFinder.setCurUser(null);
+            TheHotelFinder.getLogRegFrame().clearFields();
+            TheHotelFinder.getLogRegFrame().setVisible(true);
+        }
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void findHotelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findHotelBtnActionPerformed
@@ -279,7 +291,7 @@ public class HomePageFrame extends javax.swing.JFrame {
         String checkOutDate = checkOutDateChooserCombo.getText();
         
         if(validate(noRooms, noPeople, checkInDate, checkOutDate)){
-            int nights = (int)((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24);
+            int nights = (int)(((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24));
             //int nights
             hotelCardList = TheHotelFinder.getDb().getHotels(location, noRooms, noPeople, nights, MyDate.toDate(checkInDate),MyDate.toDate(checkOutDate));
         }else{
@@ -317,6 +329,11 @@ public class HomePageFrame extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_bookingsMenuItemActionPerformed
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
     
     
     public void showMessage(String msg){

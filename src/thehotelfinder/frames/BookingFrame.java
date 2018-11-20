@@ -70,6 +70,7 @@ public class BookingFrame extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(510, 140, 900, 900));
         setSize(new java.awt.Dimension(900, 900));
 
+        jPanel1.setBackground(new java.awt.Color(254, 249, 243));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Booking Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Light", 0, 36), new java.awt.Color(51, 102, 255))); // NOI18N
 
         typeOfRoom.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -85,10 +86,12 @@ public class BookingFrame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setText("Total Amount Payable         :");
 
+        aadharLabel.setBackground(new java.awt.Color(254, 249, 243));
         buttonGroup.add(aadharLabel);
         aadharLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         aadharLabel.setText("              Aadhar Card");
 
+        panLabel.setBackground(new java.awt.Color(254, 249, 243));
         buttonGroup.add(panLabel);
         panLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         panLabel.setText("               Pan Card");

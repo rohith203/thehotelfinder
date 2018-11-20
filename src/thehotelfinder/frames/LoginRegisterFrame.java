@@ -578,7 +578,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         String address[] = new String[3];
         address[0] = streetTextField.getText();
         address[1] = cityTextField.getText();
-        address[2] = cityTextField.getText();
+        address[2] = stateTextField.getText();
         String email = emailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();

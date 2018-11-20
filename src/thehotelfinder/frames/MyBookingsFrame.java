@@ -33,7 +33,7 @@ public class MyBookingsFrame extends javax.swing.JFrame {
                 numNotCheckedIn+=1;
             }
         }
-        infoLabel.setText("You have " + numNotCheckedIn + " booking(s) not Checked In");
+        infoLabel.setText("You have " + numNotCheckedIn + " booking(s) NOT checked in");
 
         for(int i=0; i<bookingCardList.size(); i++){
            scrollPanePanel.add((MyBookingCard)bookingCardList.get(i));

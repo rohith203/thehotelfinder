@@ -48,7 +48,7 @@ public class MyBookingCard extends javax.swing.JPanel {
             status+="NOT CHECKED IN";
             ratingBtn.setVisible(false);
             ratingComboBox.setVisible(false);
-        }else if(curDate.after(MyDate.toDate(checkIn)) && curDate.before(MyDate.toDate(checkOut))){
+        }else if((curDate.equals(MyDate.toDate(checkIn)) || curDate.after(MyDate.toDate(checkIn))) && curDate.before(MyDate.toDate(checkOut))){
             status+="CHECKED IN";
         }else{
             status+="CHECKED OUT";

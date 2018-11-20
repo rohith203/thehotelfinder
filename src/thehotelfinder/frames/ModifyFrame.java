@@ -24,7 +24,7 @@ public class ModifyFrame extends javax.swing.JFrame {
         this.bookingRef = bookingRef;
         initComponents();
         
-         Calendar calendar = Calendar.getInstance(); // this would default to now
+        Calendar calendar = Calendar.getInstance(); // this would default to now
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         checkIndateChooser.setMinDate(calendar);
         Calendar calendar1 = Calendar.getInstance(); // this would default to now
