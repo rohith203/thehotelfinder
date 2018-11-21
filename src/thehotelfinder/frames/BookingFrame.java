@@ -10,6 +10,7 @@ import thehotelfinder.databaseutil.Hotel;
 import thehotelfinder.databaseutil.Booking;
 import java.awt.Color;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import thehotelfinder.MyDate;
 import thehotelfinder.TheHotelFinder;
 
@@ -36,7 +37,8 @@ public class BookingFrame extends javax.swing.JFrame {
         hotelSelected.setText(hotel.getName());
         typeOfRoom.setText(noRoomsUser[0] + " x single room(s) + " + noRoomsUser[1] + " x double room(s)");
         datesLabel.setText(MyDate.toStringInit(checkIn) + " - " + MyDate.toStringInit(checkOut));
-        totalCostLabel.setText("\u20B9 " + (hotel.getCostArr()[0] * noRoomsUser[0] + hotel.getCostArr()[1] * noRoomsUser[1]));
+        double total = (noRoomsUser[0] * hotel.getCostArr()[0] + noRoomsUser[1] * hotel.getCostArr()[1])*nights;
+        totalCostLabel.setText("\u20B9 " + total);
     }
 
     /**
@@ -237,6 +239,24 @@ public class BookingFrame extends javax.swing.JFrame {
             optionPane.showMessageDialog(this, "Please enter the id proof.");
             return;
         }
+        if(proofType.equals("aadhar")){
+            char[] chars = proofValue.toCharArray();
+            for(char x:chars){
+                if(!Character.isDigit(x)){
+                    JOptionPane.showMessageDialog(this, "Enter valid ID !");
+                    return;
+                }
+            }
+        }else if(proofType.equals("aadhar")){
+            char[] chars = proofValue.toCharArray();
+            for(char x:chars){
+                if(!(Character.isLetter(x) && Character.isDigit(x))){
+                    JOptionPane.showMessageDialog(this, "Enter valid ID !");
+                    return;
+                }
+            }
+        }
+        
         if(proofType.equals("aadhar") && proofValue.length()!=12){
             optionPane.showMessageDialog(this, "Please enter a 12 digit Aadhar number.");
             return;

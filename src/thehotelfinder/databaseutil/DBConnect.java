@@ -17,6 +17,7 @@ import static com.mongodb.client.model.Updates.combine;
 import com.mongodb.client.result.UpdateResult;
 import java.net.ConnectException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
@@ -210,20 +211,7 @@ public class DBConnect {
         
         return true;
     }
-//    
-//     public boolean initRating(){
-//        MongoCollection<Document> collection = database.getCollection("hotels");
-//        FindIterable<Document> iterDoc = collection.find();
-//            for(Document d: iterDoc){
-//                int r1 = (int)(Math.random() * ((5 - 0) + 1));
-//                int r2 = (int)(Math.random() * ((5 - 0) + 1));
-//                ArrayList ratingArr = (ArrayList)d.get("ratingArr");
-//                ratingArr.add(Integer.toString(r1));
-//                ratingArr.add(Integer.toString(r2));
-//                collection.updateOne(Filters.eq("name", (String)d.get("name")), Updates.set("ratingArr", ratingArr));
-//            }
-//        return true;
-//    }
+
     
     public boolean addBooking(Booking b){
         MongoCollection<Document> collection = database.getCollection("booking");
@@ -246,6 +234,14 @@ public class DBConnect {
         return true;
     }
     
+    private int arrMax(int arr[]){
+        int m = 0;
+        for(int x: arr){
+            if(x>m) m = x;
+        }
+        return m;
+    }
+    
     public int[] getMaxRooms(String hotelName, String a, String b){
         int res[] = new int[2];
         
@@ -255,7 +251,9 @@ public class DBConnect {
         Date aDate = MyDate.toDate(a);
         Date bDate = MyDate.toDate(b);
         int days = MyDate.getDays(a, b);
-        int bookedArr[] = new int[days];
+        int singleBookedArr[] = new int[days];
+        int doubleBookedArr[] = new int[days];
+        
         MongoCollection<Document> bookingCollection = database.getCollection("booking");
         MongoCollection<Document> hotelCollection = database.getCollection("hotels");
 
@@ -264,33 +262,63 @@ public class DBConnect {
 
         for(Document hDoc: hiterDoc){
             if(hotelName.equals(hDoc.get("name"))){
-                for(Document bDoc: biterDoc){
-                    if(hotelName.equals(bDoc.get("hotel"))){
-                        String checkIn = (String)bDoc.get("checkInDate");
-                        String checkOut = (String)bDoc.get("checkOutDate");
-                        Date checkInDate = MyDate.toDate(checkIn);
-                        Date checkOutDate = MyDate.toDate(checkOut);
-                        if(((checkInDate.after(aDate) || checkInDate.equals(aDate)) && checkInDate.before(bDate) && (checkOutDate.equals(bDate) || checkOutDate.after(bDate))) ||
-                           ((checkInDate.before(aDate) || checkInDate.equals(aDate)) && (checkOutDate.before(bDate) || checkOutDate.equals(bDate)) && checkOutDate.after(aDate)) ||
-                           ((checkInDate.after(aDate) || checkInDate.equals(aDate)) && checkInDate.before(bDate) && (checkOutDate.before(bDate) || checkOutDate.equals(bDate)) && checkOutDate.after(aDate)) ||
-                           (checkInDate.before(aDate) && checkOutDate.after(bDate)) ||
-                           (checkInDate.equals(aDate) && checkOutDate.equals(bDate))
-                          ){
-                            int nsingle = (int)bDoc.get("nsingle");
-                            int ndouble = (int)bDoc.get("ndouble");
-//                            maxSingle += nsingle;
-//                            maxDouble += ndouble;
-                            if(maxSingle < nsingle) maxSingle = nsingle;
-                            if(maxDouble < ndouble) maxDouble = ndouble;
+                for(int i=0; i<days; i++){
+                    Date x = MyDate.addDay(aDate, i);
+                    Date y = MyDate.addDay(aDate, i+1);
+                    for(Document bDoc: biterDoc){
+                        if(hotelName.equals(bDoc.get("hotel"))){
+                            String checkIn = (String)bDoc.get("checkInDate");
+                            String checkOut = (String)bDoc.get("checkOutDate");
+                            Date checkInDate = MyDate.toDate(checkIn);
+                            Date checkOutDate = MyDate.toDate(checkOut);
+                            if(MyDate.hasOverlap(x, y, checkInDate, checkOutDate)){
+                                int nsingle = (int)bDoc.get("nsingle");
+                                int ndouble = (int)bDoc.get("ndouble");
+                                singleBookedArr[i] += nsingle;
+                                doubleBookedArr[i] += ndouble;
+                            }
                         }
+                    }
+                    
+                }
+//                System.out.print("\nSingle arr: ");
+//                for(int x: singleBookedArr) {System.out.print(x+" ");}
+//                System.out.print("\ndouble arr: ");
+//                for(int x: doubleBookedArr) {System.out.print(x+" ");}
+                maxSingle = arrMax(singleBookedArr);
+                maxDouble = arrMax(doubleBookedArr);
+                
+                
+//                for(Document bDoc: biterDoc){
+//                    if(hotelName.equals(bDoc.get("hotel"))){
+//                        String checkIn = (String)bDoc.get("checkInDate");
+//                        String checkOut = (String)bDoc.get("checkOutDate");
+//                        Date checkInDate = MyDate.toDate(checkIn);
+//                        Date checkOutDate = MyDate.toDate(checkOut);
+//                        if(((checkInDate.after(aDate) || checkInDate.equals(aDate)) && checkInDate.before(bDate) && (checkOutDate.equals(bDate) || checkOutDate.after(bDate))) ||
+//                           ((checkInDate.before(aDate) || checkInDate.equals(aDate)) && (checkOutDate.before(bDate) || checkOutDate.equals(bDate)) && checkOutDate.after(aDate)) ||
+//                           ((checkInDate.after(aDate) || checkInDate.equals(aDate)) && checkInDate.before(bDate) && (checkOutDate.before(bDate) || checkOutDate.equals(bDate)) && checkOutDate.after(aDate)) ||
+//                           (checkInDate.before(aDate) && checkOutDate.after(bDate)) ||
+//                           (checkInDate.equals(aDate) && checkOutDate.equals(bDate))
+//                          ){
+//                            int nsingle = (int)bDoc.get("nsingle");
+//                            int ndouble = (int)bDoc.get("ndouble");
+//                                maxSingle += nsingle;
+//                                maxDouble += ndouble;
+////                            if(maxSingle < nsingle) maxSingle = nsingle;
+////                            if(maxDouble < ndouble) maxDouble = ndouble;
+//                        }
                         
 //                        if(MyDate.hasOverlap(aDate, bDate, checkInDate, checkOutDate)){
-//                            for(int i=0; i<MyDate.getDays(checkIn, checkOut); i++){
-//                                
-//                            }
+//                            int nsingle = (int)bDoc.get("nsingle");
+//                            int ndouble = (int)bDoc.get("ndouble");
+//                            maxSingle += nsingle;
+//                            maxDouble += ndouble;
 //                        }
-                    }
-                }
+
+//                        
+//                    }
+//                }
                 ArrayList hotelRooms = (ArrayList)hDoc.get("noRooms");
                 res[0] = (int)(double)(hotelRooms.get(0)) - maxSingle;
                 res[1] = (int)(double)(hotelRooms.get(1)) - maxDouble;
@@ -332,7 +360,7 @@ public class DBConnect {
                                                   nsingle, ndouble, totalAmount));
             }
         }
-        
+        Collections.reverse(bookingList);
         return bookingList;
     }
     
@@ -363,7 +391,6 @@ public class DBConnect {
                 hotelList.add(new HotelCard(hotel, noRoomsUser, noPeople, nights,checkInDate,checkOutDate));
             }
         }
-        
         return hotelList;
     }
     

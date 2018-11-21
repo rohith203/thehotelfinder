@@ -34,7 +34,9 @@ public class MyBookingCard extends javax.swing.JPanel {
         hotelLabel.setText("<html>"+hotelName + ",<br> " + city + ", " + state+"</html>");
         checkInDateLabel.setText(checkIn);
         checkOutDateLabel.setText(checkOut);
-        bookingDateLabel.setText(bookingDate);
+        String bookingTime = MyDate.getBookingDate(bookingRef);
+        bookingDateLabel.setText(bookingTime);
+        
         if(nsingle!=0 && ndouble==0){
             roomsLabel.setText(nsingle + " single room(s)");
         }else if(ndouble!=0 && nsingle==0){

@@ -28,19 +28,19 @@ public class HotelCard extends javax.swing.JPanel {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.noPeople = noPeople;
+        this.nights = nights;
         initComponents();
         
         double rating = hotel.getAvgRating();
         int ratingWidth = (int)((rating/5)*165);
         System.out.println(rating + " " + ratingWidth);
-        
         starsBgPanel.setBounds(0, 0, ratingWidth, 30);
-        
         
         this.availableRoomsArr = TheHotelFinder.getDb().getMaxRooms(hotel.getName(), MyDate.toStringInit(checkInDate), MyDate.toStringInit(checkOutDate));
         
         singleSpinner.setModel(new javax.swing.SpinnerNumberModel(0,0,availableRoomsArr[0],1));
         doubleSpinner.setModel(new javax.swing.SpinnerNumberModel(0,0,availableRoomsArr[1],1));
+        
         locationLabel.setText(hotel.getCity() + ", " + hotel.getState());
         hotelNameLabel.setText(hotel.getName());
         DecimalFormat df = new DecimalFormat("#.##");
@@ -218,6 +218,7 @@ public class HotelCard extends javax.swing.JPanel {
         });
         add(waitListBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, 30));
 
+        ratingPanel.setBackground(new java.awt.Color(204, 204, 204));
         ratingPanel.setLayout(null);
 
         stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/stars_bluebg.png"))); // NOI18N
@@ -240,7 +241,7 @@ public class HotelCard extends javax.swing.JPanel {
         ratingPanel.add(starsBgPanel);
         starsBgPanel.setBounds(0, 0, 0, 30);
 
-        add(ratingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 100, 160, 30));
+        add(ratingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 100, 165, 30));
 
         hotelImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/bluebg.jpg"))); // NOI18N
         add(hotelImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -263,6 +264,10 @@ public class HotelCard extends javax.swing.JPanel {
         int noRoomsUserArr[] = new int[2];
         noRoomsUserArr[0] = nsingle;
         noRoomsUserArr[1] = ndouble;
+        if(nsingle==0 && ndouble==0){
+            JOptionPane.showMessageDialog(this, "Please select atleast one room.");
+            return;
+        }
         if(availableRoomsArr[0]>=nsingle && availableRoomsArr[1]>=ndouble){
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
@@ -280,13 +285,13 @@ public class HotelCard extends javax.swing.JPanel {
         int nsingle = (int)singleSpinner.getValue();
         int ndouble = (int)doubleSpinner.getValue();
         
-        
         if((nsingle==0 && ndouble==0)){
             jOptionPane1.showMessageDialog(this,"Please select atleast one room");
             return;
         }
-        
-        priceValueLabel.setText("\u20B9" + (nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1]));
+        double total = (nsingle * hotel.getCostArr()[0] + ndouble * hotel.getCostArr()[1])*nights;
+        System.out.println("totalPrice: \n" + total);
+        priceValueLabel.setText("\u20B9" + total);
     }//GEN-LAST:event_roomsSpinnerStateChanged
 
     private void waitListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waitListBtnActionPerformed

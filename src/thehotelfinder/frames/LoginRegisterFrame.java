@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import thehotelfinder.MyDate;
 import thehotelfinder.TheHotelFinder;
 
 /**
@@ -677,20 +678,19 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         
         
         
-        SimpleDateFormat formatter = new SimpleDateFormat("dd MMM, yyyy");
-        
-        try{
-            Date dobDate = formatter.parse(dob);
-            if(dobDate.after(new Date())){
-                showMessage("Enter valid date");
-                return false;
-            }
-        }catch(ParseException e){
-            System.out.println(e);
-            showMessage("Enter Date of Birth");
-            return false;
-        }
-        
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd MMM, yyyy");
+//        
+//        try{
+//            Date dobDate = formatter.parse(dob);
+//            if(dobDate.after(new Date())){
+//                showMessage("Enter valid date");
+//                return false;
+//            }
+//        }catch(ParseException e){
+//            System.out.println(e);
+//            showMessage("Enter Date of Birth");
+//            return false;
+//        }
         return true;
     }
     

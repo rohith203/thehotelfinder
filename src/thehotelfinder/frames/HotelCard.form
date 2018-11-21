@@ -322,9 +322,14 @@
       </Constraints>
     </Component>
     <Container class="javax.swing.JPanel" name="ratingPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="15" y="100" width="160" height="30"/>
+          <AbsoluteConstraints x="15" y="100" width="165" height="30"/>
         </Constraint>
       </Constraints>
 

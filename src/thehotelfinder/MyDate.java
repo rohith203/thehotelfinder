@@ -28,17 +28,29 @@ public class MyDate{
     }
     
     public static boolean hasOverlap(Date a, Date b, Date x, Date y){
-        if(((a.after(y) || a.equals(y)) && b.after(y)) ||
+        if(((a.after(y) || a.equals(y)) && b.after(a)) ||
             (a.before(x) && (b.before(x) || b.equals(x)))){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
     
     public static String getRefString(Date d){
         SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmmss");
         String s = formatter.format(d);
         return s;
+    }
+    
+    public static String getBookingDate(String ref){
+        SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmmss");
+        SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm:ss dd MMM, yyyy");
+        Date resDate = new Date();
+        try{
+            resDate = formatter.parse(ref);
+        }catch(ParseException e){
+            System.out.println(e);
+        }
+        return formatter1.format(resDate);
     }
     
     public static String toStringInit(Date d){
@@ -48,8 +60,15 @@ public class MyDate{
     }
     
     public static int getDays(String a, String b){
-        int nights = (int)((MyDate.toDate(a).getTime()) - (MyDate.toDate(b).getTime()))/(1000 * 60 * 60 * 24);
+        int nights = (int)(((MyDate.toDate(a).getTime()) - (MyDate.toDate(b).getTime()))/(1000 * 60 * 60 * 24));
         return abs(nights);
+    }
+    
+    public static Date addDay(Date d, int days){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(d);
+        cal.add(Calendar.DAY_OF_MONTH, days);
+        return cal.getTime();
     }
     
     public static Date removeTime(Date date) {    

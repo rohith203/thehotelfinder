@@ -291,8 +291,9 @@ public class HomePageFrame extends javax.swing.JFrame {
         String checkOutDate = checkOutDateChooserCombo.getText();
         
         if(validate(noRooms, noPeople, checkInDate, checkOutDate)){
-            int nights = (int)(((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24));
-            //int nights
+//            int nights = (int)(((MyDate.toDate(checkOutDate).getTime()) - (MyDate.toDate(checkInDate).getTime()))/(1000 * 60 * 60 * 24));
+            int nights = MyDate.getDays(checkInDate, checkOutDate);
+//            System.out.println("\n nights: "+nights+"\n");
             hotelCardList = TheHotelFinder.getDb().getHotels(location, noRooms, noPeople, nights, MyDate.toDate(checkInDate),MyDate.toDate(checkOutDate));
         }else{
             return;

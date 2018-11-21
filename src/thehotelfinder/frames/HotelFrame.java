@@ -7,6 +7,7 @@ package thehotelfinder.frames;
 
 import thehotelfinder.databaseutil.Hotel;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
 /**
@@ -24,14 +25,32 @@ public class HotelFrame extends javax.swing.JFrame {
         hotelNameLabel.setText(hotel.getName());
         locationLabel.setText(hotel.getCity() + ", " + hotel.getState());
         amenitiesLabel.setText(getStringArr(hotel.getHotelDetails()));
+        
+        if(hotel.getName().equals("Mercure Hyderabad KCP") || hotel.getName().equals("TRANSIT HOTEL") || hotel.getName().equals("HOTEL LE ROI DELHI") || 
+           hotel.getName().equals("PARK PRIME KOLKATA") || hotel.getName().equals("FORTUNE SELECT TRINITY")){
+            System.out.println("hotel1");
+            hotelImageLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hotel1.jpg")));
+        }else if(hotel.getName().equals("Ellala Gachibowli Hyderabad") || hotel.getName().equals("DRAGON FLY") || hotel.getName().equals("CASPIA HOTEL") || 
+                 hotel.getName().equals("THE LINDSAY") || hotel.getName().equals("GOLDFINCH HOTELS")){
+            hotelImageLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hotel2.jpg")));
+        }else if(hotel.getName().equals("The Park") || hotel.getName().equals("KOHINOOR CONTINENTAL") || hotel.getName().equals("HOTEL SOUTHERN") || 
+                 hotel.getName().equals("HOTEL HINDUSTHAN INTERNATIONAL") || hotel.getName().equals("CHANCERY PAVILION")){
+            hotelImageLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hotel3.jpg")));
+        }else if(hotel.getName().equals("IBIS Hyderabad Hitec City") || hotel.getName().equals("KEYS SELECT HOTEL NESTOR") || hotel.getName().equals("GINGER DELHI RYN") || 
+                 hotel.getName().equals("THE PEERLESS INN KOLKATA") || hotel.getName().equals("ADARSH HAMILTON")){
+            hotelImageLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hotel4.jpg")));
+        }else if(hotel.getName().equals("Royalton Hotel") || hotel.getName().equals("T2 BEACON MUMBAI") || hotel.getName().equals("ORANA HOTELS AND RESORTS") || 
+                 hotel.getName().equals("Aauris") || hotel.getName().equals("CHANCERY PAVILION")){
+            hotelImageLabel.setIcon(new ImageIcon(getClass().getResource("..\\imgs\\hotel5.jpg")));
+        }
+        
+        
         double rating = hotel.getAvgRating();
-//        int starsWidth = 
         ratingWidth = (int)((rating/5)*165);
         System.out.println(rating + " " + ratingWidth);
 //        ratingWidth += 10*(((int)rating));
         
         starsBgPanel.setBounds(0, 0, ratingWidth, 30);
-//                ((JComponent)getContentPane()).revalidate();
 
     }
 
@@ -52,6 +71,7 @@ public class HotelFrame extends javax.swing.JFrame {
         ratingPanel = new javax.swing.JPanel();
         stars = new javax.swing.JLabel();
         starsBgPanel = new javax.swing.JPanel();
+        hotelImageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(710, 100, 0, 0));
@@ -103,6 +123,9 @@ public class HotelFrame extends javax.swing.JFrame {
 
         HotelPanel.add(ratingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 30));
 
+        hotelImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thehotelfinder/imgs/hotel1.jpg"))); // NOI18N
+        HotelPanel.add(hotelImageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 200, 140));
+
         getContentPane().add(HotelPanel, "card2");
 
         pack();
@@ -122,6 +145,7 @@ public class HotelFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HotelPanel;
     private javax.swing.JLabel amenitiesLabel;
+    private javax.swing.JLabel hotelImageLabel;
     private javax.swing.JLabel hotelNameLabel;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel locationLabel;
