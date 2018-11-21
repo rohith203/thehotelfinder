@@ -165,8 +165,14 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 17)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 255, 255));
         jLabel1.setText("New user? Open register tab.");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginPaneLayout = new javax.swing.GroupLayout(loginPane);
         loginPane.setLayout(loginPaneLayout);
@@ -340,7 +346,7 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
 
         passwordLabel1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 17)); // NOI18N
         passwordLabel1.setLabelFor(passwordField1);
-        passwordLabel1.setText("Password again:");
+        passwordLabel1.setText("Confirm Password:");
 
         passwordField1.setColumns(22);
         passwordField1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 16)); // NOI18N
@@ -630,6 +636,11 @@ public class LoginRegisterFrame extends javax.swing.JFrame {
             registerBtn.doClick();
         }
     }//GEN-LAST:event_enterRegisterAction
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_jLabel1MouseClicked
     
     
     public void clearFields(){

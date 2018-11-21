@@ -333,6 +333,8 @@ public class HomePageFrame extends javax.swing.JFrame {
 
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         // TODO add your handling code here:
+        AboutFrame af = new AboutFrame();
+        af.setVisible(true);
         
     }//GEN-LAST:event_aboutMenuItemActionPerformed
     
